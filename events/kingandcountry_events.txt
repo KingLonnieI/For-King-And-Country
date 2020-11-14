@@ -1,0 +1,84 @@
+add_namespace = kingandcountry
+
+##Event: The Reorganized Government of China
+country_event = {
+	id = kingandcountry.1
+	title = kingandcountry.1.title
+	desc = kingandcountry.1.desc
+	picture = GFX_report_event_asian_politicians
+	fire_only_once = yes
+	trigger = {
+		tag = JAP
+        has_government = monarchist
+        OR = { 
+            CHI = { is_subject_of = JAP }
+            AND = { 
+			    CHI = { exists = no }
+				PRC = { is_subject_of = JAP }
+			}
+        }
+        MAN = { exists = yes }
+        MAN = { NOT = { has_government = communism } }
+	}
+	option = {
+		name = kingandcountry.1.a
+		ai_chance = { factor = 1}
+		CHI = {
+		    create_country_leader = {
+	     		name = "Yuan Keding"
+	    		picture = "gfx/leaders/Monarchs/Yuan_Keding_China.tga"
+	    		expire = "1981.1.1"
+	     		ideology = totalitarian_monarchism
+	    		traits = {
+	    			imperial_sanction warrior_code
+	    		}
+	    	}
+		}
+		PRC = {
+		    create_country_leader = {
+	     		name = "Yuan Keding"
+	    		picture = "gfx/leaders/Monarchs/Yuan_Keding_China.tga"
+	    		expire = "1981.1.1"
+	     		ideology = totalitarian_monarchism
+	    		traits = {
+	    			imperial_sanction warrior_code
+	    		}
+	    	}
+		}
+	}
+	option = {
+		name = kingandcountry.1.b
+		ai_chance = { factor = 1}
+		if = { 
+		    limit = { 
+			    CHI = { is_subject_of = JAP }
+			}
+            CHI = { 
+	    	    set_politics = { 
+	    		    ruling_party = neutrality 
+	    			elections_allowed = no
+	    		}
+	    		add_popularity = { ideology = neutrality popularity = 1 }
+	     	}
+		}
+        if = { 
+		    limit = { 
+			    CHI = { exists = no }
+				PRC = { is_subject_of = JAP }
+			    }
+                PRC = {
+			        set_politics = { ruling_party = neutrality elections_allowed = no }
+			        add_popularity = { ideology = neutrality popularity = 1 }
+			        create_country_leader = {
+	     	            name = "Wang Jingwei"
+	    	            picture = "gfx/leaders/Monarchs/r56_portrait_CHI_Wang_Jingwei.tga"
+	   		            expire = "1981.1.1"
+	   		            ideology = despotism
+	   		            traits = {
+    		    	        imperial_sanction warrior_code
+    		            }
+    	            }
+			} 
+		}
+	}
+}

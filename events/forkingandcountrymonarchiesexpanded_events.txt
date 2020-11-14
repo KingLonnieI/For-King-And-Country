@@ -1,0 +1,79 @@
+add_namespace = forkingandcountrymonarchiesexpanded
+
+##Event: The Royal Government
+country_event = {
+	id = forkingandcountrymonarchiesexpanded.1
+	title = forkingandcountrymonarchiesexpanded.1.title
+	desc = forkingandcountrymonarchiesexpanded.1.desc
+	picture = the_royal_government-56566
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = GRE_metaxism_focus
+        NOT = { has_government = monarchist }
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = forkingandcountrymonarchiesexpanded.1.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = metaxas_stay_tt
+	}
+	option = {
+		name = forkingandcountrymonarchiesexpanded.1.b
+		ai_chance = { factor = 0}
+		set_politics = { ruling_party = monarchist elections_allowed = no }
+		custom_effect_tooltip = the_king_takes_power_tt
+	}
+}
+##Event: The spirit of 1862
+country_event = {
+	id = forkingandcountrymonarchiesexpanded.2
+	title = forkingandcountrymonarchiesexpanded.2.title
+	desc = forkingandcountrymonarchiesexpanded.2.desc
+	picture = the_spirit_of_1862-56567
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = GRE_compromise_with_the_monarchists
+        has_completed_focus = GRE_horror_and_fear
+        has_idea = GRE_george_ii_restrained
+	}
+	option = {
+		name = forkingandcountrymonarchiesexpanded.2.a
+		ai_chance = { factor = 0}
+		remove_idea = GRE_george_ii
+		remove_idea = GRE_george_ii_restrained
+		create_country_leader = {
+			name = "Alexandru Cantacuzino"
+			desc = "POLITICS_ALEXANDRU_CANTACUZINO_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_ROM_Alexandru_Cantacuzino.tga"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				autocratic_imperialist fascist_sympathies
+			}
+		}
+	}
+	option = {
+		name = forkingandcountrymonarchiesexpanded.2.b
+		ai_chance = { factor = 0}
+		set_country_flag = basileus_cantacuzino
+		set_politics = { ruling_party = monarchist elections_allowed = no }
+		remove_idea = GRE_george_ii
+		remove_idea = GRE_george_ii_restrained
+		create_country_leader = {
+			name = "Alexandru Cantacuzino"
+			desc = "POLITICS_ALEXANDRU_CANTACUZINO_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_ROM_Alexandru_Cantacuzino.tga"
+			expire = "1965.1.1"
+			ideology = totalitarian_monarchism
+			traits = {
+				autokrator fascist_sympathies
+			}
+		}
+	}
+	option = {
+		name = forkingandcountrymonarchiesexpanded.2.c
+		ai_chance = { factor = 1}
+	}
+}

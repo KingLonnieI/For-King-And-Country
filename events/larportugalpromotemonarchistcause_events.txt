@@ -1,0 +1,405 @@
+﻿add_namespace = larportugalpromotemonarchistcause
+
+##Event: As Dificuldades de um Império Luso-Brasileiro
+country_event = {
+	id = larportugalpromotemonarchistcause.1
+	title = larportugalpromotemonarchistcause.1.title
+	desc = larportugalpromotemonarchistcause.1.desc
+	picture = as_dificuldades_de_um_imprio_lusobrasileiro-42731
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.1.a
+		ai_chance = { factor = 1}
+        set_country_flag = reforming_brazil_kingdom
+		hidden_effect = { country_event = { days = 60 id = larportugalpromotemonarchistcause.5 } }
+	}
+}
+##Event: The Imperial General Assembly
+country_event = {
+	id = larportugalpromotemonarchistcause.2
+	title = larportugalpromotemonarchistcause.2.title
+	desc = larportugalpromotemonarchistcause.2.desc
+	picture = the_imperial_general_assembly-42749
+	fire_only_once = yes
+	trigger = {
+		tag = POR
+        BRA = { exists = no }
+        POR = { 
+		    OR = {
+    			has_government = monarchist
+				has_government = neutrality
+			}
+		}
+        POR = { has_completed_focus = POR_the_kingdom_reunited }
+        has_global_flag = POR_portugal_joined_brazilian_civil_war_flag
+        has_country_flag = reforming_brazil_kingdom
+	}
+	mean_time_to_happen = {
+		days = 40
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.2.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = imperial_general_assembly_tt
+        hidden_effect = { 
+            set_country_flag = activate_imperial_assembly
+        }
+	}
+}
+##Event: The General Courts
+country_event = {
+	id = larportugalpromotemonarchistcause.3
+	title = larportugalpromotemonarchistcause.3.title
+	desc = larportugalpromotemonarchistcause.3.desc
+	picture = the_general_courts-42751
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.3.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = cortes_gerais_tt
+        hidden_effect = {
+            set_country_flag = activate_cortes_gerais
+        }
+	}
+}
+##Event: The Capital of the Empire
+country_event = {
+	id = larportugalpromotemonarchistcause.4
+	title = larportugalpromotemonarchistcause.4.title
+	desc = larportugalpromotemonarchistcause.4.desc
+	picture = the_capital_of_the_empire-42542
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.4.a
+		ai_chance = { factor = 1}
+		POR = { set_capital = 500 }
+        set_country_flag = imperial_capital_set
+        set_country_flag = allowed_brazilian_buildup
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.4.b
+		ai_chance = { factor = 1}
+		set_country_flag = imperial_capital_set
+	}
+}
+##Event: Settling the succession
+country_event = {
+	id = larportugalpromotemonarchistcause.5
+	title = larportugalpromotemonarchistcause.5.title
+	desc = larportugalpromotemonarchistcause.5.desc
+	picture = settling_the_succession-42755
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.5.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = start_succession_crisis_tt
+        swap_ruler_traits = { remove = constitutional_monarch_minor add = illegitimate_monarch }
+        set_country_flag = succession_crisis_ongoing
+        add_timed_idea = { idea = portuguese_succession_crisis days = 90 }
+        hidden_effect = { 
+        country_event = { days 20 id = larportugalpromotemonarchistcause.7 }
+        }
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.5.b
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = dom_pedro_crowned_tt
+        set_country_flag = king_emperor_pedro
+		create_country_leader = {
+			name = "Dom Pedro III and VI"
+			desc = "POLITICS_PEDRO_VI_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_Brazil_Pedro_IV.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				inexperienced_monarch constitutional_monarch king_emperor pedro_fancy_title
+			}
+	    }
+		hidden_effect = {
+     		country_event = { days = 20 id = larportugalpromotemonarchistcause.6 }
+			country_event = { id = larportugalpromotemonarchistcause.9 }
+		}		
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.5.c
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = cortes_decision_tt
+        #The Cortes will choose the King according to the Capital
+        if = { 
+		    limit = {
+     			500 = { is_capital = yes }
+			} 
+			hidden_effect = {
+    			country_event = { days = 20 id = larportugalpromotemonarchistcause.6 }
+				add_stability = -0.2
+				create_country_leader = {
+			        name = "Dom Pedro III and VI"
+			        desc = "POLITICS_PEDRO_VI_DESC"
+			        picture = "gfx/leaders/Monarchs/Portrait_Brazil_Pedro_IV.tga"
+			        expire = "1981.1.1"
+			        ideology = constitutional_monarchism
+			        traits = {
+			        	inexperienced_monarch constitutional_monarch king_emperor pedro_fancy_title
+			        }
+	            }
+				country_event = { days = 3 id = larportugalpromotemonarchistcause.9 }
+			} 
+		}
+        if = { 
+		    limit = {
+    			112 = { is_capital = yes }
+			} 
+			hidden_effect = {
+			add_country_leader_trait = king_emperor 
+			add_stability = -0.4
+			}
+		}
+	}
+}
+##Event: Disputes among the Orleans-Braganza
+country_event = {
+	id = larportugalpromotemonarchistcause.6
+	title = larportugalpromotemonarchistcause.6.title
+	desc = larportugalpromotemonarchistcause.6.desc
+	picture = disputes_among_the_orleansbraganza-42756
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+	    add_stability = -0.1
+		name = larportugalpromotemonarchistcause.6.a
+		ai_chance = { factor = 1}
+		set_country_flag = brazilian_succession_settled
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.6.b
+		ai_chance = { factor = 1}
+		set_country_flag = brazilian_succession_settled
+        set_country_flag = dom_pedro_alcantara_inherits
+		add_stability = -0.2
+        BRA = {
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Dom Pedro de Alcântara"
+            desc = "POLITICS_PEDRO_ALCANTARA_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_BRA_Pedro_of_Orleans_Braganza.tga"
+			expire = "1981.1.1"
+	        ideology = constitutional_monarchism
+	        traits = {
+	        	empire_builder constitutional_monarch pedro_fancy_title
+	        }
+        }
+		}
+	}
+}
+##Event: Revived Constitutionalist sentiment
+country_event = {
+	id = larportugalpromotemonarchistcause.7
+	title = larportugalpromotemonarchistcause.7.title
+	desc = larportugalpromotemonarchistcause.7.desc
+	picture = revived_constitutionalist_sentiment-42811
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.7.a
+		ai_chance = { factor = 1}
+		hidden_effect = { swap_ruler_traits = { remove = illegitimate_monarch add = illegitimate_monarch2 } }
+        set_country_flag = activate_succession_crisis
+	}
+}
+##Event: An unlikely compromise
+country_event = {
+	id = larportugalpromotemonarchistcause.8
+	title = larportugalpromotemonarchistcause.8.title
+	desc = larportugalpromotemonarchistcause.8.desc
+	picture = an_unlikely_compromise-42896
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.8.a
+		ai_chance = { factor = 0}
+		set_country_flag = dona_maria_francisca
+		add_political_power = -200
+		create_country_leader = {
+			name = "Dona Maria Francisca"
+			desc = "POLITICS_MARIA_FRANCISCA_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_Dona_Maria_Francisca_Orleans_Braganza.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				popular_queen constitutional_monarch queen_empress
+			}
+	    }
+		hidden_effect = { 
+		    country_event = { days = 3 id = larportugalpromotemonarchistcause.9 }
+			clr_country_flag = succession_crisis_ongoing
+		    remove_ideas = portuguese_succession_crisis
+		}
+	}
+    option = {
+		name = larportugalpromotemonarchistcause.8.b
+		ai_chance = { factor = 1}
+            add_stability = -0.05
+			add_political_power = -50
+	}
+}
+##Event: Dom Duarte Abdicates
+country_event = {
+	id = larportugalpromotemonarchistcause.9
+	title = larportugalpromotemonarchistcause.9.title
+	desc = larportugalpromotemonarchistcause.9.desc
+	picture = dom_duarte_abdicates-43036
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.9.a
+		ai_chance = { factor = 1}
+		if = {
+		    limit = { has_country_flag = dom_pedro_alcantara_inherits }
+			create_country_leader = {
+			    name = "Dom Pedro de Alcântara"
+                desc = "POLITICS_PEDRO_ALCANTARA_DESC"
+			    picture = "gfx/leaders/Monarchs/Portrait_BRA_Pedro_of_Orleans_Braganza.tga"
+			    expire = "1981.1.1"
+	            ideology = constitutional_monarchism
+	            traits = {
+	            	empire_builder constitutional_monarch pedro_fancy_title
+	            }
+            }
+		}
+        if = {
+		    limit = {
+            has_country_flag = brazilian_succession_settled			
+			NOT = { has_country_flag = dom_pedro_alcantara_inherits }
+			}
+            create_country_leader = {
+				name = "Dom Pedro Henrique"
+				desc = "POLITICS_PRINCE_PEDRO_HENRIQUE_DESC"
+				picture = "gfx/leaders/BRA/portrait_bra_prince_pedro_hernique_de_orleans_e_braganza.dds"
+				expire = "1981.07.05"
+				ideology = constitutional_monarchism
+				traits = {
+					constitutional_monarch disdain_for_politicians_2
+				}					
+			}
+		}	
+        if = {
+		    limit = {
+            has_country_flag = brazilian_succession_settled			
+			NOT = { has_country_flag = dom_pedro_alcantara_inherits }
+			date > 1940.1.1
+			}
+            create_country_leader = {
+				name = "Dom Pedro Gastão"
+				desc = "POLITICS_PRINCE_PEDRO_GASTÃO_DESC"
+				picture = "gfx/leaders/Monarchs/Portrait_BRA_Pedro_IV.tga"
+				expire = "1981.07.05"
+				ideology = constitutional_monarchism
+				traits = {
+					constitutional_monarch disdain_for_politicians_2
+				}					
+			}
+		}		
+	}
+}
+##Event: Plans for the Empire
+country_event = {
+	id = larportugalpromotemonarchistcause.10
+	title = larportugalpromotemonarchistcause.10.title
+	desc = larportugalpromotemonarchistcause.10.desc
+	picture = plans_for_the_empire-43772
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.10.a
+		ai_chance = { factor = 1}
+		set_temp_variable = { country_to_initiate = BRA }
+		instantiate_collaboration_government = yes
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.10.b
+		ai_chance = { factor = 0}
+		set_country_flag = brazilian_issues_flag
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.10.c
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = will_lead_to_duarte_fall
+        set_country_flag = start_lusitanian_empire
+	}
+}
+##Event: The Imperial Assembly demands sovereignty
+country_event = {
+	id = larportugalpromotemonarchistcause.11
+	title = larportugalpromotemonarchistcause.11.title
+	desc = larportugalpromotemonarchistcause.11.desc
+	picture = the_imperial_assembly_demands_sovereignty-42543
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = larportugalpromotemonarchistcause.11.a
+		ai_chance = { factor = 1}
+		set_capital = 500
+        create_country_leader = {
+			name = "Dom Pedro III and VI"
+			desc = "POLITICS_PEDRO_III_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_Brazil_Pedro_IV.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				inexperienced_monarch constitutional_monarch king_emperor pedro_fancy_title
+			}
+		}
+        set_country_flag = full_brazilian_dominance
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.11.b
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Dom Pedro III and VI"
+			desc = "POLITICS_PEDRO_III_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_Brazil_Pedro_IV.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				inexperienced_monarch constitutional_monarch king_emperor pedro_fancy_title
+			}
+		}
+        set_country_flag = partial_brazilian_dominance
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.11.c
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = pedro_alcantara_portugal_tt
+        set_country_flag = little_brazilian_dominance
+            create_country_leader = {
+			    name = "Dom Pedro de Alcântara"
+                desc = "POLITICS_PEDRO_ALCANTARA_DESC"
+			    picture = "gfx/leaders/Monarchs/Portrait_BRA_Pedro_of_Orleans_Braganza.tga"
+			    expire = "1981.1.1"
+	            ideology = constitutional_monarchism
+	            traits = {
+	            	empire_builder constitutional_monarch pedro_fancy_title
+	            }
+            }
+	}
+	option = {
+		name = larportugalpromotemonarchistcause.11.d
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = maria_francisca_crowned_tt
+        create_country_leader = {
+			name = "Dona Maria Francisca"
+			desc = "POLITICS_MARIA_FRANCISCA_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_Dona_Maria_Francisca_Orleans_Braganza.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				popular_queen constitutional_monarch queen_empress
+			}
+	    }
+        set_country_flag = no_brazilian_dominance
+	}
+}

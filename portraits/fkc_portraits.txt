@@ -1,0 +1,114 @@
+default = {
+	#navy = {
+		#male = {
+		#}
+		#female = {
+		#}
+	#}
+	
+	#army = {
+		#male = {
+		#}
+		#female = {
+		#}
+	#}
+	
+	male = {
+		"gfx/leaders/leader_unknown.dds"
+	}
+	female = {
+		"gfx/leaders/leader_unknown.dds"
+	}
+}
+
+continent = {
+	name = europe
+	
+	political = {
+		monarchist = {
+				male = { 
+					"gfx/leaders/Monarchs/POL_regency.tga"
+			}
+		}
+	}
+
+}
+
+continent = {
+	name = north_america
+
+	political = {
+		monarchist = {
+				male = { 
+					"gfx/leaders/Monarchs/POL_regency.tga" 
+			}
+		}
+	}
+
+}
+
+continent = {
+	name = south_america
+	
+	political = {
+		monarchist = {
+				male = { 
+					"gfx/leaders/Monarchs/POL_regency.tga"  
+			}
+		}
+	}
+
+}
+
+continent = {
+	name = australia
+	
+	political = {
+		monarchist = {
+				male = { 
+					"gfx/leaders/Monarchs/POL_regency.tga"
+			}
+		}
+	}
+
+}
+
+continent = {
+	name = africa
+	
+	political = {
+		monarchist = {
+				male = { 
+					"gfx/leaders/Monarchs/Portrait_Generic_Tribal_Council.tga" 
+			}
+		}
+	}
+
+
+}
+
+continent = {
+	name = asia
+
+	political = {
+		monarchist = {
+				male = { 
+					"gfx/leaders/Monarchs/Portrait_Lama_Council.tga" 
+			}
+		}
+	}	
+
+}
+
+continent = {
+	name = middle_east
+	
+	political = {
+		monarchist = {
+				male = { 
+					"gfx/leaders/Monarchs/Portrait_Federal_Supreme_Council.tga"  
+			}
+		}
+	}
+
+}

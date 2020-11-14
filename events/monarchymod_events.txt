@@ -1,0 +1,648 @@
+add_namespace = monarchymod
+
+##Event: On Continuing the Monarchy
+country_event = {
+	id = monarchymod.2
+	title = monarchymod.2.title
+	desc = monarchymod.2.desc
+	picture = GFX_report_event_eng_royal_family
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+        is_subject = no
+        NOT = { has_government = monarchist }
+        has_country_flag = ENG_abdication_crisis_dominion_will_leave
+	}
+	option = {
+		name = monarchymod.2.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = monarchymod.2.b
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = canada_choosing_king_tt
+        hidden_effect = {
+            country_event = { days = 4 id = monarchymod.3 }
+            news_event = { days = 8 id = monarchymod.4 }
+        }
+	}
+}
+##Event: The Kingdom of Canada
+country_event = {
+	id = monarchymod.3
+	title = monarchymod.3.title
+	desc = monarchymod.3.desc
+	picture = GFX_report_event_eng_royal_family
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchymod.3.a
+		ai_chance = { factor = 1}
+	    create_country_leader = {
+				name = "Arthur of Connaught"
+				picture = "gfx/leaders/Monarchs/Portrait_Prince_Arthur.tga"
+				expire = "1981.1.1"
+     			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch
+			}
+		}
+		set_country_flag = british_king
+		country_event = { id = monarchymod.5 }
+	}
+	option = {
+		name = monarchymod.3.b
+		ai_chance = { factor = 1}
+		set_country_flag = regency_installed
+        country_event = { days = 10 id = monarchymod.5 }
+	}
+}
+##Event: Canada elects a new King
+news_event = {
+	id = monarchymod.4
+	title = monarchymod.4.title
+	desc = monarchymod.4.desc
+	picture = GFX_news_event_009
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		NOT = { tag = CAN }
+	}
+	option = {
+		name = monarchymod.4.a
+        trigger = {
+			country_exists = ENG
+			ENG = { has_capitulated = no }
+			tag = ENG
+			OR = {
+			    is_subject_of = ENG 
+				is_in_faction_with = ENG 
+			}	
+		}
+		set_global_flag = canada_new_king
+	}
+	option = {
+		name = monarchymod.4.b
+		trigger = {
+			NOT = {
+			    tag = ENG
+		    	OR = {
+		    	    is_subject_of = ENG 
+		    		is_in_faction_with = ENG 
+		    	}
+			}
+			NOT = { has_government = communism }
+		}
+		set_global_flag = canada_new_king
+	}
+	option = {
+		name = monarchymod.4.c
+		trigger = {
+			has_government = communism
+		}
+		set_global_flag = canada_new_king
+	}
+}
+##Event: A Throne for the Commonwealth
+country_event = {
+	id = monarchymod.5
+	title = monarchymod.5.title
+	desc = monarchymod.5.desc
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+        has_government = monarchist
+        has_global_flag = canada_new_king
+        NOT = { has_country_flag = regency_installed }
+	}
+	option = {
+		name = monarchymod.5.a
+		ai_chance = { factor = 1 }
+		set_global_flag = independent_commonwealth
+        hidden_effect = {
+            AST = { country_event = { id = monarchymod.6 } }
+            NZL = { country_event = { id = monarchymod.6 } }
+            SAF = { country_event = { id = monarchymod.6 } }
+        }
+	}
+	option = {
+		name = monarchymod.5.b
+		ai_chance = { factor = 0 }
+		puppet = AST
+        puppet = NZL
+        puppet = SAF
+        if = { 
+		    limit = { 
+		       CAN = { has_country_flag = british_king }
+		    }
+			AST = {
+		        create_country_leader = {
+				    name = "Arthur of Connaught"
+				    picture = "gfx/leaders/Monarchs/Portrait_Prince_Arthur.tga"
+				    expire = "1981.1.1"
+     			    ideology = constitutional_monarchism
+			        traits = {
+				        constitutional_monarch
+			        }
+		        }
+			}
+            NZL = {
+		        create_country_leader = {
+				    name = "Arthur of Connaught"
+				    picture = "gfx/leaders/Monarchs/Portrait_Prince_Arthur.tga"
+				    expire = "1981.1.1"
+     			    ideology = constitutional_monarchism
+			        traits = {
+				        constitutional_monarch
+			        }
+		        }
+			}
+            SAF = {
+		        create_country_leader = {
+				    name = "Arthur of Connaught"
+				    picture = "gfx/leaders/Monarchs/Portrait_Prince_Arthur.tga"
+				    expire = "1981.1.1"
+     			    ideology = constitutional_monarchism
+			        traits = {
+				        constitutional_monarch
+			        }
+		        }
+			}			
+        }
+        else = {
+            set_country_flag = enforce_personal_union_commonwealth
+        }		
+	}
+}
+##Event: The fate of the Monarchy
+country_event = {
+	id = monarchymod.6
+	title = monarchymod.6.title
+	desc = monarchymod.6.desc
+	picture = GFX_report_event_eng_royal_family
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchymod.6.a
+		ai_chance = { factor = 0 }
+		set_country_flag = regency_decisions
+	}
+	option = {
+		name = monarchymod.6.b
+		ai_chance = { factor = 1 }
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+	}
+}
+##Event: The Future of India
+country_event = {
+	id = monarchymod.7
+	title = monarchymod.7.title
+	desc = monarchymod.7.desc
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	trigger = {
+		tag = RAJ
+		has_country_flag = ENG_abdication_crisis_dominion_will_leave
+		is_subject = no
+		NOT = { has_government = monarchist }
+	}
+	option = {
+		name = monarchymod.7.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = monarchymod.7.b
+		ai_chance = { factor = 0}
+		set_politics = { ruling_party = monarchist elections_allowed = no } set_political_party = { ideology = monarchist popularity = 1 }
+	}
+	option = {
+		name = monarchymod.7.c
+		ai_chance = { factor = 0}
+		set_politics = { ruling_party = monarchist elections_allowed = no } set_political_party = { ideology = monarchist popularity = 1 } set_country_flag = india_regency_installed
+	}
+}
+##Event: Accession of Pakistan
+country_event = {
+	id = monarchymod.8
+	title = monarchymod.8.title
+	desc = monarchymod.8.desc
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	trigger = {
+		tag = PAK 
+        NOT = { has_government = monarchist }
+        is_subject = no
+        NOT = { has_country_flag = pakistani_king }
+	}
+	option = {
+		name = monarchymod.8.a
+		ai_chance = { factor = 1}
+		set_country_flag = pakistani_king
+	}
+	option = {
+		name = monarchymod.8.b
+		ai_chance = { factor = 0}
+		create_country_leader = {
+			name = "Muhammad Khair ud din Mirza"
+			picture = "gfx/leaders/Monarchs/Muhammad_Khair_ud_din_Mirza.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				nationalist_symbol 
+			}
+		}
+        set_country_flag = pakistani_king
+	}
+	option = {
+		name = monarchymod.8.c
+		ai_chance = { factor = 0}
+		create_country_leader = {
+			name = "Sadeq Mohammad Khan"
+			picture = "gfx/leaders/Monarchs/Portrait_PAK_Sadeq_Mohammad_Khan_V.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				nationalist_symbol 
+			}
+		}
+        set_country_flag = pakistani_king
+	}
+	option = {
+		name = monarchymod.8.d
+		ai_chance = { factor = 0}
+		create_country_leader = {
+			name = "Nawab Khanji"
+			picture = "gfx/leaders/Monarchs/Portrait_PRF_Nawab_Khanji.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				nationalist_symbol 
+			}
+		}
+        set_country_flag = pakistani_king
+	}
+}
+##Event: An Emir for Algeria
+country_event = {
+	id = monarchymod.9
+	title = monarchymod.9.title
+	desc = monarchymod.9.desc
+	picture = GFX_report_event_german_reichstag_gathering
+	fire_only_once = yes
+	trigger = {
+		tag = ALG
+        has_government = monarchist
+        NOT = { has_country_flag = algerian_emir }
+	}
+	option = {
+		name = monarchymod.9.a
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "az-Zubayr bin Ahmad as-Sharif"
+			picture = "gfx/leaders/Monarchs/Portrait_az-Zubayr_bin_Ahmad_as-Sharif.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				nationalist_symbol 
+			}
+		}
+        set_country_flag = algerian_emir
+	}
+	option = {
+		name = monarchymod.9.b
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Mohammed Ben Aarafa"
+			picture = "gfx/leaders/Monarchs/Mohammed_Ben_Aarafa.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				nationalist_symbol 
+			}
+		}
+        set_country_flag = algerian_emir
+	}
+	option = {
+		name = monarchymod.9.c
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Lamine Bey"
+			picture = "gfx/leaders/Monarchs/Portrait_Tunisia_Lamine_Bey.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				nationalist_symbol 
+			}
+		}
+        set_country_flag = algerian_emir
+	}
+	option = {
+		name = monarchymod.9.d
+		ai_chance = { factor = 1}
+		#Husain_Bey_Gouta
+		create_country_leader = {
+			name = "Husain Bey Gouta"
+			picture = "gfx/leaders/Monarchs/Husain_Bey_Gouta.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				nationalist_symbol 
+			}
+		}
+        set_country_flag = algerian_emir
+	}
+}
+##Event: A Monarchy in the Caucasus
+country_event = {
+	id = monarchymod.10
+	title = monarchymod.10.title
+	desc = monarchymod.10.desc
+	picture = a_monarchy_in_the_caucasus-46741
+	fire_only_once = yes
+	trigger = {
+		tag = AZR
+        has_government = monarchist
+        is_subject = no
+	}
+	option = {
+		name = monarchymod.10.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = monarchymod.10.b
+		ai_chance = { factor = 1}
+		kill_country_leader = yes
+		set_country_flag = regency_installed
+	}
+}
+##Event: The Regency of the Queen
+country_event = {
+	id = monarchymod.11
+	title = monarchymod.11.title
+	desc = monarchymod.11.desc
+	picture = GFX_report_event_por_return_of_the_monarchy
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchymod.11.a
+		ai_chance = { factor = 1}
+		set_country_flag = amelia_regency
+		add_political_power = -200
+	}
+	option = {
+		name = monarchymod.11.b
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = dona_amelia_will_appease_everyone_tt
+		create_country_leader = {
+			name = "Dona Amélia de Portugal"
+			picture = "gfx/leaders/Monarchs/Portrait_Amelie_Portugal.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				grieving_mother queen_mother
+			}
+		}
+        set_stability = 100
+        set_war_support = 100
+		clr_country_flag = quick_solution_set
+		clr_country_flag = succession_crisis_ongoing
+		set_country_flag = amelia_regency
+		remove_ideas = portuguese_succession_crisis
+        hidden_effect = { 
+        country_event = { days = 150 id = monarchymod.12 }
+		}
+	}
+}
+##Event: The Legitimate King
+country_event = {
+	id = monarchymod.12
+	title = monarchymod.12.title
+	desc = monarchymod.12.desc
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		POR = { OR = { has_government = monarchist has_government = neutrality } }
+        BRA = { exists = no }
+        112 = { is_capital = yes }
+	}
+	option = {
+		name = monarchymod.12.a
+		ai_chance = { factor = 1}
+		clr_country_flag = succession_crisis_ongoing
+        clr_country_flag = activate_succession_crisis
+        swap_ruler_traits = { remove = illegitimate_monarch add = constitutional_monarch }
+	}
+	option = {
+		name = monarchymod.12.b
+		ai_chance = { factor = 0}
+		clr_country_flag = succession_crisis_ongoing
+        clr_country_flag = activate_succession_crisis
+        create_country_leader = {
+			name = "Dom Pedro III and VI"
+			desc = "POLITICS_PEDRO_VI_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_Brazil_Pedro_IV.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				inexperienced_monarch constitutional_monarch traditionalist_connections pedro_fancy_title
+			}
+	    }
+	}
+	option = {
+		name = monarchymod.12.c
+		ai_chance = { factor = 0}
+		clr_country_flag = succession_crisis_ongoing
+        clr_country_flag = activate_succession_crisis
+        create_country_leader = {
+			name = "Dom Pedro de Alcântara"
+			desc = "POLITICS_PEDRO_ALCANTARA_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_BRA_Pedro_of_Orleans_Braganza.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				empire_builder constitutional_monarch traditionalist_connections pedro_fancy_title
+			}
+	    }
+	}
+	option = {
+		name = monarchymod.12.d
+		ai_chance = { factor = 1}
+		clr_country_flag = succession_crisis_ongoing
+        clr_country_flag = activate_succession_crisis
+        create_country_leader = {
+			name = "Dona Maria Francisca of Orleans-Braganza"
+			desc = "POLITICS_MARIA_FRANCISCA_DESC"
+			picture = "gfx/leaders/Monarchs/Portrait_Dona_Maria_Francisca_Orleans_Braganza.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				popular_queen constitutional_monarch 
+			}
+	    }
+	}
+}
+##Event: The Monarchy Compromise
+country_event = {
+	id = monarchymod.13
+	title = monarchymod.13.title
+	desc = monarchymod.13.desc
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchymod.13.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = enraged_monarchists_tt
+        hidden_effect = { 
+            remove_ideas = { GER_wilhelm_iii }
+			add_stability = -0.15 
+            add_popularity = { ideology = monarchist popularity = 0.3 }
+        }
+	}
+	option = {
+		name = monarchymod.13.b
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = happy_monarchists_tt
+        add_stability = 0.05
+	}
+}
+##Event: Never a King
+country_event = {
+	id = monarchymod.14
+	title = monarchymod.14.title
+	desc = monarchymod.14.desc
+	picture = never_a_king-47237
+	fire_only_once = yes
+	trigger = {
+		original_tag = SPR
+        has_completed_focus = SPA_settle_the_succession_question
+        NOT = { has_global_flag = afonso_carlos_immortal }
+	}
+	option = {
+		name = monarchymod.14.a
+		ai_chance = { factor = 10}
+		clr_country_flag = SPB_xavier_king
+        custom_effect_tooltip = alfonso_becomes_king_tt
+        set_country_flag = spanish_succession_settled
+	}
+	option = {
+		name = monarchymod.14.b
+		ai_chance = { factor = 60}
+		custom_effect_tooltip = javier_remains_king_tt
+        set_country_flag = spanish_succession_settled
+	}
+	option = {
+		name = monarchymod.14.c
+		ai_chance = { factor = 20}
+		custom_effect_tooltip = karl_pius_becomes_king_tt
+        clr_country_flag = SPB_xavier_king
+        set_country_flag = SPB_karl_pius_king
+        set_country_flag = spanish_succession_settled
+	}
+	option = {
+		name = monarchymod.14.d
+		ai_chance = { factor = 10}
+		custom_effect_tooltip = juan_becomes_king_tt
+        clr_country_flag = SPB_xavier_king
+        set_country_flag = SPB_juan_king
+        set_country_flag = spanish_succession_settled
+	}
+}
+##Event: The leadership of the Empire
+country_event = {
+	id = monarchymod.15
+	title = monarchymod.15.title
+	desc = monarchymod.15.desc
+	picture = GFX_report_event_japanese_reply
+	fire_only_once = yes
+	trigger = {
+		tag = JAP
+        JAP = { has_completed_focus = JAP_purge_the_kodoha_faction }
+	}
+	option = {
+		name = monarchymod.15.a
+		ai_chance = { factor = 1}
+		set_politics = { ruling_party = fascism elections_allowed = no }
+        if = { limit = { MAN = { is_subject_of = JAP } }
+            hidden_effect = { 
+                MAN = { 
+                    set_politics = { ruling_party = fascism elections_allowed = no }
+				}
+				MEN = { 
+                    set_politics = { ruling_party = fascism elections_allowed = no }
+				}
+            } 
+		}
+        if = { limit = { MEN = { is_subject_of = JAP } } hidden_effect = { MEN = { set_politics = { ruling_party = fascism elections_allowed = no } } } }
+	}
+	option = {
+		name = monarchymod.15.b
+		ai_chance = { factor = 0}
+		set_politics = { ruling_party = fascism elections_allowed = no }
+        create_country_leader = {
+	        name = "Emperor Hirohito"
+	        desc = "POLITICS_Hirohito_DESC"
+	        picture = "Portrait_Japan_Hirohito.dds"
+	        expire = "1989.1.1"
+	        ideology = totalitarian_monarchism
+	        traits = {
+		        warrior_code
+		        emperor_showa
+		        imperial_sanction
+	        }
+	        id = 700 #Hirohito
+        }
+        if = { limit = { MAN = { is_subject_of = JAP } }
+            hidden_effect = { 
+                MAN = { 
+                    set_politics = { ruling_party = fascism elections_allowed = no } 
+				    create_country_leader = {
+	                    name = "Aisin Gioro Puyi"
+	
+	                    picture = "gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
+	                    expire = "1960.1.1"
+	                    ideology = totalitarian_monarchism
+	                    traits = {
+		                    warrior_code
+	                    }
+                    }
+			    }
+            }
+		}
+        if = { limit = { MEN = { is_subject_of = JAP } } hidden_effect = { MEN = { set_politics = { ruling_party = fascism elections_allowed = no } } } }
+	}
+	option = {
+		name = monarchymod.15.c
+		ai_chance = { factor = 0}
+		set_cosmetic_tag = JAP_showa_restoration
+        hidden_effect = {
+            swap_ideas = { remove_idea = JAP_militarism add_idea = JAP_militarism_showa }
+        }
+	}
+}
+##Event: Afonso Carlos hit by a car
+country_event = {
+	id = monarchymod.16
+	title = monarchymod.16.title
+	desc = monarchymod.16.desc
+	picture = afonso_carlos_hit_by_a_car-47237
+	fire_only_once = yes
+	trigger = {
+		if = { limit = { FRA = { is_ai = no } } tag = FRA date < 1936.10.10 }
+        if = { limit = { SPR = { is_ai = no } } tag = SPR date < 1936.10.10 }
+        else = { tag = FRA date < 1936.10.10 }
+	}
+	option = {
+		name = monarchymod.16.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = monarchymod.16.b
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = you_monster_tt
+        set_global_flag = alfonso_carlos_immortal
+	}
+}

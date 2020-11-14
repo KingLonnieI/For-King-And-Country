@@ -1,0 +1,439 @@
+on_actions = {
+		#ROOT is subject FROM is overlord
+	on_startup = {
+		effect = {
+			every_country = { 
+			    limit = { is_ai = no }
+			    country_event = { id = monarchyoverhaul.1 }
+	        }
+		}
+	}	
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = SOV
+					NOT = { has_government = communism }
+				}
+				SOV = {
+     				set_cosmetic_tag = SOV_russia
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = POL
+					has_government = monarchist 
+				}
+				POL = {
+     				country_event = { id = monarchyoverhaul.31 }
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = PRU
+					has_government = monarchist 
+				}
+				PRU = {
+     				country_event = { id = forkingandcountry.6 }
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = COL
+					has_government = monarchist 
+				}
+				COL = {
+     				country_event = { id = forkingandcountry.7 }
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = ARG
+					has_government = monarchist 
+				}
+				ARG = {
+     				country_event = { id = forkingandcountry.8 }
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = USA
+					has_government = monarchist 
+				}
+				USA = {
+     				country_event = { id = forkingandcountry.9 }
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = UKR
+					has_government = monarchist 
+				}
+				UKR = {
+     				country_event = { id = forkingandcountry.14 }
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = BLR
+					has_government = monarchist 
+				}
+				BLR = {
+     				country_event = { id = forkingandcountry.15 }
+				}
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = never_had_monarchy
+					has_government = monarchist
+				}
+				set_country_flag = regency_installed
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = had_monarchy }
+					NOT = { has_country_flag = monarchy_in_place }
+					has_government = monarchist
+				}
+				kill_ideology_leader = monarchist
+				create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+				set_country_flag = royal_election
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					neutrality > 0.1
+					neutrality < 0.2
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 20
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.2
+					neutrality < 0.3
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 30
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.3
+					neutrality < 0.4
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 40
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.4
+					neutrality < 0.5
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 50
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.5
+					neutrality < 0.6
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 60
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.6
+					neutrality < 0.7
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 70
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.7
+					neutrality < 0.8
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 80
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.8
+					neutrality < 0.9
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 90
+                }
+			}
+			if = {
+				limit = {
+					neutrality > 0.9
+					neutrality < 1
+					has_government = monarchist 
+					OR = {
+					    tag = ENG
+						tag = FRA
+						tag = SPR
+						tag = POR
+						tag = ITA
+						tag = GER
+						tag = HOL
+						tag = MAN
+						tag = JAP 
+						tag = ROM
+						tag = YUG
+						tag = GRE
+						tag = TUR
+						tag = BUL
+						tag = HUN
+                    }
+				}
+				set_political_party = {
+                    ideology = neutrality
+                    popularity = 0
+                }
+				set_political_party = {
+                    ideology = monarchist
+                    popularity = 100
+                }
+			}
+		}
+	}
+}

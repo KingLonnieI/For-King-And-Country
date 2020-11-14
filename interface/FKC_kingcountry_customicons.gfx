@@ -1,0 +1,33 @@
+spriteTypes = { 
+	##Icon For: A Força Expedicionária Brasileira
+	SpriteType = { 
+		name = "a_fora_expedicionria_brasileira-51149"
+		texturefile = "gfx/interface/event_gfx/a_fora_expedicionria_brasileira-51149.dds"
+	}
+
+	##Icon For: The German Nation
+	SpriteType = { 
+		name = "the_german_nation-51157"
+		texturefile = "gfx/interface/event_gfx/the_german_nation-51157.dds"
+	}
+
+	##Icon For: The Crown of Spain
+	SpriteType = { 
+		name = "the_crown_of_spain-51183"
+		texturefile = "gfx/interface/event_gfx/the_crown_of_spain-51183.dds"
+	}
+
+	##Icon For: African Civilizations
+	SpriteType = { 
+		name = "african_civilizations-51340"
+		texturefile = "gfx/interface/event_gfx/african_civilizations-51340.dds"
+	}
+
+	##Icon For: Are you playing other mods?
+	SpriteType = { 
+		name = "are_you_playing_other_mods-46741"
+		texturefile = "gfx/interface/event_gfx/are_you_playing_other_mods-46741.dds"
+	}
+
+ 
+ }

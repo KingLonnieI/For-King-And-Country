@@ -1,0 +1,588 @@
+foreign_influence = {
+
+	# Decisions for masters to push their ideology onto puppets
+	# Note that subject status is not checked due to those only appearing in DLC
+	# (Subjects are puppets with high autonomy)
+
+	royal_visit = {
+
+		icon = eng_propaganda_campaigns
+
+		days_remove = 120
+		
+		available = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+			FROM = {
+				monarchist < 0.9
+			}
+			OR = {
+				political_power_daily > 0.5
+				has_political_power > 60
+			}
+		}
+
+		visible = {
+			has_government = monarchist
+			FROM = {
+				is_puppet_of = ROOT
+				monarchist < 0.99
+			}
+		}
+
+		target_array = subjects
+
+		target_trigger = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+		}
+
+		complete_effect = {
+			FROM = { add_timed_idea = { idea = BRA_royalist_movements days = 120 } }
+		}
+
+		modifier = {
+			political_power_cost = 0.5
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	install_dominion = {
+
+		icon = generic_prepare_civil_war
+		
+		cost = 50
+		
+		available = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+			FROM = {
+				monarchist > 0.6
+			}
+			FROM = {
+				NOT = { has_government = monarchist }
+			}
+		}
+
+		visible = {
+			has_government = monarchist
+			FROM = {
+				is_puppet_of = ROOT
+				NOT = { has_government = monarchist }
+			}
+		}
+
+		target_array = subjects
+
+		target_trigger = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+		}
+
+		complete_effect = {
+			FROM = { country_event = { id = mtg_generic.1 } }
+			FROM = {
+				add_timed_idea = {
+					idea = political_turmoil
+					days = 365
+				}
+			}
+			FROM = {
+			    set_country_leader_ideology = absolute_monarchism
+				set_politics = {
+					ruling_party = monarchist
+					elections_allowed = no
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	force_royal_elections = {
+
+		icon = generic_prepare_civil_war
+		
+		cost = 50
+		
+		available = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+			FROM = {
+				has_country_flag = never_had_monarchy
+			}
+			FROM = {
+				NOT = { has_government = monarchist }
+			}
+		}
+
+		visible = {
+			has_government = monarchist
+			has_country_flag = monarchist_nation
+			has_country_flag = monarchist_foreign_policy
+			FROM = {
+				is_puppet_of = ROOT
+				NOT = { has_government = monarchist }
+				NOT = { has_country_flag = elected_king }
+				NOT = { has_country_flag = president_king }
+				NOT = { has_country_flag = president_regency }
+				NOT = { has_country_flag = regency_installed }
+			}
+		}
+
+		target_array = subjects
+
+		target_trigger = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+		}
+
+		complete_effect = {
+			FROM = { country_event = { id = mtg_generic.1 } }
+			FROM = {
+				add_timed_idea = {
+					idea = political_turmoil
+					days = 365
+				}
+			}
+			FROM = {
+			    set_country_flag = regency_installed
+				set_politics = {
+					ruling_party = monarchist
+					elections_allowed = no
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	impose_personal_union = {
+
+		icon = generic_prepare_civil_war
+		
+		cost = 50
+		
+		available = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+			FROM = {
+				NOT = { has_government = monarchist }
+			}
+		}
+
+		visible = {
+			has_government = monarchist
+			has_country_flag = monarchist_nation
+			has_country_flag = monarchist_foreign_policy
+			ROOT = {
+			    OR = {
+				    AND = {
+					    tag = ENG
+						ENG = { has_completed_focus = ENG_god_save_the_king }
+					}	
+					AND = { 
+					    tag = FRA
+						FRA = { has_completed_focus = FRA_proclaim_the_third_empire }
+					}	  
+					tag = AUS 
+					AND = { 
+					    tag = HUN 
+						HUN = { has_completed_focus = HUN_invite_the_habsburg_prince }
+					} 
+                }
+            }				
+			FROM = {
+				is_puppet_of = ROOT
+				NOT = { has_government = monarchist }
+				NOT = { has_country_flag = elected_king }
+				NOT = { has_country_flag = president_king }
+				NOT = { has_country_flag = president_regency }
+				NOT = { has_country_flag = regency_installed }
+			}
+		}
+
+		target_array = subjects
+
+		target_trigger = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+		}
+
+		complete_effect = {
+			FROM = { country_event = { id = mtg_generic.1 } }
+			FROM = {
+				add_timed_idea = {
+					idea = political_turmoil
+					days = 365
+				}
+			}
+			FROM = {
+			    set_country_flag = elected_king
+				set_politics = {
+					ruling_party = monarchist
+					elections_allowed = no
+				}
+				if = { 
+				    limit = { ROOT = { tag = ENG } }
+					create_country_leader = {
+				        name = "Edward VIII"
+				        desc = "POLITICS_EDWARD_EDWARD_DESC"
+				        picture = "gfx/leaders/Monarchs/Portrait_Britain_Edward_VIII.tga"
+				        expire = "1965.1.1"
+				        ideology = absolute_monarchism
+				        traits = {
+					        autocratic_imperialist
+				        }
+			        }
+				}
+                if = { 
+				    limit = { ROOT = { tag = FRA } }
+					create_country_leader = {
+				        name = "Napoleon VI"
+				        desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
+				        picture = GFX_portraits_fra_napoleon_vi
+				        expire = "1965.1.1"
+				        ideology = absolute_monarchism
+				        traits = {
+
+				        }
+			        }
+				}
+                if = { 
+				    limit = { ROOT = { tag = HUN } }
+					create_country_leader = {
+				        name = "Otto von Habsburg"
+				        desc = "POLITICS_OTTO_VON_HABSBURG_DESC"
+				        picture = GFX_Portrait_hungary_otto_von_hapsburg
+				        expire = "1965.1.1"
+				        ideology = constitutional_monarchism
+				        traits = {
+					
+				        }
+			        }
+				}
+                if = { 
+				    limit = { ROOT = { tag = AUS } }
+					create_country_leader = {
+				        name = "Otto von Habsburg"
+				        desc = "POLITICS_OTTO_VON_HABSBURG_DESC"
+				        picture = GFX_Portrait_hungary_otto_von_hapsburg
+				        expire = "1965.1.1"
+				        ideology = constitutional_monarchism
+				        traits = {
+					
+				        }
+			        }
+				}				
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	enforce_personal_union = {
+
+		icon = generic_prepare_civil_war
+		
+		cost = 50
+		
+		available = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+			FROM = {
+				has_country_flag = never_had_monarchy
+			}
+			FROM = {
+				NOT = { has_government = monarchist }
+			}
+		}
+
+		visible = {
+			has_government = monarchist
+			has_country_flag = monarchist_nation
+			has_country_flag = monarchist_foreign_policy
+			ROOT = {
+			    OR = {
+				    tag = BRA	  
+					tag = POR
+					tag = SPR
+					tag = MEX
+					tag = JAP 
+					tag = SOV 
+					tag = GER 
+					tag = HOL
+					tag = BEL
+					tag = SWE
+					tag = NOR
+					tag = DEN
+					tag = MAN
+                }
+            }				
+			FROM = {
+				is_puppet_of = ROOT
+				NOT = { has_government = monarchist }
+				NOT = { has_country_flag = elected_king }
+				NOT = { has_country_flag = president_king }
+				NOT = { has_country_flag = president_regency }
+				NOT = { has_country_flag = regency_installed }
+			}
+		}
+
+		target_array = subjects
+
+		target_trigger = {
+			FROM = {
+				is_puppet_of = ROOT
+			}
+		}
+
+		complete_effect = {
+			FROM = { country_event = { id = mtg_generic.1 } }
+			FROM = {
+				add_timed_idea = {
+					idea = political_turmoil
+					days = 365
+				}
+			}
+			FROM = {
+			    set_country_flag = elected_king
+				set_politics = {
+					ruling_party = monarchist
+					elections_allowed = no
+				}
+				if = { 
+				    limit = { ROOT = { tag = BRA } }
+					create_country_leader = {
+					    name = "Prince Pedro Henrique"
+					    desc = "POLITICS_PRINCE_PEDRO_HENRIQUE_DESC"
+					    picture = "gfx/leaders/BRA/portrait_bra_prince_pedro_hernique_de_orleans_e_braganza.dds"
+				    	expire = "1981.07.05"
+				    	ideology = constitutional_monarchism
+				    	traits = {
+				    		inexperienced_monarch
+				    	}					
+				    }
+				}
+                if = { 
+				    limit = { ROOT = { tag = MEX } }
+					create_country_leader = {
+					    name = "Princess Maria Josepha"
+				    	picture = "gfx/leaders/Monarchs/Portrait_Mexico_Maria.tga"
+				    	expire = "1981.1.1"
+				    	ideology = constitutional_monarchism
+				    	traits = {
+				    		popular_queen protector_of_the_campesinos refounder_of_mexico
+				    	}
+				    }
+				}
+                if = { 
+				    limit = { ROOT = { tag = SPR NOT = { has_country_flag = SPB_xavier_king } NOT = { has_global_flag = SPB_alfonso_xiii_dead } } }
+					create_country_leader = {
+						name = "Alfonso XIII"
+						desc = "POLITICS_ALFONSO_XIII_DESC"
+						picture = "GFX_portrait_SPA_alfonso_xiii"
+						expire = "1965.1.1"
+						ideology = constitutional_monarchism
+						traits = {
+							disgraced_monarch
+						}
+					}
+				}
+                if = { 
+				    limit = { ROOT = { tag = SPR has_global_flag = afonso_carlos_immortal } }
+					create_country_leader = {
+	                	name = "Don Alfonso Carlos I"	
+                    	picture = "gfx/leaders/Monarchs/portrait_spa_infante_alfonso_carlos.tga"
+                    	expire = "2060.1.1"
+                    	ideology = absolute_monarchism
+	                	traits = {
+	                    	immortal nationalist_symbol imperial_connections autocratic_imperialist disdain_for_politicians_2 empire_builder the_sacred_king the_legitimist
+	                	}
+                	}
+				}
+                if = { 
+				    limit = { ROOT = { tag = SPR has_country_flag = SPB_karl_pius_king } }
+					create_country_leader = {
+						name = "Don Carlos VIII"
+						desc = "POLITICS_CARLOS_VIII_DESC"
+						picture = "gfx/leaders/Monarchs/Portrait_Karl_Pius_von_Habsburg.tga"
+						expire = "1965.1.1"
+						ideology = constitutional_monarchism
+						traits = {
+							the_sacred_king 
+						}
+					}
+				}
+                if = { 
+				    limit = { ROOT = { tag = SPR has_country_flag = SPB_juan_king } }
+					create_country_leader = {
+						name = "Don Juan III"
+						desc = "POLITICS_JUAN_III_DESC"
+						picture = "gfx/leaders/Monarchs/Portrait_SPR_Juan_III.tga"
+						expire = "1965.1.1"
+						ideology = constitutional_monarchism
+						traits = {
+							autocratic_imperialist empire_builder disdain_for_politicians_2
+						}
+					}
+				}
+                if = { 
+				    limit = { ROOT = { tag = SPR NOT = { has_country_flag = SPB_xavier_king } has_global_flag = SPB_alfonso_xiii_dead } }
+					create_country_leader = {
+						name = "Jaime IV"
+						desc = "POLITICS_JAIME_IV_DESC"
+						picture = "GFX_portrait_fra_infante_jaime"
+						expire = "1965.1.1"
+						ideology = absolute_monarchism
+						traits = {
+							the_legitimist
+						}
+					}
+				}				
+                if = { 
+				    limit = { ROOT = { tag = JAP } }
+					create_country_leader = {
+	                name = "Emperor Hirohito"
+	                desc = "POLITICS_Hirohito_DESC"
+	                picture = "Portrait_Japan_Hirohito.dds"
+	                expire = "1989.1.1"
+	                ideology = totalitarian_monarchism
+	                traits = {
+		                warrior_code
+		                emperor_showa
+		                imperial_sanction
+	                }
+					id = 700 #Hirohito
+                    }
+				}
+                if = { 
+				    limit = { ROOT = { tag = SOV } }
+					create_country_leader = {
+				    	name = "Tsar Kirill I"
+				    	desc = "POLITICS_KIRILL_I_DESC"
+				    	picture = "gfx/leaders/Monarchs/Portrait_SOV_Kirill_Vladimirovich_Romanov.tga"
+				    	expire = "1981.1.1"
+				    	ideology = totalitarian_monarchism
+					    traits = {
+					    	nationalist_symbol disdain_for_politicians_2
+					    }
+				    }
+			    }	
+                if = { 
+				    limit = { ROOT = { tag = GER } }
+					create_country_leader = {
+				    	name = "King Wilhelm III"
+				    	desc = "POLITICS_WILHELM_III_DESC"
+				    	picture = GFX_portrait_ger_wilhelm_iii
+				    	expire = "1965.1.1"
+				    	ideology = constitutional_monarchism
+				    	traits = {
+				    		popular_figurehead2
+				    	}
+				    }
+			    }
+                if = { 
+				    limit = { ROOT = { tag = BEL } }
+					create_country_leader = {
+				    	name = "King Leopold III"
+				    	picture = "gfx/leaders/Monarchs/Portrait_BEL_Leopold_iii.tga"
+				    	expire = "1981.1.1"
+				    	ideology = constitutional_monarchism
+				    	traits = {
+				    		constitutional_monarch
+				    	}
+				    }
+			    }
+                if = { 
+				    limit = { ROOT = { tag = HOL } }
+					create_country_leader = {
+			        	name = "Queen Wilhelmina"
+			        	desc = "POLITICS_WILHELMINA_DESC"
+			        	picture = "portrait_hol_wilhelmina.dds"
+			        	expire = "1965.1.1"
+			        	ideology = constitutional_monarchism
+			        	female = yes
+			        	traits = {
+			         		wilhelmina
+		        			disdain_for_politicians_1
+		        			queen_of_the_people
+		        		}
+		     	    }
+			    }
+                if = { 
+				    limit = { ROOT = { tag = SWE } }
+					create_country_leader = {
+				    	name = "King Gustaf V"
+				    	picture = "gfx/leaders/Monarchs/Portrait_Sweden_Gustaf_V.tga"
+				    	expire = "1981.1.1"
+				    	ideology = constitutional_monarchism
+				    	traits = {
+				    		constitutional_monarch 
+				    		headstrong
+				    		disdain_for_politicians_1
+				    	}
+				    }
+			    }
+                if = { 
+				    limit = { ROOT = { tag = NOR } }
+					create_country_leader = {
+				    	name = "King Haakon VII"
+				    	picture = "gfx/leaders/Monarchs/Portrait_NOR_Haakon_vii.tga"
+				    	expire = "1987.1.1"
+				    	ideology = constitutional_monarchism
+				    	traits = {
+				    		constitutional_monarch 
+				    	}
+				    }
+			    }
+                if = { 
+				    limit = { ROOT = { tag = DEN } }
+					create_country_leader = {
+					    name = "King Christian X"
+					    picture = "gfx/leaders/Monarchs/Portrait_DEN_Christian_X.tga"
+				    	expire = "1981.1.1"
+				    	ideology = constitutional_monarchism
+				    	traits = {
+				    		constitutional_monarch
+				    	}
+				    }
+			    }
+                if = { 
+				    limit = { ROOT = { tag = MAN } }
+					create_country_leader = {
+	                    name = "Aisin Gioro Puyi"
+	                    picture = "gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
+	                    expire = "1989.1.1"
+	                    ideology = totalitarian_monarchism
+	                    traits = {
+		                    warrior_code
+	                    }
+                    }
+			    }
+            }				
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

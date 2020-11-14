@@ -1,0 +1,69 @@
+spriteTypes = { 
+	##Icon For: As Dificuldades de um Império Luso-Brasileiro
+	SpriteType = { 
+		name = "as_dificuldades_de_um_imprio_lusobrasileiro-42731"
+		texturefile = "gfx/interface/event_gfx/as_dificuldades_de_um_imprio_lusobrasileiro-42731.dds"
+	}
+
+	##Icon For: The Imperial General Assembly
+	SpriteType = { 
+		name = "the_imperial_general_assembly-42749"
+		texturefile = "gfx/interface/event_gfx/the_imperial_general_assembly-42749.dds"
+	}
+
+	##Icon For: The General Courts
+	SpriteType = { 
+		name = "the_general_courts-42751"
+		texturefile = "gfx/interface/event_gfx/the_general_courts-42751.dds"
+	}
+
+	##Icon For: The Capital of the Empire
+	SpriteType = { 
+		name = "the_capital_of_the_empire-42542"
+		texturefile = "gfx/interface/event_gfx/the_capital_of_the_empire-42542.dds"
+	}
+
+	##Icon For: Settling the succession
+	SpriteType = { 
+		name = "settling_the_succession-42755"
+		texturefile = "gfx/interface/event_gfx/settling_the_succession-42755.dds"
+	}
+
+	##Icon For: Disputes among the Orleans-Braganza
+	SpriteType = { 
+		name = "disputes_among_the_orleansbraganza-42756"
+		texturefile = "gfx/interface/event_gfx/disputes_among_the_orleansbraganza-42756.dds"
+	}
+
+	##Icon For: Revived Constitutionalist sentiment
+	SpriteType = { 
+		name = "revived_constitutionalist_sentiment-42811"
+		texturefile = "gfx/interface/event_gfx/revived_constitutionalist_sentiment-42811.dds"
+	}
+
+	##Icon For: An unlikely compromise
+	SpriteType = { 
+		name = "an_unlikely_compromise-42896"
+		texturefile = "gfx/interface/event_gfx/an_unlikely_compromise-42896.dds"
+	}
+
+	##Icon For: Dom Duarte Abdicates
+	SpriteType = { 
+		name = "dom_duarte_abdicates-43036"
+		texturefile = "gfx/interface/event_gfx/dom_duarte_abdicates-43036.dds"
+	}
+
+	##Icon For: Plans for the Empire
+	SpriteType = { 
+		name = "plans_for_the_empire-43772"
+		texturefile = "gfx/interface/event_gfx/plans_for_the_empire-43772.dds"
+	}
+
+	##Icon For: The Imperial Assembly demands sovereignty
+	SpriteType = { 
+		name = "the_imperial_assembly_demands_sovereignty-42543"
+		texturefile = "gfx/interface/event_gfx/the_imperial_assembly_demands_sovereignty-42543.dds"
+	}
+
+ 
+ }

@@ -1,0 +1,39 @@
+spriteTypes = { 
+	##Icon For: Royal Guard
+	SpriteType = { 
+		name = "GFX_idea_BRA_royal_guard-45064"
+		texturefile = "gfx/interface/ideas/BRA_royal_guard-45064.dds"
+	}
+
+	##Icon For: Royal Hierarchy
+	SpriteType = { 
+		name = "GFX_idea_BRA_royal_hierarchy-44982"
+		texturefile = "gfx/interface/ideas/BRA_royal_hierarchy-44982.dds"
+	}
+
+	##Icon For: Royalist Nation
+	SpriteType = { 
+		name = "GFX_idea_BRA_royalist_nation-45007"
+		texturefile = "gfx/interface/ideas/BRA_royalist_nation-45007.dds"
+	}
+
+	##Icon For: Monarchist movements
+	SpriteType = { 
+		name = "GFX_idea_BRA_monarchist_movements-45039"
+		texturefile = "gfx/interface/ideas/BRA_monarchist_movements-45039.dds"
+	}
+
+	##Icon For: Monarchism endorsed
+	SpriteType = { 
+		name = "GFX_idea_BRA_monarchism_endorsed-45041"
+		texturefile = "gfx/interface/ideas/BRA_monarchism_endorsed-45041.dds"
+	}
+
+	##Icon For: Crown Support
+	SpriteType = { 
+		name = "GFX_idea_BRA_crown_support-45068"
+		texturefile = "gfx/interface/ideas/BRA_crown_support-45068.dds"
+	}
+
+ 
+ }

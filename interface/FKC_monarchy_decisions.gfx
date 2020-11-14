@@ -1,0 +1,79 @@
+spriteTypes = {	
+
+	### categories
+	
+	spriteType = {
+		name = "GFX_decision_cat_generic_portugal"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_iberia.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_cat_generic_cisleithania"
+		texturefile = "gfx/interface/decisions/decision_cat_cisleithania.dds"
+	}
+
+	spriteType = {
+		name = "GFX_decision_cat_russian_empire"
+		texturefile = "gfx/interface/decisions/decision_cat_romanov_restore_russia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_decision_cat_generic_brazilian_empire"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_brazilian_empire.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_cat_chinese_empire"
+		texturefile = "gfx/interface/decisions/decision_cat_picture_chi_infiltration.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_new_monarchy"
+		texturefile = "gfx/interface/decisions/decision_category_new_monarchy.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_succession_crisis"
+		texturefile = "gfx/interface/decisions/decision_category_succession_crisis.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_polish_king"
+		texturefile = "gfx/interface/decisions/decision_category_polish.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_regency_decisions"
+		texturefile = "gfx/interface/decisions/decision_category_regency_decisions.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_elect_monarch"
+		texturefile = "gfx/interface/decisions/decision_category_elect_monarch.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_india"
+		texturefile = "gfx/interface/decisions/decision_category_india.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_bourbons"
+		texturefile = "gfx/interface/decisions/decision_category_bourbons.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_habsburgs"
+		texturefile = "gfx/interface/decisions/decision_category_habsburgs.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_romanovs"
+		texturefile = "gfx/interface/decisions/decision_category_romanovs.dds"
+	}
+	
+	spriteType = {
+		name = "decision_category_germans"
+		texturefile = "gfx/interface/decisions/decision_category_germans.dds"
+	}
+}

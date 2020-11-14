@@ -1,0 +1,3501 @@
+﻿add_namespace = monarchyoverhaul
+
+##Event: For King and Country
+country_event = {
+	id = monarchyoverhaul.1
+	title = monarchyoverhaul.1.title
+	desc = monarchyoverhaul.1.desc
+	picture = GFX_report_event_royal_visit
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.1.a
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = load_monarchs_tt #including asia
+		hidden_effect = {
+                news_event = { days = 10 id = monarchyoverhaul.5 }
+			AFG = { 
+			set_country_flag = monarchy_in_place
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 75 }
+			    create_country_leader = {
+	                name = "Mohammed Zahir Shah"
+	                desc = "POLITICS_MOHAMMED_ZAHIR_SHAH_DESC"
+	                picture = "Portrait_Afghanistan_Mohammed_Zahir_Shah.dds"
+	                expire = "1965.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		               #
+	                }
+                }
+			}
+			ALB = {
+            set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "King Zog"
+	                desc = "POLITICS_KING_ZOG_DESC"
+	                picture = "Portrait_Albania_King_Zog.dds"
+	                expire = "1965.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		               #
+	                }
+                }
+			}
+			ADU = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Emir Mohammed Ben Aarafa"
+					picture = "gfx/leaders/Monarchs/Mohammed_Ben_Aarafa.tga"
+					expire = "1987.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}	
+			}
+			ALG = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			ANG = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Pedro VII Afonso"
+					picture = "gfx/leaders/Monarchs/Portrait_Kongo_Pedro_VII_Afonso.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol 
+					}
+				}
+			}
+			ARG = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			AZR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Hassan Mirza Qajar"
+					picture = "gfx/leaders/Monarchs/Portrait_Persia_Hassan_Mirza_Qajar.tga"
+					expire = "1987.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					    unpopular_monarch
+					}
+				}
+			}
+			AST = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Australian Parliament"
+					picture = "gfx/leaders/Monarchs/Portrait_Australia_Parliament.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			AUS = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Otto von Habsburg"
+					picture = "gfx/leaders/Monarchs/Portrait_EYE_Austria_Otto_I.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					    constitutional_monarch
+					}
+				}
+			}
+			ARM = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Hakob_Bragatuni"
+					picture = "gfx/leaders/Monarchs/Portrait_Armenia_Hakob_Bragatuni.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					    constitutional_monarch
+					}
+				}
+			}
+			BAH = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BAN = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BAS = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BAY = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "King Rupprecht"
+					picture = "gfx/leaders/Monarchs/Portrait_Bavaria_Rupprecht_von_Bayern.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch
+					}
+			    }
+			}
+			BEL = { 
+			set_country_flag = monarchy_in_place
+			    create_country_leader = {
+					name = "King Leopold III"
+					picture = "gfx/leaders/Monarchs/Portrait_BEL_Leopold_iii.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch
+					}
+				}
+			}
+			BHU = { 
+			set_country_flag = monarchy_in_place
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Jigme Wangchuck"
+	                desc = "POLITICS_JIGME_WANGCHUCK_DESC"
+	                picture = "GFX_portrait_buthan_jigme_wangchuk"
+	                expire = "1965.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		               #
+	                }
+                }
+			}
+			BLR = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BLZ = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BOL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BOS = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BOT = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Kgosi Seretse Khama"
+					picture = "gfx/leaders/Monarchs/Botswana_Seretse_Khama.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol 
+					}
+				}
+			}
+			BRA = { 
+			set_country_flag = had_monarchy
+			    create_country_leader = {
+					name = "Emperor Dom Pedro III"
+					desc = "POLITICS_PEDRO_III_DESC"
+					picture = "gfx/leaders/Monarchs/Portrait_Brazil_Pedro_IV.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						inexperienced_monarch constitutional_monarch traditionalist_connections pedro_fancy_title
+					}
+			    }
+			}
+			BRD = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mwami Mwambutsa IV"
+					picture = "gfx/leaders/Monarchs/Portrait_Burundi_Mwambutsa_Fourth.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			BRI = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			BRM = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Myat Paya Lat"
+					picture = "gfx/leaders/Monarchs/Portrait_Burma_Myat_Paya_Lat.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			BUL = {
+            set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 60 }
+			    create_country_leader = {
+	                name = "Boris III"
+	                desc = "POLITICS_BORIS_III_DESC"
+	                picture = "gfx/leaders/Monarchs/r56_portrait_BUL_boris_iii.tga"
+	                expire = "1965.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		               #
+	                }
+                }
+			}
+			CAM = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Samdech Euv Norodom Sihanouk"
+					picture = "gfx/leaders/Monarchs/Portrait_CAM_Norodom_Sihanouk.tga"
+					expire = "2012.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol  
+					}
+				}
+			}
+			CAN = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Canadian Parliament"
+					picture = "gfx/leaders/Monarchs/Portrait_Canada_Parliament.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CAR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Emperor Barthelemy Boganda"
+					picture = "gfx/leaders/Monarchs/Portrait_Barthelemy_Boganda.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+                        dictator 
+					}
+				}
+			}
+			CAT = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CAY = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CHA = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Abdul Qadir III"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa_reactionary_3.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			CHI = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Prince Chung"
+					picture = "gfx/leaders/Monarchs/Portrait_CHI_Price_Chung.tga"
+					expire = "1987.1.1"
+					ideology = totalitarian_monarchism
+					traits = {
+					    regent
+					}
+				}
+			}
+			CHL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CMR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Achirimbi II"
+					picture = "gfx/leaders/Monarchs/Portrait_Mittelafrika_Achirimbi.tga"
+					expire = "1981.1.1"
+					ideology = despotism
+					traits = {
+						restored_monarch 
+					}
+				}
+			}
+			COG = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mabumba Kitanika"
+					picture = "gfx/leaders/Monarchs/Portrait_KTG_Mabumba_Kitanika.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			COL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			COR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+				name = "Napoléon VI"
+				desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
+				picture = GFX_portraits_fra_napoleon_vi
+				expire = "1965.1.1"
+				ideology = absolute_monarchism
+				traits = {
+					
+				}
+			}
+			}
+			COS = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CRC = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CRO = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CSA = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CUB = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CYP = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			CZE = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			DAH = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Angoli Agbo"
+					picture = "gfx/leaders/Monarchs/Portrait_Dahomey_Angoli.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			DDR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "King Wilhelm III"
+					desc = "POLITICS_WILHELM_III_DESC"
+					picture = GFX_portrait_ger_wilhelm_iii
+					expire = "1965.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						popular_figurehead2
+					}
+				}
+			}
+			DEN = { 
+			set_country_flag = monarchy_in_place
+			    create_country_leader = {
+					name = "King Christian X"
+					picture = "gfx/leaders/Monarchs/Portrait_DEN_Christian_X.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch
+					}
+				}
+			}
+			DJI = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Abd Allah III"
+					picture = "gfx/leaders/Monarchs/Portrait_Ethiopia_Abiye_Abebe.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			DOM = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			ECU = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			EGY = { 
+			set_country_flag = monarchy_in_place
+			    if = { limit = { date < 1937.1.1 }
+			    create_country_leader = {
+					name = "King Fuad I"
+					picture = "GFX_portrait_egy_faud_i"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						#
+					}
+				}
+				create_country_leader = {
+					name = "King Fuad I"
+					picture = "GFX_portrait_egy_faud_i"
+					expire = "1981.1.1"
+					ideology = despotism
+					traits = {
+						#
+					}
+				}
+				}
+				if = { limit = { date > 1937.1.1 }
+			    create_country_leader = {
+					name = "King Farouk Muhammad Ali"
+					picture = "gfx/leaders/Monarchs/Portrait_EGY_Farouk_Muhammad_Ali.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						unpopular_monarch
+					}
+				}
+				create_country_leader = {
+					name = "King Farouk Muhammad Ali"
+					picture = "gfx/leaders/Monarchs/Portrait_EGY_Farouk_Muhammad_Ali.tga"
+					expire = "1981.1.1"
+					ideology = despotism
+					traits = {
+						unpopular_monarch
+					}
+				}
+				}
+			}
+			ELS = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			ENG = { 
+			set_country_flag = monarchy_in_place
+			    if = { 
+				    limit = {
+					    EGY = { exists = no }
+						has_dlc = "Together for Victory"
+					}
+                    ENG = {
+                        release = EGY 
+                        transfer_state = 453 
+                        puppet = EGY 
+                        set_autonomy = { target = EGY autonomy_state = autonomy_dominion }
+                    }
+					EGY = {
+					    set_politics = { ruling_party = monarchist elections_allowed = no }
+						set_popularities = {
+							democratic = 10
+							neutrality = 0
+							fascism = 8
+							communism = 0
+							monarchist = 82
+						}
+						every_state = {
+						    limit = { is_core_of = SUD }
+							add_core_of = EGY 
+						}
+                    }						
+                }
+                if = { 
+				    limit = {
+					    EGY = { exists = no }
+					}
+                    ENG = {
+                        release = EGY 
+                        transfer_state = 453 
+                        puppet = EGY 
+                    }
+					EGY = {
+					    set_politics = { ruling_party = monarchist elections_allowed = no }
+						set_popularities = {
+							democratic = 10
+							neutrality = 0
+							fascism = 8
+							communism = 0
+							monarchist = 82
+						}
+						every_state = {
+						    limit = { is_core_of = SUD }
+							add_core_of = EGY 
+						}	
+                    }
+                }				
+			    if = { limit = { date < 1937.1.1 }  
+			    create_country_leader = {
+					name = "King George V"
+					picture = "gfx/leaders/Monarchs/Portrait_ENG_King_George_V.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch
+					}
+				}
+				}
+				if = { limit = { date > 1937.1.1 }
+				create_country_leader = {
+					name = "King George VI"
+					picture = "gfx/leaders/Monarchs/Portrait_United_Kingdom_George_VI.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch popular_figurehead
+					}
+				}
+				}
+			}
+			EQG = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Malabo II"
+					picture = "gfx/leaders/Monarchs/Malabo_II_Equatorial_Guinea.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			ERI = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Alimirah Hanfare"
+					picture = "gfx/leaders/Monarchs/Aussa_Alimirah_Anfere.tga"
+					expire = "1981.1.1"
+					ideology = despotism
+					traits = {
+						restored_monarch 
+					}
+				}
+			}
+			EST = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			ETH = { 
+			set_country_flag = monarchy_in_place
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Emperor Haile Selassie I"
+	                desc = "POLITICS_HAILE_SELASSIE_DESC"
+	                picture = "gfx/leaders/Monarchs/Portrait_ETH_Haile_Selassie.tga"
+	                expire = "1965.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		               nationalist_symbol
+	                }
+                }
+			}
+			FIJ = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+					name = "Ratu Popi Epeli Cakobau"
+					picture = "gfx/leaders/Monarchs/Portrait_Ratu_Popi_Epeli_Cakobau.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol
+					}
+				}
+			}
+			FIN = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "King Väinö II"
+					picture = "gfx/leaders/Monarchs/Portrait_FIN_Vaino_I.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch 
+					}
+				}
+			}
+			FRA = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Charles Maurras"
+					picture = "gfx/leaders/Dictators/r56_portrait_FRA_Charles_Maurras.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					    anti_democrat regent
+					}
+				}
+			}
+			FSM = { 
+			set_country_flag = had_monarchy 
+			create_country_leader = {
+					name = "Queen Salote Tupou III"
+					picture = "gfx/leaders/Monarchs/Portrait_Salote_Tupou_III.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			GAB = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Prince Gugsa Selassie"
+					picture = "gfx/leaders/Monarchs/Portrait_Ethiopia_Haile_Selassie_Gugsa.tga"
+					desc = "DESC_PRINCE_SELASSIE"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			GAM = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Queen Mfamara"
+					picture = "gfx/leaders/Monarchs/Portrait_Mfamara_Niumi.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			GDL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			GEO = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "King George Bagrationi"
+					picture = "gfx/leaders/Monarchs/Portrait_GEO_George_Bagriaton_Mukhraneli.tga"
+					expire = "1941.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			GER = { 
+			set_country_flag = had_monarchy
+		    	create_country_leader = {
+	          		name = "Kaiser Wilhelm II"
+	        		desc = "POLITICS_WILHELM_II_DESC"
+	        		picture = gfx/leaders/Monarchs/r56_portrait_GER_King_Wilhelm.tga
+	        		expire = "1965.1.1"
+	        		ideology = constitutional_monarchism
+	        		traits = {
+	        			anti_democrat imperial_connections
+	        		}
+	        	}
+			}
+			GHA = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Agyeman Prempeh II"
+					picture = "gfx/leaders/Monarchs/Nana_Otumfuo_Agyeman_Prempeh_II.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol
+					}
+				}
+			}
+			GLC = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			GNA = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Alfa Toure"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa_reactionary_5.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			GNB = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			GRE = {
+            set_country_flag = monarchy_in_place			
+				create_country_leader = {
+	        		name = "George II"
+		        	desc = "POLITICS_GEORGE_II_DESC"
+	        		picture = "GFX_portrait_gre_george_ii"
+	        		expire = "1965.1.1"
+	        		ideology = absolute_monarchism
+	        		traits = {
+	        			divisive_absolute_monarch
+	         		}
+	        	}
+			}
+			GUA = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			GUM = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			GXC = { 
+			set_country_flag = warlord_dynastical_option
+			}
+			GYA = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			HAI = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			HAN = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Ernest Augustus of Hanover"
+					picture = "gfx/leaders/Monarchs/Portrait_Hanover_Ernest_Augustus.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+			    }
+			}
+			HAW = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "David Kalakaua Kawananakoa"
+	            desc = ""
+	            picture = "gfx/leaders/Monarchs/Portrait_HAW_David_Kalakaua.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+		            #
+	            }
+            }
+			}
+			HOL = { 
+			set_country_flag = monarchy_in_place				
+			    create_country_leader = {
+				name = "Queen Wilhelmina"
+				desc = "POLITICS_WILHELMINA_DESC"
+				picture = "portrait_hol_wilhelmina.dds"
+				expire = "1965.1.1"
+				ideology = constitutional_monarchism
+				female = yes
+				traits = {
+					wilhelmina
+					disdain_for_politicians_1
+					queen_of_the_people
+				}
+			    }
+			}
+			HON = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			HUN = { 
+			set_country_flag = monarchy_in_place				
+			    create_country_leader = {
+	                name = "Holy Crown of Hungary"
+	                picture = "gfx/leaders/Monarchs/Portrait_HUN_Regency.tga"
+	                expire = "1989.1.1"
+	                ideology = constitutional_monarchism
+	                traits = {
+	                }
+                }
+			}
+			ICE = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			INS = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+					name = "Sultan Hamengkubuwono IX"
+					picture = "gfx/leaders/Monarchs/Portrait_Indonesia_Hamengbukuwono_IX.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			IRE = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			IRQ = { 
+			set_country_flag = monarchy_in_place	
+            set_politics = { ruling_party = monarchist elections_allowed = no }			
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 80 }
+			    create_country_leader = {
+	                name = "King Ghazi I"
+	                desc = "POLITICS_GHAZI_I_DESC"
+	                picture = "GFX_portrait_iraq_ghazi"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+                        #
+	                }
+                }
+			}
+			ISR = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			ITA = { 
+			set_country_flag = monarchy_in_place				
+			    create_country_leader = {
+	                name = "King Victor Emmanuel III"
+	                desc = "POLITICS_VICTOR_EMMANUEL_III_DESC"
+	                picture = "GFX_portrait_italy_victor_emmanuel_iii"
+	                expire = "1989.1.1"
+	                ideology = constitutional_monarchism
+	                traits = {
+                        unpopular_monarch
+	                }
+                }
+			}
+			IVO = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Amon N'Douffou IV"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa_despotism_4.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			JAM = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			JAP = { 
+			set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = fascism popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Emperor Hirohito"
+	                desc = "POLITICS_Hirohito_DESC"
+	                picture = "Portrait_Japan_Hirohito.dds"
+	                expire = "1989.1.1"
+	                ideology = totalitarian_monarchism
+	                traits = {
+		                warrior_code
+		                emperor_showa
+		                imperial_sanction
+	                }
+					id = 700 #Hirohito
+                }
+				create_country_leader = {
+	                name = "Fumimaro Konoe"
+	                desc = ""
+	                picture = "gfx/leaders/Dictators/Portrait_Japan_Prince_Fumimaro_Konoe.tga"
+	                expire = "1989.1.1"
+	                ideology = fascism_ideology
+	                traits = {
+		                warrior_code
+		                generallissimo
+		                imperial_sanction
+	                }
+                }
+				create_country_leader = {
+	                name = "Tokugawa Iesato"
+	                desc = ""
+	                picture = "gfx/leaders/Dictators/Portrait_Japan_Tokugawa_Iesato.tga"
+	                expire = "1989.1.1"
+	                ideology = despotism
+	                traits = {
+		                warrior_code
+		                dictator
+	                }
+                }
+				set_party_name = { 
+		            ideology = fascism
+	        	    long_name = JAP_fascism_party_iraa_long 
+	        	    name = JAP_fascism_party_iraa 
+	        	}
+				set_party_name = { 
+		            ideology = monarchist
+		            long_name = JAP_monarchist_party_sakurakai_long 
+		            name = JAP_monarchist_party_sakurakai 
+	        	}
+			}
+			JOR = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+					name = "King Abdullah I"
+					picture = "gfx/leaders/Monarchs/Portrait_JOR_Abdullah_i.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			KAZ = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Pavel Shatilov"
+					picture = "gfx/leaders/Monarchs/Portrait_Russia_Pavel_Shatilov.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			KEN = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Sultan Khalifa"
+					desc = "DESC_SULTAN_KHALIFA"
+					picture = "gfx/leaders/Monarchs/Portrait_Zanzibar_Sultan_Khalifa.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			KOR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "Emperor Yi Un"
+	            picture = "gfx/leaders/Monarchs/r56_portrait_KOR_Yi_Un.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+			}
+			}
+			KUW = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+	            name = "Emir Ahmad Al-Sabah"
+	            picture = "gfx/leaders/Monarchs/Portrait_JBS_Al_Jaber.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+			}
+			}
+			KUR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+            	name = "Sheikh Mahmud Barzanji"
+            	desc = "POLITICS_SHEIKH_BARZANJI_DESC"
+            	picture = "gfx/leaders/Monarchs/Portrait_KUR_Mahmud_Barzanji.tga"
+            	expire = "1965.1.1"
+            	ideology = despotism
+            	traits = {
+            		#
+            	}
+            }
+			}
+			KYR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "Mohammed Alim Khan"
+	            picture = "gfx/leaders/Monarchs/Portrait_Turkestan_Mohammed_Alim_Khan.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+			}
+			}
+			LAO = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "Sisavang Vong"
+	            picture = "gfx/leaders/Monarchs/Portrait_LAO_Sisavang_Vong.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+			}
+			}
+			LAT = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "Martins Penikis"
+	            picture = "gfx/leaders/Monarchs/Portrait_LAT_Martins_Penikis.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+			}
+			}
+			LBA = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+	            name = "King Idris I"
+	            picture = "gfx/leaders/Monarchs/Portrait_LBA_Idris_i.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+			}
+			}
+			LEB = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "Prince Abdullah of Hejaz"
+	            picture = "gfx/leaders/Monarchs/r56_portrait_IRQ_abd_al_ilah.tga"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+				}
+			}
+			LIB = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			LIT = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mindaugas III"
+					picture = "gfx/leaders/Monarchs/Portrait_Poland_Mindaugas_III.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			LUX = { 
+			set_country_flag = monarchy_in_place
+			    create_country_leader = {
+					name = "Grand Duchess Charlotte"
+					picture = "gfx/leaders/Monarchs/Portrait_LUX_Charlotte.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch 
+					}
+				}
+			}
+			MAC = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			MAD = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Ranavalona IV"
+					picture = "gfx/leaders/Monarchs/MAD_ranavalona_iii.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			MAL = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+					name = "Conference of Rulers"
+					picture = "gfx/leaders/Monarchs/Portrait_Conference_of_Rulers.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			MAN = { 
+			set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = fascism popularity = 0 }
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Aisin Gioro Puyi"
+	                picture = "gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
+	                expire = "1989.1.1"
+	                ideology = totalitarian_monarchism
+	                traits = {
+		                warrior_code
+	                }
+                }
+				create_country_leader = {
+	                name = "Aisin Gioro Puyi"
+	                picture = "gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
+	                expire = "1989.1.1"
+	                ideology = despotism
+	                traits = {
+		                warrior_code
+	                }
+                }
+				create_country_leader = {
+	                name = "Zhang Jinghui"
+	                picture = "gfx/leaders/Dictators/Portrait_Manchukuo_Zhang_Jinghui.tga"
+	                expire = "1989.1.1"
+	                ideology = rexism
+	                traits = {
+	                }
+                }
+			}
+			MEK = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Friedrich Franz of Mecklenburg-Schwerin"
+					desc = "POLITICS_FRIEDRICH_FRANZ_OF_MECKLENBURG-SCHWERIN_DESC"
+					picture = "gfx/leaders/Monarchs/Portrait_friedrich_franz.tga"
+					expire = "1965.1.1"
+					ideology = totalitarian_monarchism
+					traits = {
+						fascist_sympathies
+					}
+					id = 501 #Neutral Franz
+				}
+			}
+			MEN = { 
+			set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = fascism popularity = 0 }
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Prince Demchugdongrub"
+					desc = "POLITICS_DEMCHUGDONGRUB_DESC"
+	                picture = "GFX_portrait_men_demchugdongrub"
+	                expire = "1989.1.1"
+	                ideology = totalitarian_monarchism
+	                traits = {
+		                spirit_of_genghis
+	                }
+                }
+			}
+			MEX = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Empress Maria I"
+					picture = "gfx/leaders/Monarchs/Portrait_Mexico_Maria.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						popular_queen protector_of_the_campesinos refounder_of_mexico
+					}
+				}
+			}
+			MLD = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Sultan Osmaan of the Maldives"
+					picture = "gfx/leaders/Monarchs/Sultan_Osmaan.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						unpopular_monarch inexperienced_monarch 
+					}
+				}
+			}
+			MLI = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mansa Modibo Keita"
+					picture = "gfx/leaders/Monarchs/Emperor_Modibo_Keita.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol 
+					}
+				}
+			}
+			MLT = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Prince Ludovico Chigi"
+					picture = "gfx/leaders/Monarchs/Portrait_Ludovico_Chigi.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						the_sacred_king
+					}
+				}
+			}
+			MLW = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Matapira Kummaani Kachindamoto III"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa_reactionary_2.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			MNT = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Danilo II"
+					picture = "gfx/leaders/Monarchs/Portrait_MNT_Danilo.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch
+					}
+				}
+			}
+			MOL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			TRA = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			KOS = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			MOL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			MON = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	                name = "Jampal Khan"
+					desc = ""
+	                picture = "gfx/leaders/Monarchs/Portrait_Bogd_Khan.tga"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		                popular_monarch
+	                }
+                }
+			}
+			MOR = { 
+			set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "King Mohammed V"
+					desc = ""
+	                picture = "gfx/leaders/Monarchs/Mohammed_V.tga"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		                popular_monarch
+	                }
+                }
+			}
+			MRT = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Ahmad wud Deid"
+					picture = "gfx/leaders/Monarchs/Portrait_Africa_Generic_land_new_3.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			MZB = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "King Sobhuza II of Eswatini"
+					picture = "gfx/leaders/Monarchs/Sobhuza_II.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol 
+					}
+				}
+			}
+			NAV = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			NEP = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+					name = "King Tribhuvan I"
+					picture = "gfx/leaders/Monarchs/Portrait_NEP_Tribhuvan_I.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			NGA = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Sultan Siddiq Abubakar III"
+					picture = "gfx/leaders/Monarchs/Siddiq_Abubakar.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			NGR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Shehu Masta II"
+					picture = "gfx/leaders/Monarchs/Portrait_KBR_Shehu_Masta_II.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			NIC = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			NIR = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			NMB = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Hosea Kutako"
+					picture = "gfx/leaders/Monarchs/Portrait_NAM_Hosea_Kutako.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			NOR = { 
+			set_country_flag = monarchy_in_place
+			    create_country_leader = {
+					name = "King Haakon VII"
+					picture = "gfx/leaders/Monarchs/Portrait_NOR_Haakon_vii.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch 
+					}
+				}
+			}
+			NZL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "New Zealand Parliament"
+					picture = "gfx/leaders/Monarchs/Portrait_New_Zealand_Parliament.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			OCC = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Prince Louis of Grimaldi"
+					desc = "POLITICS_GRIMALDI_DESC"
+					picture = "gfx/leaders/Monarchs/Portrait_Occitany_Louis_Grimaldi.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = { 
+					}
+			    }
+			}
+			OMA = { 
+			set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Sultan Said bin Taimur"
+					desc = ""
+	                picture = "GFX_portrait_oman_said_bin_taimur"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+		                popular_monarch
+	                }
+                }
+			}
+			PAK = { 
+			set_country_flag = monarchy_in_place
+			    create_country_leader = {
+					name = "Chamber of Princes"
+					picture = "gfx/leaders/Monarchs/Portrait_Chamber_of_Princes.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			PAL = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Prince Zeid bin Hussein"
+					picture = "gfx/leaders/Monarchs/Portrait_Zeid_bin_Hussein.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = { 
+					}
+				}
+			}
+			PAN = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			PAR = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			PER = { 
+			set_country_flag = monarchy_in_place			
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Reza Shah Pahlavi"
+					desc = "POLITICS_REZA_SHAH_PAHLAVI_DESC"
+	                picture = "Portrait_Iran_Reza_Shah_Pahlavi.dds"
+	                expire = "1989.1.1"
+	                ideology = constitutional_monarchism
+	                traits = {
+		                constitutional_monarch
+	                }
+                }
+			}
+			PHI = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			PNG = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			POL = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/Portrait_Polish_Government.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			POR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+				name = "Dom Duarte Nuno"
+				desc = "POLITICS_DOM_DUARTE_NUNO_DESC"
+				picture = "gfx/leaders/POR/portrait_por_duarte_nuno.dds"
+				expire = "1976.12.24"
+				ideology = constitutional_monarchism
+				traits = { 
+					constitutional_monarch_minor
+				}
+			}
+			}
+			PRC = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+				name = "Emperor Yuntai"
+				picture = "gfx/leaders/Monarchs/Yuan_Keding_China.tga"
+				expire = "1981.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					constitutional_monarch 
+				}
+		    }
+			}
+			PRE = { 
+			set_country_flag = had_monarchy
+				create_country_leader = {
+					name = "King Wilhelm III"
+					desc = "POLITICS_WILHELM_III_DESC"
+					picture = GFX_portrait_ger_wilhelm_iii
+					expire = "1965.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						popular_figurehead2
+					}
+				}
+			}
+			PRU = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			PUE = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			QAT = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Emir Abdullah bin Jassim Al Thani"
+					picture = "gfx/leaders/Monarchs/Portrait_Abdullah_bin_Jassim_Al_Thani.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			RAJ = { 
+			set_country_flag = monarchy_in_place
+			release = BRM
+			    ENG = { puppet = BRM }
+			    BRM = {
+				    set_cosmetic_tag = BUR
+					set_politics = { ruling_party = neutrality elections_allowed = no }
+					create_country_leader = {
+				    	name = "Sir Archibald Douglas Cochrane"
+			    		picture = "gfx/leaders/Prime Ministers/Archibald_Douglas_Cochrane.tga"
+			    		expire = "1987.1.1"
+			    		ideology = despotism
+			    		traits = {
+			    		}
+			    	}
+				}	
+			    create_country_leader = {
+					name = "Chamber of Princes"
+					picture = "gfx/leaders/Monarchs/Portrait_Chamber_of_Princes.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			RCG = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Queen Ngalifourou"
+					picture = "gfx/leaders/Monarchs/Portrait_Teke_Queen_Ngalifourou.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						restored_monarch 
+					}
+				}
+			}
+			ROM = { 
+			set_country_flag = monarchy_in_place			
+			set_political_party = { ideology = neutrality popularity = 12 }
+			set_political_party = { ideology = monarchist popularity = 48 }
+			    create_country_leader = {
+	                name = "King Carol II"
+					desc = "POLITICS_CAROL_II_DESC"
+	                picture = "gfx/leaders/Monarchs/Portrait_romania_Carol_II.tga"
+	                expire = "1989.1.1"
+	                ideology = totalitarian_monarchism
+	                traits = {
+		                hedonist
+	                }
+                }
+			}
+			RWA = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+					name = "Mwami Mutara III"
+					picture = "gfx/leaders/Monarchs/Mutara_III_Rwanda.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol
+					}
+				}
+			}
+			SAF = { 
+			set_country_flag = never_had_monarchy
+			create_country_leader = {
+					name = "South African Parliament"
+					picture = "gfx/leaders/Monarchs/Portrait_South_Africa_Parliament.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						#
+					}
+				}
+			}
+			SAM = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			SAU = { 
+			set_country_flag = monarchy_in_place	
+            set_politics = { ruling_party = monarchist elections_allowed = no }			
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "King Abdulaziz Ibn Saud"
+	                desc = "POLITICS_ABDULAZIZ_DESC"
+	                picture = "Portrait_Saudi_Arabia_Abdulazis_Ibn_Saud.dds"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+                        #
+	                }
+                }
+			}
+			SAX = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Friedrich Christian"
+					picture = "gfx/leaders/Monarchs/Portrait_Germany_Friedrich_Christian_von_Sachsen.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+			    }
+			}
+			SCO = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			SEN = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Maad Saloum Fode N'Gouye Joof"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa2.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			SER = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "King Petar II"
+					picture = "gfx/leaders/Monarchs/Portrait_Yugoslavia_Peter_II.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch 
+					}
+				}
+			}
+			SHL = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Prince Wilhelm Friedrich"
+					picture = "gfx/leaders/Monarchs/Portrait_Wilhelm_Friedrich_Schleswig.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+			    }
+			}
+			SHX = { 
+			set_country_flag = warlord_dynastical_option
+			}
+			SIA = { 
+			set_country_flag = monarchy_in_place
+			    create_country_leader = {
+					name = "King Rama VIII"
+					picture = "gfx/leaders/Monarchs/Portrait_SIA_Rama_VIII.tga"
+					expire = "1987.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						inexperienced_monarch 
+					}
+				}
+			}
+			SIE = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Fula Mansa Gbanka"
+					picture = "gfx/leaders/Monarchs/Portrait_Ethiopia_Kassa_Haile_Darge.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			SIK = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Yulbars Khan"
+					picture = "gfx/leaders/Monarchs/Portrait_Xinjiang_Yulbars_Khan.tga"
+					expire = "1987.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			SLO = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			SLV = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			SOL = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			SOM = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Sultan Ali Shire"
+					desc = "DESC_ALI_SHIRE"
+					picture = "gfx/leaders/Monarchs/Portrait_SOM_Ali_Shire.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			SOV = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Tsar Kirill I"
+					desc = "POLITICS_KIRILL_I_DESC"
+					picture = "gfx/leaders/Monarchs/Portrait_SOV_Kirill_Vladimirovich_Romanov.tga"
+					expire = "1981.1.1"
+					ideology = totalitarian_monarchism
+					traits = {
+						nationalist_symbol disdain_for_politicians_2
+					}
+				}
+			}
+			SPA = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+				name = "Alfonso XIII"
+				desc = "POLITICS_ALFONSO_XIII_DESC"
+				picture = "GFX_portrait_SPA_alfonso_xiii"
+				expire = "1965.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					disgraced_monarch
+				}
+			}
+			}
+			SPR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+				name = "Alfonso XIII"
+				desc = "POLITICS_ALFONSO_XIII_DESC"
+				picture = "GFX_portrait_SPA_alfonso_xiii"
+				expire = "1965.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					disgraced_monarch
+				}
+			}
+			}
+			SRL = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Sir John Lionel Kotelawala"
+					picture = "gfx/leaders/Monarchs/LKA_Sir_John_Lionel_Kotelawala.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			SUD = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Adam walad al-Jayli"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa_despotism_2.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			SUR = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			SWE = { 
+			set_country_flag = monarchy_in_place 
+			    set_political_party = { ideology = neutrality popularity = 0 }
+				set_political_party = { ideology = monarchist popularity = 18 }
+			    create_country_leader = {
+					name = "King Gustaf V"
+					picture = "gfx/leaders/Monarchs/Portrait_King_Gustav.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch 
+						headstrong
+						disdain_for_politicians_1
+					}
+				}
+			}
+			SWI = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			SYR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "Prince Abdullah of Hejaz"
+	            picture = "gfx/leaders/Asia/r56_portrait_IRQ_abd_al_ilah"
+	            ideology = absolute_monarchism
+	            traits = {
+	            	#
+	            }
+            }
+			}
+			TAH = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	            name = "Teri'i-nui-o-Tahiti a Pomare"
+	            desc = ""
+	            picture = "gfx/leaders/Asia/Portrait_Asia_Generic_female_1.dds"
+	            ideology = absolute_monarchism
+	            female = yes
+	            traits = {
+	            	#
+	            }
+            }
+			}
+			TAJ = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	                name = "Mohammed Daoud Khan"
+	                picture = "gfx/leaders/Monarchs/Portrait_Afghan_Mohammed_Daoud_Khan.tga"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+                        #
+	                }
+				}	
+			}
+			TAN = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+	                name = "Khan Yagaan Noyon"
+	                picture = "gfx/leaders/Monarchs/Yagaan_noyon.tga"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+                        #
+	                }
+                }
+			}
+			TIB = { 
+			set_country_flag = monarchy_in_place
+            set_politics = { ruling_party = monarchist elections_allowed = no }			
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Regent Jamphel Yeshe Gyaltsen"
+	                desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
+	                picture = "Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+                        #
+	                }
+                }
+			}
+			TMS = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mehmed Sabâhaddin"
+					picture = "gfx/leaders/Monarchs/Portrait_Prince_Sabahaddin_de_Neuchatel.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					    nationalist_symbol
+					}
+				}
+			}
+			TOG = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mlapa IV"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa5.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			TRI = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			TUN = { 
+			set_country_flag = monarchy_in_place
+			create_country_leader = {
+					name = "Bey Ahmad II"
+					picture = "gfx/leaders/Monarchs/Portrait_Tunisia_Ahmad_II.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			TUR = { 
+			set_country_flag = had_monarchy
+	    		create_country_leader = {
+	        		name = "Abdulmejid II"
+		        	desc = "POLITICS_ABDULMEJID_II_DESC"
+		        	picture = "GFX_portrait_tur_abdulmejid_ii"
+		        	expire = "1965.1.1"
+		        	ideology = absolute_monarchism
+		        	traits = {
+		        		gentle_scholar
+		        	}
+	        	}
+			}
+			TZN = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Paulo Rwamujongo Nyamutura III"
+					picture = "gfx/leaders/Monarchs/Portrait_Africa_Generic_land_new_2.tga"
+					expire = "1981.1.1"
+					ideology = despotism
+					traits = {
+						restored_monarch 
+					}
+				}
+			}
+			UAE = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Federal Supreme Council"
+					picture = "gfx/leaders/Monarchs/Portrait_Federal_Supreme_Council.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						staunch_constitutionalist
+					}
+				}
+			}
+			UGA = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mutesa II of Buganda"
+					picture = "gfx/leaders/Monarchs/Portrait_Uganda_Mutesa.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						constitutional_monarch
+					}
+				}
+			}
+			UKR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Pavlo Skoropaldski"
+					picture = "gfx/leaders/Monarchs/r56_portrait_UKR_Pavlo_Skoropadskyi.tga"
+					expire = "1987.1.1"
+					ideology = totalitarian_monarchism
+					traits = {
+					    dictator headstrong generallissimo
+					}
+				}
+			}
+			URG = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			USA = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			UZB = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Mohammed Alim Khan"
+					picture = "gfx/leaders/Monarchs/Portrait_Turkestan_Mohammed_Alim_Khan.tga"
+					expire = "1999.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						nationalist_symbol
+					}
+				}
+			}
+			VEN = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			VIN = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Emperor Bao Dai"
+					picture = "gfx/leaders/Monarchs/Portrait_VIN_Bao_Dai.tga"
+					expire = "1999.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			VOL = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Dasa I"
+					picture = "gfx/leaders/Monarchs/Portrait_Burkina_Dasa.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = {
+					}
+				}
+			}
+			WES = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			WLS = { 
+			set_country_flag = never_had_monarchy
+			    create_country_leader = {
+					name = "Regency Council"
+					picture = "gfx/leaders/Monarchs/POL_regency.tga"
+					expire = "1987.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+					}
+				}
+			}
+			WUR = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Albrecht von Wurttemberg"
+					picture = "gfx/leaders/Monarchs/GER_albrecht_von_wurttemberg.tga"
+					expire = "1981.1.1"
+					ideology = constitutional_monarchism
+					traits = {
+						restored_monarch 
+					}
+			    }
+			}
+			XSM = { 
+			set_country_flag = warlord_dynastical_option
+			}
+			YEM = { 
+			set_country_flag = monarchy_in_place
+            set_politics = { ruling_party = monarchist elections_allowed = no }			
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 100 }
+			    create_country_leader = {
+	                name = "Imam Yahya Muhammad"
+	                desc = "POLITICS_IMAM_YAHYA_DESC"
+	                picture = "GFX_portrait_yemen_imam_yahya"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+                        #
+	                }
+                }
+			}
+			YUG = { 
+			set_country_flag = monarchy_in_place
+            set_politics = { ruling_party = monarchist elections_allowed = no }			
+			set_political_party = { ideology = neutrality popularity = 0 }
+			set_political_party = { ideology = monarchist popularity = 60 }
+			    create_country_leader = {
+	                name = "Prince Paul"
+	                desc = "POLITICS_PRINCE_PAUL_DESC"
+	                picture = "Portrait_Yugoslavia_Prince_Paul.dds"
+	                expire = "1989.1.1"
+	                ideology = absolute_monarchism
+	                traits = {
+                        #
+	                }
+                }
+			}
+			ZAM = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Yeta III"
+					picture = "gfx/leaders/Monarchs/Portrait_Barot_YetaIII.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+			ZIM = { 
+			set_country_flag = had_monarchy
+			create_country_leader = {
+					name = "Munhuwepayi Nhowe"
+					picture = "gfx/leaders/Monarchs/Portrait_Generic_Africa_despotism_1.tga"
+					expire = "1981.1.1"
+					ideology = absolute_monarchism
+					traits = { 
+					}
+				}
+			}
+        }
+	}
+}
+
+##Event: Better or Special Historical Flavor
+country_event = {
+	id = monarchyoverhaul.2
+	title = monarchyoverhaul.2.title
+	desc = monarchyoverhaul.2.desc
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.2.a
+		ai_chance = { factor = 1}
+		hidden_effect = {
+		#load portrait
+        }
+	}
+	option = {
+		name = monarchyoverhaul.2.b
+		ai_chance = { factor = 1}
+		hidden_effect = {
+
+        }
+	}
+}
+
+##Event: Where the crown never ruled
+country_event = {
+	id = monarchyoverhaul.4
+	title = monarchyoverhaul.4.title
+	desc = monarchyoverhaul.4.desc
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.4.a
+		ai_chance = { factor = 1}
+		set_global_flag = royal_elections_allowed
+	}
+}
+##Event: Monarchist Literature
+country_event = {
+	id = monarchyoverhaul.5
+	title = monarchyoverhaul.5.title
+	desc = monarchyoverhaul.5.desc
+	picture = monarchist_literature-35284
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.5.a
+		ai_chance = { factor = 1}
+		hidden_effect = {
+		every_country = { 
+		    limit = { 
+			    NOT = {
+     				monarchist > 0.3
+				    has_government = monarchist
+			    }
+			}
+			add_timed_idea = { idea = BRA_monarchist_literature_banned days = 210 }
+		}
+        set_global_flag = monarchism_allowed
+		}
+	}
+	option = {
+		name = monarchyoverhaul.5.b
+		ai_chance = { factor = 1}
+		hidden_effect = {
+		every_country = {
+    		limit = {
+    			NOT = {
+    				monarchist > 0.3
+					has_government = monarchist
+				}
+			}
+			add_timed_idea = { idea = BRA_monarchist_movements days = 210 }
+		}
+        set_global_flag = monarchism_allowed
+		}
+	}
+	option = {
+		name = monarchyoverhaul.5.c
+		ai_chance = { factor = 1}
+		hidden_effect = {
+		every_country = {
+    		limit = {
+    			NOT = {
+     				monarchist > 0.3
+					has_government = monarchist
+				}
+			}
+     		add_timed_idea = { idea = BRA_monarchism_endorsed days = 210 }
+		}
+        set_global_flag = monarchism_allowed
+		}
+	}
+}
+##Event: Where is our Crown?
+country_event = {
+	id = monarchyoverhaul.6
+	title = monarchyoverhaul.6.title
+	desc = monarchyoverhaul.6.desc
+	picture = where_is_our_crown-38155
+	trigger = {
+		NOT = { has_government = monarchist }
+        NOT = { has_country_flag = royalism_on_the_streets }
+        monarchist > 0.33
+        has_global_flag = monarchism_allowed
+        has_country_flag = never_had_monarchy
+	}
+	mean_time_to_happen = {
+		days = 20
+	}
+	option = {
+		name = monarchyoverhaul.6.a
+		ai_chance = { factor = 1}
+		set_country_flag = royalism_on_the_streets
+	}
+}
+##Event: Imperial Nostalgia
+country_event = {
+	id = monarchyoverhaul.7
+	title = monarchyoverhaul.7.title
+	desc = monarchyoverhaul.7.desc
+	picture = GFX_report_event_royal_visit
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_government = monarchist }
+        NOT = { has_country_flag = imperial_nostalgia }
+        monarchist > 0.5
+        has_global_flag = monarchism_allowed
+        has_country_flag = never_had_monarchy
+        has_country_flag = royalism_on_the_streets
+	}
+	option = {
+		name = monarchyoverhaul.7.a
+		ai_chance = { factor = 1}
+		set_country_flag = imperial_nostalgia
+	}
+}
+##Event: A King for the People
+country_event = {
+	id = monarchyoverhaul.8
+	title = monarchyoverhaul.8.title
+	desc = monarchyoverhaul.8.desc
+	picture = GFX_report_event_eng_royal_family
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_government = monarchist }
+        has_country_flag = imperial_nostalgia 
+        monarchist > 0.6
+        has_global_flag = monarchism_allowed
+        has_country_flag = never_had_monarchy
+        has_country_flag = royalism_on_the_streets
+	}
+	option = {
+		name = monarchyoverhaul.8.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = create_regency_tt
+        hidden_effect = {
+            country_event = { days = 60 id = monarchyoverhaul.10 }
+        }
+	}
+	option = {
+		name = monarchyoverhaul.8.b
+		ai_chance = { factor = 1}
+		add_political_power = -100
+		add_popularity = {
+			ideology = monarchist
+			popularity = -0.20
+		}
+		add_timed_idea = {
+			idea = BRA_suppressed_royalists
+			days = 365
+		}
+	}
+}
+##Event: Royalist Coup
+country_event = {
+	id = monarchyoverhaul.9
+	title = monarchyoverhaul.9.title
+	desc = monarchyoverhaul.9.desc
+	picture = GFX_report_event_spr_nationalist_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		OR = { 
+		    has_idea = BRA_suppressed_royalists 
+			has_idea = BRA_royalist_radicals
+		}
+        OR = { 
+		    monarchist > 0.7 
+			has_stability < 0.2
+		}
+	}
+	option = {
+		name = monarchyoverhaul.9.a
+		ai_chance = { factor = 1}
+		set_politics = { ruling_party = monarchist elections_allowed = no }
+        set_country_flag = regency_installed
+        add_ideas = BRA_royalist_nation
+	}
+}
+##Event: Regency Agreed
+country_event = {
+	id = monarchyoverhaul.10
+	title = monarchyoverhaul.10.title
+	desc = monarchyoverhaul.10.desc
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.10.a
+		ai_chance = { factor = 1}
+		set_politics = { ruling_party = monarchist elections_allowed = no }
+        set_country_flag = regency_decisions
+        add_ideas = BRA_royalist_nation
+	}
+}
+##Event: The Monarchy Restoration
+country_event = {
+	id = monarchyoverhaul.11
+	title = monarchyoverhaul.11.title
+	desc = monarchyoverhaul.11.desc
+	picture = GFX_report_event_royal_visit
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.11.a
+		ai_chance = { factor = 1}
+		set_country_flag = restoration_chain_begin
+	}
+}
+##Event: Monarchists in Politics
+country_event = {
+	id = monarchyoverhaul.12
+	title = monarchyoverhaul.12.title
+	desc = monarchyoverhaul.12.desc
+	picture = GFX_report_event_german_reichstag_gathering
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = restoration_chain_begin
+        has_country_flag = heir_in_the_streets
+        monarchist > 0.4
+        NOT = { has_government = monarchist }
+	}
+	option = {
+		name = monarchyoverhaul.12.a
+		ai_chance = { factor = 1}
+		set_country_flag = monarchist_politician
+        add_timed_idea = { idea = BRA_monarchist_politicians days = 180 }
+	}
+}
+##Event: Restore the Monarchy
+country_event = {
+	id = monarchyoverhaul.13
+	title = monarchyoverhaul.13.title
+	desc = monarchyoverhaul.13.desc
+	picture = GFX_report_event_eng_royal_family
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = restoration_chain_begin
+        has_country_flag = monarchist_politician
+        monarchist > 0.7
+        NOT = { has_government = monarchist }
+	}
+	option = {
+		name = monarchyoverhaul.13.a
+		ai_chance = { factor = 1}
+		set_politics = { ruling_party = monarchist elections_allowed = no }
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = monarchyoverhaul.13.b
+		ai_chance = { factor = 0}
+		add_political_power = -500
+		add_popularity = {
+			ideology = monarchist
+			popularity = -0.40
+		}
+		add_ideas = BRA_royalist_radicals 
+	}
+}
+##Event: The Heir to the Throne
+country_event = {
+	id = monarchyoverhaul.14
+	title = monarchyoverhaul.14.title
+	desc = monarchyoverhaul.14.desc
+	picture = GFX_report_event_american_hunger_march
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_government = monarchist }
+        NOT = { has_country_flag = heir_on_the_streets }
+        monarchist > 0.3
+        has_global_flag = monarchism_allowed
+        has_country_flag = had_monarchy
+	}
+	option = {
+		name = monarchyoverhaul.14.a
+		ai_chance = { factor = 1}
+		set_country_flag = heir_on_the_streets
+	}
+	option = {
+		name = monarchyoverhaul.14.b
+		ai_chance = { factor = 1}
+		set_country_flag = heir_on_the_streets
+        add_popularity = { ideology = monarchist popularity = -0.2 }
+        add_ideas = BRA_suppressed_royalists
+        add_political_power = -500
+	}
+}
+##Event: Expanding Royal Powers
+country_event = {
+	id = monarchyoverhaul.15
+	title = monarchyoverhaul.15.title
+	desc = monarchyoverhaul.15.desc
+	picture = GFX_report_event_japanese_reply
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = royalist_debates }
+        NOT = { has_government = monarchist }
+        has_country_flag = monarchy_in_place
+	}
+	option = {
+		name = monarchyoverhaul.15.a
+		ai_chance = { factor = 1}
+		add_timed_idea = { idea = BRA_royal_debates days = 120 }
+        set_country_flag = royalist_debates
+	}
+}
+##Event: Pressure for Royal action
+country_event = {
+	id = monarchyoverhaul.16
+	title = monarchyoverhaul.16.title
+	desc = monarchyoverhaul.16.desc
+	picture = pressure_for_royal_action-39155
+	trigger = {
+		NOT = { has_government = monarchist }
+        monarchist > 0.3
+        has_country_flag = royalist_debates
+        has_idea = BRA_royal_debates
+        NOT = { has_country_flag = royalist_riots }
+	}
+	mean_time_to_happen = {
+		days = 60
+	}
+	option = {
+		name = monarchyoverhaul.16.a
+		ai_chance = { factor = 1}
+		set_country_flag = royal_action
+	}
+}
+##Event: The Crown supports the Royalists
+country_event = {
+	id = monarchyoverhaul.17
+	title = monarchyoverhaul.17.title
+	desc = monarchyoverhaul.17.desc
+	picture = the_crown_supports_the_royalists-39156
+	is_triggered_only = yes
+	trigger = {
+		OR = { monarchist > 0.5 AND = { democratic < 0.4 neutrality < 0.4 } }
+        has_country_flag = royal_action
+        NOT = { has_government = monarchist }
+        NOT = { has_idea = BRA_royal_debates }
+	}
+	option = {
+		name = monarchyoverhaul.17.a
+		ai_chance = { factor = 1}
+		hidden_effect = {
+        add_ideas = BRA_crown_support
+        country_event = { days = 120 id = monarchyoverhaul.18 }
+        }
+	}
+	option = {
+		name = monarchyoverhaul.17.b
+		ai_chance = { factor = 1}
+		add_timed_idea = { idea = BRA_suppressed_royalists days = 210 }
+        set_country_flag = monarchy_in_check
+	}
+}
+##Event: Your Majesty's Government
+country_event = {
+	id = monarchyoverhaul.18
+	title = monarchyoverhaul.18.title
+	desc = monarchyoverhaul.18.desc
+	picture = your_majestys_government-39157
+	is_triggered_only = yes
+	option = {
+		name = monarchyoverhaul.18.a
+		ai_chance = { factor = 1}
+		set_politics = { ruling_party = monarchist elections_allowed = no }
+        remove_ideas = BRA_crown_support
+	}
+}
+##Event: Parliament dissolved
+country_event = {
+	id = monarchyoverhaul.19
+	title = monarchyoverhaul.19.title
+	desc = monarchyoverhaul.19.desc
+	picture = parliament_dissolved-39158
+	trigger = {
+		OR = { monarchist > 0.4 has_stability < 0.35 }
+        has_idea = BRA_suppressed_royalists
+		has_country_flag = monarchy_in_place
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = monarchyoverhaul.19.a
+		ai_chance = { factor = 1}
+		set_politics = { ruling_party = monarchist elections_allowed = no }
+        remove_ideas = BRA_crown_support
+        add_stability = 0.1
+	}
+}
+##Event: The Monarchy Restored!
+country_event = {
+	id = monarchyoverhaul.20
+	title = monarchyoverhaul.20.title
+	desc = monarchyoverhaul.20.desc
+	picture = the_monarchy_restored-41791
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = restoration_chain_begin
+        has_country_flag = had_monarchy
+        has_country_flag = monarchist_nation
+        has_government = monarchist
+	}
+	option = {
+		name = monarchyoverhaul.20.a
+		ai_chance = { factor = 1}
+		set_country_flag = monarchy_restored
+	}
+}
+##Event: The Chinese Monarchy
+country_event = {
+	id = monarchyoverhaul.21
+	title = monarchyoverhaul.21.title
+	desc = monarchyoverhaul.21.desc
+	picture = the_chinese_monarchy-41797
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CHI
+        has_government = monarchist
+        has_country_flag = monarchist_nation
+	}
+	option = {
+		name = monarchyoverhaul.21.a
+		ai_chance = { factor = 1}
+		hidden_effect = { country_event = { id = monarchyoverhaul.22 } }
+	}
+}
+##Event: Fate of the Dragon Throne
+country_event = {
+	id = monarchyoverhaul.22
+	title = monarchyoverhaul.22.title
+	desc = monarchyoverhaul.22.desc
+	picture = fate_of_the_dragon_throne-41798
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.22.a
+		ai_chance = { factor = 1}
+		set_cosmetic_tag = man_restored
+        if = { limit = { MAN = { exists = yes } } MAN = { country_event = { id = monarchyoverhaul.23 } } }
+        if = { limit = { MAN = { exists = no } }
+            create_country_leader = {
+	            name = "Aisin Gioro Puyi"	
+                picture = "gfx/leaders/Monarchs/Portrait_Manchuria_Henry_Pu_Yi.tga"
+                expire = "1960.1.1"
+                ideology = totalitarian_monarchism
+	            traits = {
+	                warrior_code
+	            }
+            }
+		}
+	}
+	option = {
+		name = monarchyoverhaul.22.b
+		ai_chance = { factor = 1}
+		set_cosmetic_tag = CHI_ming
+		create_country_leader = {
+			name = "Zhu Yuxun"
+			picture = "gfx/leaders/Monarchs/Portrait_Zhu_Yuxun.tga"
+			expire = "1981.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				constitutional_monarch 
+			}
+		}
+	}
+	option = {
+		name = monarchyoverhaul.22.c
+		ai_chance = { factor = 1}
+		CHI = { 
+		    create_country_leader = {
+				name = "Emperor Yuntai"
+				picture = "gfx/leaders/Monarchs/Yuan_Keding_China.tga"
+				expire = "1981.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					constitutional_monarch 
+				}
+		    }
+		}
+	}
+	option = {
+		name = monarchyoverhaul.22.d
+		ai_chance = { factor = 1}
+		CHI = {
+		    set_cosmetic_tag = CHI_kai_shek
+			create_country_leader = {
+				name = "Emperor Kai-Shek"
+				picture = "gfx/leaders/Monarchs/r56_portrait_CHI_Chiang_Kai_Shek.tga"
+				expire = "1981.1.1"
+				ideology = totalitarian_monarchism
+				traits = {
+					empire_builder generallissimo unpopular_monarch
+				}
+		    }
+		}	
+	}
+}
+##Event: Puyi refuses!
+country_event = {
+	id = monarchyoverhaul.24
+	title = monarchyoverhaul.24.title
+	desc = monarchyoverhaul.24.desc
+	picture = puyi_refuses-41808
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.24.a
+		ai_chance = { factor = 1 }
+		CHI = {
+            create_country_leader = {
+				name = "Prince Chung"
+				picture = "gfx/leaders/Monarchs/Portrait_CHI_Price_Chung.tga"
+				expire = "1981.1.1"
+				ideology = totalitarian_monarchism
+				traits = {
+					regent
+				}
+		    }
+		}
+	}
+	option = {
+		name = monarchyoverhaul.24.b
+		ai_chance = { factor = 1 }
+		CHI = { 
+		    create_country_leader = {
+				name = "Aisin Gioro Pujie"
+				picture = "gfx/leaders/Monarchs/Portrait_Aisin_Gioro_Pujie.tga"
+				expire = "1981.1.1"
+				ideology = totalitarian_monarchism
+				traits = {
+					warrior_code
+				}
+		    }
+		}
+	}
+}
+##Event: Puyi Returns!
+country_event = {
+	id = monarchyoverhaul.25
+	title = monarchyoverhaul.25.title
+	desc = monarchyoverhaul.25.desc
+	picture = puyi_returns-41809
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.25.a
+		ai_chance = { factor = 1}
+		CHI = {
+		    set_cosmetic_tag = man_restored
+			load_focus_tree = manchukuo_focus
+            create_country_leader = {
+	            name = "Aisin Gioro Puyi"	
+                picture = "gfx/leaders/Monarchs/Portrait_Manchuria_Henry_Pu_Yi.tga"
+                expire = "1960.1.1"
+                ideology = totalitarian_monarchism
+	            traits = {
+	                warrior_code
+	            }
+            }
+		}
+	}
+}
+##Event: Manchukuo surrendered it's lands to China
+country_event = {
+	id = monarchyoverhaul.26
+	title = monarchyoverhaul.26.title
+	desc = monarchyoverhaul.26.desc
+	picture = manchukuo_surrendered_its_lands_to_china-41797
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.26.a
+		ai_chance = { factor = 80}
+		every_state = { 
+		    limit = { is_core_of = MAN }
+			add_core_of = JAP
+		}
+        if = { 
+		    limit = {
+			    MAN = { exists = yes }
+			}
+            JAP = { 
+			    declare_war_on = { 
+				    target = MAN 
+					type = puppet_wargoal_focus 
+				}
+			}
+		}	
+        if = { 
+		    limit = { 
+			    MAN = { exists = no } 
+				CHI = { exists = yes }
+			} 
+			JAP = {
+    			declare_war_on = {
+    				target = CHI
+   					type = puppet_wargoal_focus
+				}
+			}
+		}	
+	}
+	option = {
+		name = monarchyoverhaul.26.b
+		ai_chance = { factor = 20}
+		add_offsite_building = { type = arms_factory level = 2 } add_offsite_building = { type = industrial_complex level = 3 }
+	}
+}
+##Event: Puyi fled to China!
+country_event = {
+	id = monarchyoverhaul.27
+	title = monarchyoverhaul.27.title
+	desc = monarchyoverhaul.27.desc
+	picture = puyi_fled_to_china-41799
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.27.a
+		ai_chance = { factor = 1}
+		if = { 
+		    limit = {
+    			MAN = { exists = yes }
+			}
+            JAP = { country_event = { days = 10 id = monarchyoverhaul.28 } }
+		}	
+	}
+}
+##Event: The fate of Manchukuo
+country_event = {
+	id = monarchyoverhaul.28
+	title = monarchyoverhaul.28.title
+	desc = monarchyoverhaul.28.desc
+	picture = GFX_report_event_asian_politicians
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MAN = { exists = yes }
+        CHI = { has_government = monarchist }
+	}
+	option = {
+		name = monarchyoverhaul.28.a
+		ai_chance = { factor = 1}
+		JAP = { annex_country = { target = MAN transfer_troops = yes } }
+        JAP = { set_temp_variable = { country_to_initiate = MAN } instantiate_collaboration_government = yes }
+        MAN = { 
+			create_country_leader = {
+	            name = "Prince Yasuhito"	
+                picture = "gfx/leaders/Monarchs/Portrait_JAP_Yasuhito.tga"
+                expire = "1960.1.1"
+                ideology = totalitarian_monarchism
+	            traits = {
+	                warrior_code
+	            }
+            }
+		}
+	}
+	option = {
+		name = monarchyoverhaul.28.b
+		ai_chance = { factor = 1}
+		MAN = { set_cosmetic_tag = MAN_reorganized }
+        MAN = { transfer_state = 609 }
+        MAN = { transfer_state = 745 }
+        every_state = { limit = { is_core_of = CHI } add_core_of = MAN }
+        MAN = { load_focus_tree = china_warlord_focus }
+        MAN = { complete_national_focus = CHI_secure_internal_politics }
+        MAN = { complete_national_focus = CHI_opposition }
+		MAN = {
+		    set_politics = { ruling_party = neutrality elections_allowed = no }
+		    create_country_leader = {
+	            name = "Emperor Hirohito"
+	            desc = "POLITICS_Hirohito_DESC"
+	            picture = "Portrait_Japan_Hirohito.dds"
+	            expire = "1989.1.1"
+	            ideology = totalitarian_monarchism
+	            traits = {
+		            warrior_code
+		            emperor_showa
+		            imperial_sanction
+	            }
+	            id = 700 #Hirohito
+            }
+			create_country_leader = {
+	            name = "Wang Jingwei"	
+                picture = "gfx/leaders/Monarchs/r56_portrait_CHI_Wang_Jingwei.tga"
+                expire = "1960.1.1"
+                ideology = despotism
+	            traits = {
+	            }
+            }
+		}	
+	}
+}
+##Event: The Mexican Empire
+country_event = {
+	id = monarchyoverhaul.29
+	title = monarchyoverhaul.29.title
+	desc = monarchyoverhaul.29.desc
+	picture = the_mexican_empire-42165
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.29.a
+		ai_chance = { factor = 1}
+		set_cosmetic_tag = MEX_cristero
+		create_country_leader = {
+            name = "Maria Josepha Sophia Iturbide"	
+            picture = "gfx/leaders/Monarchs/Portrait_Mexico_Maria.tga"
+            expire = "1960.1.1"
+            ideology = constitutional_monarchism
+            traits = {
+			    popular_queen  
+	        }
+        }
+	}
+	option = {
+		name = monarchyoverhaul.29.b
+		ai_chance = { factor = 1}
+		set_cosmetic_tag = MEX_cristero
+		create_country_leader = {
+            name = "Roberto de Austria-Este"	
+            picture = "gfx/leaders/Monarchs/Portrait_Duke_Roberto.tga"
+            expire = "1960.1.1"
+            ideology = absolute_monarchism
+            traits = {
+			    unpopular_monarch autocratic_imperialist
+	        }
+        }
+	}
+	option = {
+		name = monarchyoverhaul.29.c
+		ai_chance = { factor = 1}
+		set_cosmetic_tag = MEX_cristero
+        set_country_flag = electing_bourbons
+	}
+	option = {
+		name = monarchyoverhaul.29.d
+		ai_chance = { factor = 1}
+		hidden_effect = { country_event = { id = monarchy_overhaul.30 } }
+	}
+}
+##Event: The House of Moctezuma-Tultengo
+country_event = {
+	id = monarchyoverhaul.30
+	title = monarchyoverhaul.30.title
+	desc = monarchyoverhaul.30.desc
+	picture = the_house_of_moctezumatultengo-42176
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.30.a
+		ai_chance = { factor = 1}
+		create_country_leader = {
+            name = "Don Fernando de Moctezuma-Tultengo"	
+            picture = "gfx/leaders/Monarchs/Portrait_Don_Fernando_Moctezuma_Tultengo.tga"
+            expire = "1960.1.1"
+            ideology = absolute_monarchism
+            traits = {
+			    inexperienced_imperialist nationalist_symbol
+	        }
+        }
+	}
+	option = {
+		name = monarchyoverhaul.30.b
+		ai_chance = { factor = 1}
+		country_event = { id = monarchyoverhaul.29 }
+	}
+}
+##Event: The Kingdom of Poland
+country_event = {
+	id = monarchyoverhaul.31
+	title = monarchyoverhaul.31.title
+	desc = monarchyoverhaul.31.desc
+	picture = the_kingdom_of_poland-42200
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = monarchyoverhaul.31.a
+		ai_chance = { factor = 1}
+		set_country_flag = poland_elected
+		create_country_leader = {
+            name = "Friedrich Christian von Wettin"	
+            picture = "gfx/leaders/Monarchs/Portrait_Poland_Friedrich_Christian.tga"
+            expire = "1960.1.1"
+            ideology = constitutional_monarchism
+            traits = {
+	        }
+        }
+	}
+	option = {
+		name = monarchyoverhaul.31.b
+		ai_chance = { factor = 1}
+		set_country_flag = electing_polish_kings
+	}
+	option = {
+		name = monarchyoverhaul.31.c
+		ai_chance = { factor = 1}
+		set_country_flag = electing_habsburgs
+	}
+	option = {
+		name = monarchyoverhaul.31.d
+		ai_chance = { factor = 0}
+		set_country_flag = regency_installed
+	}
+}
+##Event: China invites Puyi to retake the Dragon Throne
+country_event = {
+	id = monarchyoverhaul.23
+	title = monarchyoverhaul.23.title
+	desc = monarchyoverhaul.23.desc
+	picture = china_invites_puyi_to_retake_the_dragon_throne-41799
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = monarchyoverhaul.23.b
+		ai_chance = { factor = 1 }
+		JAP = { country_event = { id = monarchyoverhaul.27 } }
+        CHI = { country_event = { days = 10 id = monarchyoverhaul.25 } }
+        MAN = { kill_country_leader = yes }
+	}
+	option = {
+		name = monarchyoverhaul.23.c
+		ai_chance = { factor = 1 }
+		CHI = { country_event = { id = monarchyoverhaul.24 } }
+	}
+	option = {
+		name = monarchyoverhaul.23.a
+		ai_chance = { factor = 1}
+		if = {
+    		limit = {
+    			MAN = { is_ai = no }
+			} 
+			CHI = { change_tag_from = ROOT }
+            set_autonomy = { 
+			    target = MAN
+ 				autonomy_state = autonomy_free
+			} 
+			global_every_army_leader = {
+    			limit = { 
+				    OWNER = { tag = CHI }
+				} 
+				set_nationality = MAN
+			} 
+			CHI = { transfer_navy = MAN }
+			MAN = { 
+			    annex_country = { target = CHI transfer_troops = yes }
+				set_cosmetic_tag = man_restored
+			} 
+			JAP = { country_event = { id = monarchyoverhaul.26 } }
+		}
+        else = {
+        set_autonomy = { 
+	    	target = MAN
+			autonomy_state = autonomy_free
+		}
+		global_every_army_leader = {
+     		limit = {
+    			OWNER = { tag = MAN }
+  			}
+			set_nationality = CHI
+		}
+		MAN = { transfer_navy = CHI }
+		CHI = { annex_country = { target = MAN transfer_troops = yes } }
+		JAP = { country_event = { id = monarchyoverhaul.26 } }
+		}
+	}
+}

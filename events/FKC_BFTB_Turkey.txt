@@ -1,0 +1,629 @@
+add_namespace = fkc_bftb_turkey
+
+#The Civil War - The Kemalists Attempt to Overthrow Menderes' Government
+country_event = {
+	id = fkc_bftb_turkey.22
+	title = bftb_turkey.22.t
+	desc = bftb_turkey.22.desc
+	picture = GFX_report_event_tur_military_affair
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = bftb_turkey.22.a #the Almighty guides our hand!
+		if = {
+			limit = {
+				has_unit_leader = 903
+			}
+			remove_unit_leader = 903
+		}
+		if = {
+			limit = {
+				has_idea = TUR_kemalist_army_officers_minimal_power_disloyal
+			}
+			hidden_effect = {
+				create_country_leader = {
+					name = "Kâzım Orbay"
+					desc = "POLITICS_KAZIM_ORBAY_DESC"
+					picture = "GFX_portrait_tur_kazim_orbay"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						celebrity_junta_leader
+					}
+				}
+			}
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.05
+				capital = 797
+				states = { 797 341 }
+				keep_unit_leaders = { 
+					901 
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = TUR_kemalist_army_officers_decreased_power_disloyal
+			}
+			hidden_effect = {
+				create_country_leader = {
+					name = "Kâzım Orbay"
+					desc = "POLITICS_KAZIM_ORBAY_DESC"
+					picture = "GFX_portrait_tur_kazim_orbay"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						celebrity_junta_leader
+					}
+				}
+			}
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.15
+				capital = 797
+				states = { 797 341 339 354 }
+				keep_unit_leaders = { 
+					901 
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = TUR_kemalist_army_officers_limited_power_disloyal
+			}
+			hidden_effect = {
+				create_country_leader = {
+					name = "Kâzım Orbay"
+					desc = "POLITICS_KAZIM_ORBAY_DESC"
+					picture = "GFX_portrait_tur_kazim_orbay"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						celebrity_junta_leader
+					}
+				}
+			}
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.35
+				capital = 797
+				states = { 797 341 339 354 340 342 }
+				keep_unit_leaders = { 
+					901 
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = TUR_kemalist_army_officers_extended_power_disloyal
+			}
+			hidden_effect = {
+				create_country_leader = {
+					name = "Kâzım Orbay"
+					desc = "POLITICS_KAZIM_ORBAY_DESC"
+					picture = "GFX_portrait_tur_kazim_orbay"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						celebrity_junta_leader
+					}
+				}
+			}
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.55
+				capital = 797
+				states = { 797 341 339 354 340 342 343 346 }
+				keep_unit_leaders = { 
+					901 
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = TUR_kemalist_army_officers_powerful_disloyal
+			}
+			hidden_effect = {
+				create_country_leader = {
+					name = "Kâzım Orbay"
+					desc = "POLITICS_KAZIM_ORBAY_DESC"
+					picture = "GFX_portrait_tur_kazim_orbay"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						celebrity_junta_leader
+					}
+				}
+			}
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.75
+				capital = 49
+				states = { 797 341 339 354 340 342 343 346 347 49 }
+				keep_unit_leaders = { 
+					901 
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_completed_focus = TUR_fully_integrate_the_is_bank
+				}
+				country_event = { id = fkc_bftb_turkey.95 hours = 12 random = 48 }
+			}
+			remove_ideas = TUR_kemalist_army_officers_minimal_power_disloyal
+			remove_ideas = TUR_kemalist_army_officers_decreased_power_disloyal
+			remove_ideas = TUR_kemalist_army_officers_limited_power_disloyal
+			remove_ideas = TUR_kemalist_army_officers_extended_power_disloyal
+			remove_ideas = TUR_kemalist_army_officers_powerful_disloyal
+			news_event = { id = bftb_news.204 hours = 6 }
+		}
+	}
+}
+
+#Pressure Bulgaria - Bulgaria receives puppet demand
+country_event = {
+	id = fkc_bftb_turkey.84
+	title = bftb_turkey.84.t
+	desc = bftb_turkey.84.desc
+	picture = GFX_report_event_tur_military_affair
+
+	is_triggered_only = yes
+	
+	option = {
+		name = bftb_turkey.84.a #the Soviets shall mediate
+		trigger = {
+			has_government = communism
+		}
+		SOV = { country_event = { id = bftb_turkey.85 } }
+		hidden_effect = { set_country_flag = TUR_bulgaria_seeking_aid }
+	}
+	option = {
+		name = bftb_turkey.84.b #someone... help us!
+		trigger = {
+			has_government = democratic
+		}
+		if = {
+			limit = {
+				ENG = { has_government = democratic }
+			} 
+			ENG = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				FRA = { has_government = democratic }
+			} 
+			FRA = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				GER = { has_government = democratic }
+			} 
+			GER = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				ROM = { has_government = democratic }
+			} 
+			ROM = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				GRE = { has_government = democratic }
+			} 
+			GRE = { country_event = { id = bftb_turkey.85 } }
+		}
+		hidden_effect = { set_country_flag = TUR_bulgaria_seeking_aid }
+	}
+	option = {
+		name = bftb_turkey.84.c #we need aid to stop this red Turkish menace!
+		trigger = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+				has_government = monarchist
+			}
+		}
+		if = {
+			limit = {
+				ENG = { 
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+						has_government = monarchist
+					} 
+				}
+			} 
+			ENG = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				FRA = { 
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+						has_government = monarchist
+					} 
+				}
+			} 
+			FRA = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				GER = { 
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+						has_government = monarchist
+					} 
+				}
+			} 
+			GER = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				ITA = { 
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+						has_government = monarchist
+					} 
+				}
+			} 
+			ITA = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				ROM = { 
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+						has_government = monarchist
+					} 
+				}
+			} 
+			ROM = { country_event = { id = bftb_turkey.85 } }
+		}
+		if = {
+			limit = {
+				GRE = { 
+					OR = {
+						has_government = neutrality
+						has_government = monarchist
+						has_government = fascism
+					}
+				}
+			} 
+			GRE = { country_event = { id = bftb_turkey.85 } }
+		}
+		hidden_effect = { set_country_flag = TUR_bulgaria_seeking_aid }
+	}
+	option = {
+		name = bftb_turkey.84.d #our friends will guarantee our safety
+		trigger = {
+			is_in_faction = yes
+		}
+		TUR = { country_event = { id = bftb_turkey.87 hours = 8 } }
+	}
+	option = {
+		name = bftb_turkey.84.e #anything to save Bulgarian lives
+		add_stability = -0.07
+		add_popularity = { 
+			ideology = communism
+			popularity = 0.1
+		}
+		effect_tooltip = {
+			TUR = { puppet = ROOT }
+		}
+		hidden_effect = {
+			TUR = { country_event = { id = bftb_turkey.90 } }
+		}
+	}
+}
+
+#The Civil War - Ottoman Officers Offer Chance to Restore Sultanate
+country_event = {
+	id = fkc_bftb_turkey.95
+	title = bftb_turkey.95.t
+	desc = bftb_turkey.95.desc
+	picture = GFX_report_event_tur_sultan_and_pashas
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	option = {
+		name = bftb_turkey.95.a #our old glory will be ours again
+		ai_chance = {
+			factor = 15
+			modifier = {
+				OR = {
+					has_country_flag = TUR_AI_RANDOM_OTTOMAN
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = OTTOMAN
+					}
+				}
+				factor = 100
+			}
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Refet Pasha"
+			desc = "POLITICS_REFET_PASHA_DESC"
+			picture = "GFX_portrait_tur_refe_pasha"
+			expire = "1965.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				crown_regent
+			}
+		}
+		hidden_effect = { 
+			set_politics = { ruling_party = monarchist }
+			add_popularity = {
+				ideology = monarchist
+				popularity = 0.35
+			}
+			set_party_name = { 
+				ideology = monarchist
+				long_name = TUR_sultanate_precursor_party_long
+				name = TUR_sultanate_precursor_party_long
+			}
+			set_party_name = { 
+				ideology = democratic
+				long_name = TUR_neutrality_party_long
+				name = TUR_neutrality_party
+			}
+			create_country_leader = {
+				name = "İsmet Inönü"
+				desc = "POLITICS_ISMET_INÖNÜ_DESC"
+				picture = "Portrait_Turkey_Ismet_Inonu.dds"
+				expire = "1965.1.1"
+				ideology = socialism
+				traits = {
+					milli_sef
+				}
+			}
+			create_corps_commander = {
+				name = "Fakhri Pasha"
+				gfx = "GFX_portrait_tur_fakhri_pasha"
+				traits = { war_hero inflexible_strategist trickster desert_fox }
+				skill = 4 #13
+			
+				attack_skill = 2
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 4
+			}
+			
+			create_corps_commander = {
+				name = "Ahmet Fevzi Pasha"
+				gfx = "GFX_portrait_tur_ahmet_fevzi_pasha"
+				traits = { war_hero trait_cautious trait_mountaineer }
+				skill = 3 #10
+			
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			
+			create_corps_commander = {
+				name = "Refet Pasha"
+				gfx = "GFX_portrait_tur_refe_pasha"
+				traits = { harsh_leader war_hero brilliant_strategist trickster }
+				skill = 3 #10
+			
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			
+			create_corps_commander = {
+				name = "Mehmet Esat Pasha"
+				gfx = "GFX_portrait_tur_mehmed_esad_pasha"
+				traits = { war_hero inflexible_strategist media_personality trickster hill_fighter }
+				skill = 4 #13
+			
+				attack_skill = 2
+				defense_skill = 5
+				planning_skill = 3
+				logistics_skill = 3
+			}
+			if = {
+				limit = {
+					has_unit_leader = 902
+				}
+				remove_unit_leader = 902 
+			}
+			if = {
+				limit = {
+					has_unit_leader = 903
+				}
+				remove_unit_leader = 903
+			}
+			if = {
+				limit = {
+					has_unit_leader = 904
+				}
+				remove_unit_leader = 904
+			}
+			if = {
+				limit = {
+					has_unit_leader = 905
+				}
+				remove_unit_leader = 905
+			}
+			if = {
+				limit = {
+					has_unit_leader = 906
+				}
+				remove_unit_leader = 906
+			}
+			set_country_flag = TUR_PROVISIONARY_flag
+			TUR_set_appropriate_cosmetic_tag = yes
+			set_country_flag = TUR_ottoman_officers_invited_back
+		}
+	}
+	option = {
+		name = bftb_turkey.95.b #our allegiance is to the Republic and to democracy!
+		ai_chance = {
+			factor = 5
+			modifier = {
+				OR = {
+					has_country_flag = TUR_AI_RANDOM_DEMOCRATIC_ALTERNATE
+					has_game_rule = {
+						rule = TUR_ai_behavior 
+						option = TUR_DEMOCRATIC_ALTERNATE
+					}
+				}
+				factor = 100
+			}
+		}
+		effect_tooltip = {
+			every_state = {
+				limit = { 
+					is_core_of = KUR
+					is_owned_by = TUR
+				}
+				THIS = { set_resistance = 85 }
+			}
+		}
+	}
+}
+
+#Tragedy Befalls Ottoman Royal Family
+country_event = {
+	id = fkc_bftb_turkey.136
+	title = bftb_turkey.136.t
+	desc = bftb_turkey.136.desc
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	trigger = {
+		original_tag = TUR
+		has_country_flag = TUR_altered_royal_succession_laws
+		date > 1942.12.20
+	}
+
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Abdulmejid II"
+						ruling_only = yes
+					}
+					has_completed_focus = TUR_reclaiming_our_lost_empire
+				}
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Dürrüşehvar I"
+					desc = "POLITICS_DURRUSEHVAR_I_DESC"
+					picture = "GFX_portrait_tur_durrusehvar_sultan"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						sultana
+						calipha
+					}
+				}
+				create_country_leader = {
+					name = "Dürrüşehvar I"
+					desc = "POLITICS_DURRUSEHVAR_I_DESC"
+					picture = "GFX_portrait_tur_durrusehvar_sultan"
+					expire = "1965.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						sultana
+						calipha
+					}
+				}
+			}
+			else = { 
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Dürrüşehvar I"
+					desc = "POLITICS_DURRUSEHVAR_I_DESC"
+					picture = "GFX_portrait_tur_durrusehvar_sultan"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						sultana
+					}
+				}
+				create_country_leader = {
+					name = "Dürrüşehvar I"
+					desc = "POLITICS_DURRUSEHVAR_I_DESC"
+					picture = "GFX_portrait_tur_durrusehvar_sultan"
+					expire = "1965.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						sultana
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bftb_turkey.136.a
+		effect_tooltip = {  
+			create_country_leader = {
+				name = "Dürrüşehvar I"
+				desc = "POLITICS_DURRUSEHVAR_I_DESC"
+				picture = "GFX_portrait_tur_durrusehvar_sultan"
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					sultana
+				}
+			}
+			create_country_leader = {
+				name = "Dürrüşehvar I"
+				desc = "POLITICS_DURRUSEHVAR_I_DESC"
+				picture = "GFX_portrait_tur_durrusehvar_sultan"
+				expire = "1965.1.1"
+				ideology = absolute_monarchism
+				traits = {
+					sultana
+				}
+			}
+		}
+	}
+	option = {
+		name = bftb_turkey.136.b
+		create_country_leader = {
+			name = "Mehmet Esat Paşa"
+			desc = "POLITICS_MEHMENT_ESAT_PASA_DESC"
+			picture = "GFX_portrait_tur_mehmed_esad_pasha"
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				crown_regent
+			}
+		}
+		create_country_leader = {
+			name = "Mehmet Esat Paşa"
+			desc = "POLITICS_MEHMENT_ESAT_PASA_DESC"
+			picture = "GFX_portrait_tur_mehmed_esad_pasha"
+			expire = "1965.1.1"
+			ideology = absolute_monarchism
+			traits = {
+				crown_regent
+			}
+		}
+	}
+}

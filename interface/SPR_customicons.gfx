@@ -1,0 +1,79 @@
+spriteTypes = { 
+	##Icon For: Expand Spanish Africa
+	SpriteType = { 
+		name = "GFX_SPR_expand_spanish_africa-56304"
+		texturefile = "gfx/interface/goals/GFX_SPR_expand_spanish_africa-56304.dds"
+	}
+
+	##Icon Shine For: Expand Spanish Africa
+	SpriteType = { 
+		name = "GFX_SPR_expand_spanish_africa-56304_shine"
+		texturefile = "gfx/interface/goals/GFX_SPR_expand_spanish_africa-56304.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SPR_expand_spanish_africa-56304.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SPR_expand_spanish_africa-56304.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Dios, Patria y Rey!
+	SpriteType = { 
+		name = "GFX_SPR_dios_patria_y_rey-56306"
+		texturefile = "gfx/interface/goals/GFX_SPR_dios_patria_y_rey-56306.dds"
+	}
+
+	##Icon Shine For: Dios, Patria y Rey!
+	SpriteType = { 
+		name = "GFX_SPR_dios_patria_y_rey-56306_shine"
+		texturefile = "gfx/interface/goals/GFX_SPR_dios_patria_y_rey-56306.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SPR_dios_patria_y_rey-56306.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SPR_dios_patria_y_rey-56306.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+ 
+ }

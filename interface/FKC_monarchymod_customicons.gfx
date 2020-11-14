@@ -1,0 +1,27 @@
+spriteTypes = { 
+	##Icon For: The Focus Trees
+	SpriteType = { 
+		name = "the_focus_trees-46741"
+		texturefile = "gfx/interface/event_gfx/the_focus_trees-46741.dds"
+	}
+
+	##Icon For: A Monarchy in the Caucasus
+	SpriteType = { 
+		name = "a_monarchy_in_the_caucasus-46741"
+		texturefile = "gfx/interface/event_gfx/a_monarchy_in_the_caucasus-46741.dds"
+	}
+
+	##Icon For: Never a King
+	SpriteType = { 
+		name = "never_a_king-47237"
+		texturefile = "gfx/interface/event_gfx/never_a_king-47237.dds"
+	}
+
+	##Icon For: Afonso Carlos hit by a car
+	SpriteType = { 
+		name = "afonso_carlos_hit_by_a_car-47237"
+		texturefile = "gfx/interface/event_gfx/afonso_carlos_hit_by_a_car-47237.dds"
+	}
+
+ 
+ }

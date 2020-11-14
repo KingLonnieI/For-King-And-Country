@@ -1,0 +1,286 @@
+ideas = {
+
+
+##    ##    ###    ######## ####  #######  ##    ##    ###    ##           ######  ########  #### ########  #### ########  ######  
+###   ##   ## ##      ##     ##  ##     ## ###   ##   ## ##   ##          ##    ## ##     ##  ##  ##     ##  ##     ##    ##    ## 
+####  ##  ##   ##     ##     ##  ##     ## ####  ##  ##   ##  ##          ##       ##     ##  ##  ##     ##  ##     ##    ##       
+## ## ## ##     ##    ##     ##  ##     ## ## ## ## ##     ## ##           ######  ########   ##  ########   ##     ##     ######  
+##  #### #########    ##     ##  ##     ## ##  #### ######### ##                ## ##         ##  ##   ##    ##     ##          ## 
+##   ### ##     ##    ##     ##  ##     ## ##   ### ##     ## ##          ##    ## ##         ##  ##    ##   ##     ##    ##    ## 
+##    ## ##     ##    ##    ####  #######  ##    ## ##     ## ########     ######  ##        #### ##     ## ####    ##     ######  
+
+
+	country = { #DLC
+
+		BUL_bulgarian_irredentism = {
+			picture = bul_bulgarian_irredentism 
+
+			allowed = {
+				original_tag = BUL
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+					has_government = monarchist
+				}
+			}
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.1
+				justify_war_goal_time = -0.25 
+				generate_wargoal_tension = -0.75
+				war_support_weekly = 0.003
+			}
+		}
+
+		BUL_tsar_boris_positive_01 = {
+			picture = bul_tsar_boris_positive
+
+			allowed = {
+				original_tag = BUL
+				has_country_leader = {
+					name = "Boris III"
+				}
+			}
+
+			allowed_civil_war = {
+				has_country_leader = {
+					name = "Boris III"
+				}
+				NOT = { has_government = communism }
+				NOT = { has_government = democratic }		
+			}
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.1
+				monarchist_drift = 0.01
+			}
+		}
+
+		BUL_tsar_boris_positive_02 = {
+			picture = bul_tsar_boris_positive
+			name = BUL_tsar_boris_positive_01
+
+			allowed = {
+				original_tag = BUL
+				has_country_leader = {
+					name = "Boris III"
+				}
+			}
+
+			allowed_civil_war = {
+				has_country_leader = {
+					name = "Boris III"
+				}
+				NOT = { has_government = communism }
+				NOT = { has_government = democratic }
+			}
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.2
+				monarchist_drift = 0.05
+			}
+		}
+
+		BUL_tsar_boris_positive_03 = {
+			picture = bul_tsar_boris_positive
+			name = BUL_tsar_boris_positive_01
+
+			allowed = {
+				original_tag = BUL
+				has_country_leader = {
+					name = "Boris III"
+				}
+			}
+
+			allowed_civil_war = {
+				has_country_leader = {
+					name = "Boris III"
+				}
+				NOT = { has_government = communism }
+				NOT = { has_government = democratic }
+			}
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.3
+				drift_defence_factor = 0.15
+				monarchist_drift = 0.1
+			}
+		}
+
+		BUL_tsar_boris_negative_01 = {
+			picture = bul_tsar_boris_negative
+
+			allowed = {
+				original_tag = BUL
+				has_country_leader = {
+					name = "Boris III"
+				}
+			}
+
+			allowed_civil_war = {
+				has_country_leader = {
+					name = "Boris III"
+				}
+				BUL_has_abolished_monarchy = no
+			}
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.15
+				monarchist_drift = -0.01
+			}
+		}
+
+		BUL_tsar_boris_negative_02 = {
+			name = BUL_tsar_boris_positive_01
+			picture = bul_tsar_boris_positive
+
+			allowed = {
+				original_tag = BUL
+				has_country_leader = {
+					name = "Boris III"
+				}
+			}
+
+			allowed_civil_war = {
+				has_country_leader = {
+					name = "Boris III"
+				}
+				has_completed_focus = BUL_seek_cooperation_with_the_tsar
+				NOT = {
+					any_other_country = {
+						tag = BUL
+						has_country_leader = {
+							name = "Boris III"
+						}
+					}
+				}
+			}
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.1
+				join_faction_tension = -0.2
+				monarchist_drift = -0.05
+			}
+		}
+
+		BUL_brannik = {
+			picture = MEX_politicised_army
+
+			allowed = {
+				original_tag = BUL
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_completed_focus = BUL_found_the_brannik
+					has_government = neutrality
+					has_government = monarchist
+				}
+			}
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.1
+				political_advisor_cost_factor = -0.25
+				war_support_weekly = 0.001
+			}
+		}
+
+		BUL_bulgarian_patriarchate_restored = {
+			picture = YUG_orthodox_church_support
+
+			allowed = {
+				original_tag = BUL
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = 0.01
+				political_power_gain = 0.5
+				compliance_gain = 0.15
+				monarchist_drift = 0.05
+			}
+		}
+
+		BUL_ferdinands_puppet = {
+			
+			picture = generic_monarchist_uprising
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				is_subject_of = BUL
+			}
+		
+			removal_cost = -1
+			
+			modifier = {
+				cic_to_overlord_factor = 0.4
+				mic_to_overlord_factor = 0.4
+				master_ideology_drift = 0.5
+				monarchist_drift = 0.1
+			}
+		}
+
+		BUL_nationalist_propaganda = {
+			
+			picture = generic_morale_bonus
+
+			allowed = {
+				original_tag = BUL
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+		
+			removal_cost = -1
+			
+			modifier = {
+				war_support_weekly = 0.005
+				weekly_manpower = 500
+				monarchist_drift = 0.1
+			}
+		}
+
+		BUL_nationalist_propaganda_weak = {
+			name = BUL_nationalist_propaganda
+			
+			picture = generic_morale_bonus
+
+			allowed = {
+				original_tag = BUL
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+		
+			removal_cost = -1
+
+			on_add = {
+				add_manpower = 10000
+			}
+			
+			modifier = {
+				war_support_factor = 0.05
+				monarchist_drift = 0.1
+			}
+		}
+	}
+}

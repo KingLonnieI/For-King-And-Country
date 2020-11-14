@@ -1,0 +1,772 @@
+﻿add_namespace = forkingandcountry
+
+##Event: Electing a Monarch
+country_event = {
+	id = forkingandcountry.1
+	title = forkingandcountry.1.title
+	desc = forkingandcountry.1.desc
+	picture = GFX_report_event_generic_parliament
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_government = monarchist
+                has_country_flag = never_had_monarchy
+        NOT = { 
+		    OR = { 
+			tag = PRU
+			tag = ARG
+			tag = HAI
+			tag = URG
+			tag = CRO
+			tag = AUS
+			tag = CZE
+			tag = USA
+			tag = FIN
+			tag = UKR
+			tag = BLR
+			tag = CAN
+			tag = NZL
+			tag = AST
+			tag = SAF
+			tag = ALG
+			tag = ISR
+			} 
+		}
+	}
+	option = {
+		name = forkingandcountry.1.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = will_allow_every_noble_tt
+        set_country_flag = royal_election
+	}
+	option = {
+		name = forkingandcountry.1.b
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = will_open_regency_tab_tt
+        set_country_flag = regency_installed
+	}
+}
+##Event: What's left to restore
+country_event = {
+	id = forkingandcountry.2
+	title = forkingandcountry.2.title
+	desc = forkingandcountry.2.desc
+	picture = GFX_report_event_cze_little_entente
+	trigger = {
+	    tag = AUS
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.2.a
+		ai_chance = { factor = 1}
+		set_country_flag = austrian_restoration_campaign
+	}
+	option = {
+		name = forkingandcountry.2.b
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = sour_relations_tt
+        hidden_effect = {
+            set_cosmetic_tag = AUS_empire
+            CZE = { every_owned_state = { add_claim_by = AUS } }
+            HUN = { every_owned_state = { add_claim_by = AUS } }
+            every_state = { limit = { is_core_of = CRO is_core_of = BOS } add_claim_by = AUS }
+        }
+	}
+}
+##Event: Electing a Monarch
+country_event = {
+	id = forkingandcountry.3
+	title = forkingandcountry.3.title
+	desc = forkingandcountry.3.desc
+	picture = GFX_report_event_generic_parliament
+	trigger = {
+	    OR = {
+		    tag = CRO 
+			tag = SLO 
+			tag = CZE 
+			tag = SLV
+		}
+        has_government = monarchist 
+        monarchist > 0.4
+    }		
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.3.a
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Otto von Habsburg"
+			picture = "gfx/leaders/Monarchs/Portrait_EYE_Austria_Otto_I.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch empire_builder disdain_for_politicians_2
+			}
+		}
+        set_country_flag = otto_von_habsburg_enthroned
+	}
+	option = {
+		name = forkingandcountry.3.b
+		ai_chance = { factor = 1}
+		set_country_flag = electing_habsburgs
+        set_country_flag = habsburg_ambitions
+	}
+	option = {
+		name = forkingandcountry.3.c
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = will_allow_every_noble_tt
+        set_country_flag = regency_installed
+		set_country_flag = royal_election 
+	}
+}
+##Event: Electing a Monarch
+country_event = {
+	id = forkingandcountry.4
+	title = forkingandcountry.4.title
+	desc = forkingandcountry.4.desc
+	picture = GFX_report_event_generic_parliament
+	trigger = {
+	    OR = {
+		    tag = CHL 
+			tag = ECU 
+			tag = VEN 
+			tag = GYA
+			tag = SUR
+			tag = CAY
+			tag = DOM 
+			tag = CUB
+			tag = NIC
+			tag = COS
+			tag = PAN
+			tag = HON
+			tag = ELS
+			tag = GUA
+		}
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.4.a
+		ai_chance = { factor = 1}
+		set_country_flag = electing_habsburgs
+        set_country_flag = electing_bourbons
+	}
+	option = {
+		name = forkingandcountry.4.b
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = will_allow_every_noble_tt
+        set_country_flag = regency_installed
+	}
+	option = {
+		name = forkingandcountry.4.d
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = will_open_regency_tab_tt
+        set_country_flag = regency_decisions
+		set_country_flag = royal_election 
+	}
+}
+##Event: A Native Crown
+country_event = {
+	id = forkingandcountry.5
+	title = forkingandcountry.5.title
+	desc = forkingandcountry.5.desc
+	picture = GFX_report_event_german_reichstag_gathering
+	trigger = {
+	    tag = BOL
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.5.a
+		ai_chance = { factor = 1}
+		add_stability = -0.05
+		hidden_effect = {
+		country_event = { id = forkingandcountry.4 }
+		}
+	}
+	option = {
+		name = forkingandcountry.5.b
+		ai_chance = { factor = 1}
+		clr_country_flag = regency_decisions
+        clr_country_flag = electing_habsburgs
+        clr_country_flag = electing_bourbons
+        clr_country_flag = electing_grandees
+        clr_country_flag = electing_black_nobility
+        clr_country_flag = regency_installed
+        set_country_flag = monarchist_nation
+		BOL = {
+    		create_country_leader = {
+				name = "Bonifacio Piñedo"
+				picture = "gfx/leaders/Monarchs/Portrait_Bonifacio_Pinedo.tga"
+				expire = "1981.1.1"
+				ideology = absolute_monarchism
+				traits = {
+					nationalist_symbol
+				}
+			}
+		}
+	}
+}
+##Event: El Plan del Inca
+country_event = {
+	id = forkingandcountry.6
+	title = forkingandcountry.6.title
+	desc = forkingandcountry.6.desc
+	picture = el_plan_del_inca-43761
+	trigger = {
+	    tag = PRU
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.6.a
+		ai_chance = { factor = 1}
+		hidden_effect = {
+		country_event = { id = forkingandcountry.4 }
+		}
+	}
+	option = {
+		name = forkingandcountry.6.b
+		ai_chance = { factor = 1}
+		set_cosmetic_tag = PRU_INCA
+        clr_country_flag = regency_decisions
+        clr_country_flag = electing_habsburgs
+        clr_country_flag = electing_bourbons
+        clr_country_flag = electing_grandees
+        clr_country_flag = electing_black_nobility
+        clr_country_flag = regency_installed
+        set_country_flag = monarchist_nation
+		PRU = {
+    		create_country_leader = {
+				name = "Francisco Chukiwanka Ayulo"
+				picture = "gfx/leaders/Monarchs/Portrait_Pachacutec_II.tga"
+				expire = "1981.1.1"
+				ideology = absolute_monarchism
+				traits = {
+					nationalist_symbol
+				}
+			}
+		}
+	}
+}
+##Event: The Duke of Veragua
+country_event = {
+	id = forkingandcountry.7
+	title = forkingandcountry.7.title
+	desc = forkingandcountry.7.desc
+	picture = the_duke_of_veragua-43771
+	trigger = {
+	    tag = COL
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.7.a
+		ai_chance = { factor = 1}
+		hidden_effect = {
+		country_event = { id = forkingandcountry.4 }
+		}
+	}
+	option = {
+		name = forkingandcountry.7.b
+		ai_chance = { factor = 1}
+		clr_country_flag = regency_decisions
+        clr_country_flag = electing_habsburgs
+        clr_country_flag = electing_bourbons
+        clr_country_flag = electing_grandees
+        clr_country_flag = electing_black_nobility
+        clr_country_flag = regency_installed
+        set_country_flag = monarchist_nation
+		COL = {
+    		create_country_leader = {
+				name = "Don Ramón Colón de Carvajal"
+				picture = "gfx/leaders/Monarchs/Portrait_Ramon_Colon.tga"
+				expire = "1981.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					nationalist_symbol
+				}
+			}
+		}
+		
+	}
+}
+##Event: A Platine Crown
+country_event = {
+	id = forkingandcountry.8
+	title = forkingandcountry.8.title
+	desc = forkingandcountry.8.desc
+	picture = a_platine_crown-43774
+	trigger = {
+	    tag = ARG
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.8.a
+		ai_chance = { factor = 1}
+		set_cosmetic_tag = ARG_araucania
+        clr_country_flag = regency_decisions
+        clr_country_flag = electing_habsburgs
+        clr_country_flag = electing_bourbons
+        clr_country_flag = electing_grandees
+        clr_country_flag = electing_black_nobility
+        clr_country_flag = regency_installed
+        set_country_flag = monarchist_nation
+		ARG = {
+    		create_country_leader = {
+				name = "Jacques Antoine Bernard"
+				picture = "gfx/leaders/Monarchs/portrait_anthony_III.tga"
+				expire = "1981.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					unpopular_monarch
+				}
+			}
+		}
+	}
+	option = {
+		name = forkingandcountry.8.b
+		ai_chance = { factor = 1}
+		set_country_flag = only_dukes_of_parma
+        clr_country_flag = electing_habsburgs
+        clr_country_flag = electing_grandees
+        clr_country_flag = electing_black_nobility
+        clr_country_flag = regency_installed
+        set_country_flag = monarchist_nation
+		ARG = {
+    		create_country_leader = {
+				name = "Don José de Borbón-Parma"
+				picture = "gfx/leaders/Monarchs/Joseph_of_Bourbon_Parma.tga"
+				expire = "1981.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					constitutional_monarch
+				}
+			}
+		}
+	}
+	option = {
+		name = forkingandcountry.8.c
+		ai_chance = { factor = 1}
+		clr_country_flag = regency_decisions
+        clr_country_flag = electing_habsburgs
+        clr_country_flag = electing_bourbons
+        clr_country_flag = electing_grandees
+        clr_country_flag = electing_black_nobility
+        clr_country_flag = regency_installed
+        set_country_flag = monarchist_nation
+		hidden_effect = {
+		country_event = { id = forkingandcountry.4 }
+		}
+	}
+}
+##Event: A King for America
+country_event = {
+	id = forkingandcountry.9
+	title = forkingandcountry.9.title
+	desc = forkingandcountry.9.desc
+	picture = GFX_report_event_vienna_award_hungary
+	fire_only_once = yes
+	trigger = {
+		tag = USA
+        monarchist > 0.3
+        has_government = monarchist 
+        NOT = { has_country_flag = american_monarch_set }
+	}
+	option = {
+		name = forkingandcountry.9.a
+		ai_chance = { factor = 1}
+		hidden_effect = { country_event = { id = forkingandcountry.10 }
+        }
+	}
+	option = {
+		name = forkingandcountry.9.b
+		ai_chance = { factor = 1}
+		set_country_flag = electing_hohenzollerns
+		set_country_flag = american_monarch_set
+	}
+	option = {
+		name = forkingandcountry.9.c
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = will_choose_an_old_rival_british_monarch_tt
+        hidden_effect = { country_event = { id = forkingandcountry.11 } }
+	}
+	option = {
+		name = forkingandcountry.9.d
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = everybody_laughs_tt
+        hidden_effect = { country_event = { id = forkingandcountry.12 } }
+	}
+}
+##Event: The Royal Family
+country_event = {
+	id = forkingandcountry.10
+	title = forkingandcountry.10.title
+	desc = forkingandcountry.10.desc
+	picture = GFX_report_event_eng_royal_family
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.10.a
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = britain_has_kings_party_tt 
+        if = { limit = { ENG = { has_completed_focus = ENG_the_kings_party } }
+		ENG = { puppet = USA }
+        create_country_leader = {
+				name = "Queen Wallis I"
+				desc = "POLITICS_WALLIS_I_DESC"
+				picture = GFX_portrait_eng_wallis_simpson
+				expire = "1965.1.1"
+				ideology = constitutional_monarchism
+				female = yes
+				traits = {
+					unpopular_monarch socialite_connections wallis_fancy_title
+				}
+			}
+		}
+        if = { limit = { ENG = { NOT = { has_completed_focus = ENG_the_kings_party } has_idea = ENG_king_edward } }
+        create_country_leader = {
+				name = "King Edward VIII"
+				desc = "POLITICS_EDWARD_EDWARD_DESC"
+				picture = "gfx/leaders/Monarchs/Portrait_Britain_Edward_VIII.tga"
+				expire = "1965.1.1"
+				ideology = absolute_monarchism
+				traits = {
+					inexperienced_imperialist
+				}
+			}
+		}
+        else = { 
+		    create_country_leader = {
+				name = "Edward of Windsor"
+				desc = "POLITICS_EDWARD_EDWARD_DESC"
+				picture = "gfx/leaders/Monarchs/Portrait_America_Edward.tga"
+				expire = "1965.1.1"
+				ideology = absolute_monarchism
+				traits = {
+					inexperienced_imperialist
+				}
+			}
+        }
+	}
+	option = {
+		name = forkingandcountry.10.b
+		ai_chance = { factor = 1}
+		#create Prince Henry Portrait_King_Henry
+		    create_country_leader = {
+				name = "Henry of Windsor"
+				desc = "POLITICS_EDWARD_EDWARD_DESC"
+				picture = "gfx/leaders/Monarchs/Portrait_King_Henry.tga"
+				expire = "1965.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					constitutional_monarch
+				}
+			}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.10.c
+		ai_chance = { factor = 1}
+		    create_country_leader = {
+				name = "George of Windsor"
+				desc = "POLITICS_EDWARD_EDWARD_DESC"
+				picture = "gfx/leaders/Monarchs/Portrait_Canada_King_GeorgeVI.tga"
+				expire = "1965.1.1"
+				ideology = constitutional_monarchism
+				traits = {
+					constitutional_monarch
+				}
+			}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.10.d
+		ai_chance = { factor = 1}
+        set_country_flag = monarchist_nation
+		set_country_flag = royal_election
+	}
+}
+##Event: Alternate lineages to the throne
+country_event = {
+	id = forkingandcountry.11
+	title = forkingandcountry.11.title
+	desc = forkingandcountry.11.desc
+	picture = alternate_lineages_to_the_throne-41791
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.11.a
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Ernest Augustus of Hanover"
+			picture = "gfx/leaders/Monarchs/Portrait_Hanover_Ernest_Augustus.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+			    elected_monarch 
+			}
+		}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.11.b
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "King Rupprecht of Bavaria"
+			picture = "gfx/leaders/Monarchs/Portrait_Bavaria_Rupprecht_von_Bayern.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch
+			}
+		}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.11.c
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "George Francis of Jersey"
+			picture = "gfx/leaders/Monarchs/Portrait_Lord_Jersey.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch
+			}
+		}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.11.d
+		ai_chance = { factor = 1}
+        set_country_flag = monarchist_nation
+		create_country_leader = {
+			name = "Henry of Beaufort"
+			picture = "gfx/leaders/Monarchs/Portrait_England_Bernard_Warburton.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch
+			}
+		}
+	}
+}
+##Event: Norton I, Emperor of the United States and Defender of Mexico
+country_event = {
+	id = forkingandcountry.12
+	title = forkingandcountry.12.title
+	desc = forkingandcountry.12.desc
+	picture = norton_i_emperor_of_the_united_states_and_defender_of_mexico-44418
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.12.a
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Emperor Norton II"
+			picture = "gfx/leaders/Monarchs/Portrait_CAL_Norton_II_emporer.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch
+			}
+		}
+        set_country_flag = monarchist_nation
+        set_cosmetic_tag = USA_empire
+	}
+}
+##Event: The return of Frederick Charles?
+country_event = {
+	id = forkingandcountry.13
+	title = forkingandcountry.13.title
+	desc = forkingandcountry.13.desc
+	picture = the_return_of_frederick_charles-44436
+	trigger = {
+	    tag = FIN
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.13.a
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Fredrik Kaarle I"
+			picture = "gfx/leaders/Monarchs/Portrait_Finland_Fredrik_Kaarle_I.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch
+			}
+		}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.13.b
+		ai_chance = { factor = 1}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.13.c
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Carl Gustaf Emil Mannerheim"
+			picture = "gfx/leaders/Monarchs/Portrait_Carl_Gustaf_Emil_Mannerheim.tga"
+			expire = "1981.1.1"
+			ideology = constitutional_monarchism
+			traits = {
+				constitutional_monarch
+			}
+		}
+        set_country_flag = monarchist_nation
+	}
+}
+##Event: Who can take the Crown?
+country_event = {
+	id = forkingandcountry.14
+	title = forkingandcountry.14.title
+	desc = forkingandcountry.14.desc
+	picture = GFX_report_event_generic_sign_treaty3
+	trigger = {
+	    tag = UKR
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	trigger = {
+		NOT = { SOV = { has_government = monarchist } }
+	}
+	option = {
+		name = forkingandcountry.14.a
+		ai_chance = { factor = 1}
+		create_country_leader = {
+			name = "Hetman Pavlo Skoropadskyi"
+			picture = "gfx/leaders/Monarchs/r56_portrait_UKR_Pavlo_Skoropadskyi.tga"
+			expire = "1981.1.1"
+			ideology = totalitarian_monarchism
+			traits = {
+				dictator generallissimo disdain_for_politicians_1
+			}
+		}
+        set_country_flag = monarchist_nation
+	}
+	option = {
+		name = forkingandcountry.14.b
+		ai_chance = { factor = 1}
+		set_country_flag = electing_romanovs
+        set_country_flag = seek_russian_restoration
+	}
+	option = {
+		name = forkingandcountry.14.c
+		ai_chance = { factor = 1}
+		set_country_flag = regency_installed
+		hidden_effect = {
+		country_event = { id = forkingandcountry.4 }
+		}
+	}
+}
+##Event: A Kingdom in Belarus
+country_event = {
+	id = forkingandcountry.15
+	title = forkingandcountry.15.title
+	desc = forkingandcountry.15.desc
+	picture = GFX_report_event_generic_parliament
+	trigger = {
+	    tag = BLR
+        has_government = monarchist 
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.15.a
+		ai_chance = { factor = 1}
+		set_country_flag = electing_romanovs
+        set_country_flag = seek_russian_restoration
+	}
+	option = {
+		name = forkingandcountry.15.b
+		ai_chance = { factor = 1}
+		set_country_flag = regency_installed
+		hidden_effect = {
+		country_event = { id = forkingandcountry.4 }
+		}
+	}
+}
+##Event: The Persian Monarchy
+country_event = {
+	id = forkingandcountry.16
+	title = forkingandcountry.16.title
+	desc = forkingandcountry.16.desc
+	picture = the_persian_monarchy-45243
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = forkingandcountry.16.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = forkingandcountry.16.b
+		ai_chance = { factor = 0}
+		PER = { set_cosmetic_tag = PER_qajar }
+        create_country_leader = {
+			name = "Shah Hassam Mirza Qajar"
+			picture = "gfx/leaders/Monarchs/Portrait_Persia_Hassan_Mirza_Qajar.tga"
+			expire = "1981.1.1"
+			ideology = totalitarian_monarchism
+			traits = {
+				unpopular_monarch
+			}
+		}
+	}
+}
+
+##Event: The Shogun
+country_event = {
+	id = forkingandcountry.21
+	title = forkingandcountry.21.title
+	desc = forkingandcountry.21.desc
+	picture = GFX_report_event_japanese_reply
+	trigger = {
+	    tag = JAP
+        NOT = { has_government = monarchist }
+		NOT = { has_government = democratic }
+		NOT = { has_government = communism }
+        monarchist > 0.4
+    }
+	fire_only_once = yes
+	
+	option = {
+		name = forkingandcountry.21.c
+		ai_chance = { factor = 1 }
+		set_politics = { ruling_party = fascism elections_allowed = no }
+        set_political_party = { ideology = fascism popularity = 100 }
+	}
+	option = {
+		name = forkingandcountry.21.a
+		ai_chance = { factor = 0 }
+		set_politics = { ruling_party = fascism elections_allowed = no }
+        set_cosmetic_tag = JAP_shogunate
+        set_political_party = { ideology = fascism popularity = 100 }
+	}
+	option = {
+		name = forkingandcountry.21.b
+		ai_chance = { factor = 0 }
+		set_politics = { ruling_party = neutrality elections_allowed = no }
+        set_cosmetic_tag = JAP_shogunate
+        set_political_party = { ideology = neutrality popularity = 100 }
+		set_party_name = { 
+		    ideology = neutrality
+		    long_name = JAP_neutrality_party_tokugawa_long 
+		    name = JAP_neutrality_party_tokugawa 
+		}
+	}
+}

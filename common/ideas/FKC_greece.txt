@@ -1,0 +1,82 @@
+ideas = {
+
+	country = { 		
+
+		GRE_eon = {
+				
+			allowed = {
+				original_tag = GRE
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_manpower_bonus
+				
+			removal_cost = -1
+				
+			modifier = {
+				war_support_factor = 0.1
+				training_time_factor = -0.1
+				neutrality_drift = 0.03
+				monarchist_drift = 0.03
+				fascism_drift = 0.01
+			}
+		}
+
+		GRE_george_ii = {
+				
+			allowed = {
+				original_tag = GRE
+			}
+
+			allowed_civil_war = { has_government = monarchist }	
+
+			picture = gre_george_ii
+				
+			removal_cost = -1
+				
+			modifier = {
+				stability_factor = -0.05
+				monarchist_drift = 0.05	
+			}
+		}
+
+		GRE_metaxism_6 = {
+				
+			allowed = {
+				original_tag = GRE
+				has_country_leader = { 
+					name = "Ioannis Metaxas"
+					ruling_only = yes
+				}
+				NOT = {
+					OR = { 
+						has_government = communism
+						has_government = democratic 
+					}
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = gre_metaxism_empowered
+				
+			removal_cost = -1
+				
+			modifier = {
+				war_support_factor = 0.15				
+				stability_factor = 0.15	
+				consumer_goods_factor = -0.05
+				army_core_defence_factor = 0.1
+				conscription_factor = 0.15	
+				drift_defence_factor = 1.00	
+				neutrality_drift = 0.05	
+                monarchist_drift = 0.05				
+			}
+		}	 													
+	}
+}

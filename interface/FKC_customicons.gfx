@@ -1,0 +1,21 @@
+spriteTypes = { 
+	##Icon For: Brazilian Expeditionary Force
+	SpriteType = { 
+		name = "brazilian_expeditionary_force-52041"
+		texturefile = "gfx/interface/ideas/brazilian_expeditionary_force-52041.dds"
+	}
+
+	##Icon For: Brazilian Expeditionary Force
+	SpriteType = { 
+		name = "brazilian_expeditionary_force-52042"
+		texturefile = "gfx/interface/ideas/brazilian_expeditionary_force-52042.dds"
+	}
+
+	##Icon For: Brazilian Expeditionary Force
+	SpriteType = { 
+		name = "brazilian_expeditionary_force-52043"
+		texturefile = "gfx/interface/ideas/brazilian_expeditionary_force-52043.dds"
+	}
+
+ 
+ }

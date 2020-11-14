@@ -1,0 +1,57 @@
+spriteTypes = { 
+	##Icon For: El Plan del Inca
+	SpriteType = { 
+		name = "el_plan_del_inca-43761"
+		texturefile = "gfx/interface/event_gfx/el_plan_del_inca-43761.dds"
+	}
+
+	##Icon For: The Duke of Veragua
+	SpriteType = { 
+		name = "the_duke_of_veragua-43771"
+		texturefile = "gfx/interface/event_gfx/the_duke_of_veragua-43771.dds"
+	}
+
+	##Icon For: A Platine Crown
+	SpriteType = { 
+		name = "a_platine_crown-43774"
+		texturefile = "gfx/interface/event_gfx/a_platine_crown-43774.dds"
+	}
+
+	##Icon For: Alternate lineages to the throne
+	SpriteType = { 
+		name = "alternate_lineages_to_the_throne-41791"
+		texturefile = "gfx/interface/event_gfx/alternate_lineages_to_the_throne-41791.dds"
+	}
+
+	##Icon For: Norton I, Emperor of the United States and Defender of Mexico
+	SpriteType = { 
+		name = "norton_i_emperor_of_the_united_states_and_defender_of_mexico-44418"
+		texturefile = "gfx/interface/event_gfx/norton_i_emperor_of_the_united_states_and_defender_of_mexico-44418.dds"
+	}
+
+	##Icon For: The return of Frederick Charles?
+	SpriteType = { 
+		name = "the_return_of_frederick_charles-44436"
+		texturefile = "gfx/interface/event_gfx/the_return_of_frederick_charles-44436.dds"
+	}
+
+	##Icon For: The Persian Monarchy
+	SpriteType = { 
+		name = "the_persian_monarchy-45243"
+		texturefile = "gfx/interface/event_gfx/the_persian_monarchy-45243.dds"
+	}
+
+	##Icon For: Support for the Caliphate
+	SpriteType = { 
+		name = "support_for_the_caliphate-45244"
+		texturefile = "gfx/interface/event_gfx/support_for_the_caliphate-45244.dds"
+	}
+
+	##Icon For: Foreign support for the Caliph
+	SpriteType = { 
+		name = "foreign_support_for_the_caliph-45699"
+		texturefile = "gfx/interface/event_gfx/foreign_support_for_the_caliph-45699.dds"
+	}
+
+ 
+ }

@@ -1,0 +1,15 @@
+spriteTypes = { 
+	##Icon For: The Royal Government
+	SpriteType = { 
+		name = "the_royal_government-56566"
+		texturefile = "gfx/interface/event_gfx/the_royal_government-56566.dds"
+	}
+
+	##Icon For: The spirit of 1862
+	SpriteType = { 
+		name = "the_spirit_of_1862-56567"
+		texturefile = "gfx/interface/event_gfx/the_spirit_of_1862-56567.dds"
+	}
+
+ 
+ }

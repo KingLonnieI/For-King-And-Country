@@ -1,0 +1,24 @@
+ideas = {
+
+	country = {
+	
+	    TUR_absolutism = { 
+
+			allowed = {
+				original_tag = TUR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_constitutional_guarantees
+				
+			removal_cost = -1
+				
+			modifier = {
+				monarchist_drift = 0.03
+			}
+		}
+	}
+}	

@@ -1,0 +1,117 @@
+ideas = {
+
+	country = {
+
+		ROM_king_carol_ii_hedonist = {
+
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = ROM
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+
+			modifier = {
+				
+			}
+		}
+
+		ROM_king_carol_ii_consumer_penalty = { 
+
+			picture = ROM_carol_ii_greed
+
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = ROM
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.2
+			}
+		}
+
+		ROM_king_carol_ii_factory_penalty = { 
+
+			picture = ROM_carol_ii_greed
+
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = ROM
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+
+			modifier = {
+				industrial_capacity_factory = -0.25
+			}
+		}
+
+		ROM_king_carol_ii_factory_paid_with_pp = { 
+
+			picture = ROM_carol_ii_deal
+
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = ROM
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+
+		ROM_king_carol_ii_paid_with_pp = { 
+
+			picture = ROM_carol_ii_deal
+
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = ROM
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		ROM_king_carol_ii_handled = {
+
+			picture = generic_king_handled
+
+			removal_cost = -1
+			
+			allowed = {
+				original_tag = ROM
+			}
+
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			
+			modifier = {
+				monarchist_drift = 0.02
+			}
+		}
+	}
+}

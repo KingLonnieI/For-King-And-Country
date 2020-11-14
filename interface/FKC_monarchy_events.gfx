@@ -1,0 +1,257 @@
+spriteTypes = {			
+
+###############################################################################################################################################################################
+#### MONARCHY ##################################################################################################################################################################
+###############################################################################################################################################################################
+
+spriteType = {
+		name = "GFX_BEL_Latin_Empire"
+		texturefile = "gfx/event_pictures/BEL_Latin_Empire.dds"
+	}
+
+	spriteType = {
+		name = "GFX_event_coronation_of_king"
+		texturefile = "gfx/event_pictures/event_coronation_of_king.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_POL_event_royal_castle"
+		texturefile = "gfx/event_pictures/POL_event_royal_castle.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_POL_report_event_monarchy_military"
+		texturefile = "gfx/event_pictures/POL_report_event_monarchy_military.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_POL_report_event_what_is_monarchy"
+		texturefile = "gfx/event_pictures/POL_report_event_what_is_monarchy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_qie_imperial_guard"
+		texturefile = "gfx/event_pictures/qie_imperial_guard.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_america_decision"
+		texturefile = "gfx/event_pictures/report_event_america_decision.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_augustus_father"
+		texturefile = "gfx/event_pictures/report_event_augustus_father.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_augustus_mausoleum"
+		texturefile = "gfx/event_pictures/report_event_augustus_mausoleum.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_augustus_plan"
+		texturefile = "gfx/event_pictures/report_event_augustus_plan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_augustus_preacher"
+		texturefile = "gfx/event_pictures/report_event_augustus_preacher.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_augustus_rituals"
+		texturefile = "gfx/event_pictures/report_event_augustus_rituals.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_king_army"
+		texturefile = "gfx/event_pictures/report_event_CAN_king_army.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_royal_tour"
+		texturefile = "gfx/event_pictures/report_event_CAN_royal_tour.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_communist_leader"
+		texturefile = "gfx/event_pictures/report_event_communist_leader.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_DEH_royal"
+		texturefile = "gfx/event_pictures/report_event_DEH_royal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_eng_royal_family"
+		texturefile = "gfx/event_pictures/report_event_eng_royal_family.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_france_decision"
+		texturefile = "gfx/event_pictures/report_event_france_decision.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_generic_parliament"
+		texturefile = "gfx/event_pictures/report_event_generic_parliament.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_germany_decision"
+		texturefile = "gfx/event_pictures/report_event_germany_decision.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_GRE_royal"
+		texturefile = "gfx/event_pictures/report_event_GRE_royal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_greece_decision"
+		texturefile = "gfx/event_pictures/report_event_greece_decision.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_iberia_decision"
+		texturefile = "gfx/event_pictures/report_event_iberia_decision.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_imperial_conference"
+		texturefile = "gfx/event_pictures/report_event_imperial_conference.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_italy_decision"
+		texturefile = "gfx/event_pictures/report_event_italy_decision.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_jap_imperial_family"
+		texturefile = "gfx/event_pictures/report_event_jap_imperial_family.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_report_event_king_in_finland"
+		texturefile = "gfx/event_pictures/report_event_king_in_finland.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_king_michael"
+		texturefile = "gfx/event_pictures/report_event_king_michael.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_king_overrules_sweden"
+		texturefile = "gfx/event_pictures/report_event_king_overrules_sweden.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_king_speech"
+		texturefile = "gfx/event_pictures/report_event_king_speech.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_metaxas"
+		texturefile = "gfx/event_pictures/report_event_metaxas.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_monarchy_revival"
+		texturefile = "gfx/event_pictures/report_event_monarchy_revival.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_norway_ultimatum"
+		texturefile = "gfx/event_pictures/report_event_norway_ultimatum.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_norway_union"
+		texturefile = "gfx/event_pictures/report_event_norway_union.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_POR_royal_forces"
+		texturefile = "gfx/event_pictures/report_event_POR_royal_forces.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_PRF_princes"
+		texturefile = "gfx/event_pictures/report_event_PRF_princes.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_public_rituals"
+		texturefile = "gfx/event_pictures/report_event_public_rituals.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_rama_vii"
+		texturefile = "gfx/event_pictures/report_event_rama_vii.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_romania_decision"
+		texturefile = "gfx/event_pictures/report_event_romania_decision.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_romania_parliament"
+		texturefile = "gfx/event_pictures/report_event_romania_parliament.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_romania_poland_visit"
+		texturefile = "gfx/event_pictures/report_event_romania_poland_visit.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_royal_parade"
+		texturefile = "gfx/event_pictures/report_event_royal_parade.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_royal_visit"
+		texturefile = "gfx/event_pictures/report_event_royal_visit.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_SWE_Intro_Royal_family"
+		texturefile = "gfx/event_pictures/report_event_SWE_Intro_Royal_family.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_ugandan_kingdoms_parade"
+		texturefile = "gfx/event_pictures/report_event_ugandan_kingdoms_parade.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_VIE_royalfamily"
+		texturefile = "gfx/event_pictures/report_event_VIE_royalfamily.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_walls_constantinople"
+		texturefile = "gfx/event_pictures/report_event_walls_constantinople.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_report_event_wolfgang"
+		texturefile = "gfx/event_pictures/report_event_wolfgang.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_yugoslavian_king_peter"
+		texturefile = "gfx/event_pictures/report_event_yugoslavian_king_peter.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_royal_marriage_egyptian"
+		texturefile = "gfx/event_pictures/royal_marriage_egyptian.dds"
+	}			
+}

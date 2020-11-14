@@ -1,0 +1,105 @@
+spriteTypes = { 
+	##Icon For: Monarchist Literature
+	SpriteType = { 
+		name = "monarchist_literature-35284"
+		texturefile = "gfx/interface/event_gfx/monarchist_literature-35284.dds"
+	}
+
+	##Icon For: Where is our Crown?
+	SpriteType = { 
+		name = "where_is_our_crown-38155"
+		texturefile = "gfx/interface/event_gfx/where_is_our_crown-38155.dds"
+	}
+
+	##Icon For: Pressure for Royal action
+	SpriteType = { 
+		name = "pressure_for_royal_action-39155"
+		texturefile = "gfx/interface/event_gfx/pressure_for_royal_action-39155.dds"
+	}
+
+	##Icon For: The Crown supports the Royalists
+	SpriteType = { 
+		name = "the_crown_supports_the_royalists-39156"
+		texturefile = "gfx/interface/event_gfx/the_crown_supports_the_royalists-39156.dds"
+	}
+
+	##Icon For: Your Majesty's Government
+	SpriteType = { 
+		name = "your_majestys_government-39157"
+		texturefile = "gfx/interface/event_gfx/your_majestys_government-39157.dds"
+	}
+
+	##Icon For: Parliament dissolved
+	SpriteType = { 
+		name = "parliament_dissolved-39158"
+		texturefile = "gfx/interface/event_gfx/parliament_dissolved-39158.dds"
+	}
+
+	##Icon For: The Monarchy Restored!
+	SpriteType = { 
+		name = "the_monarchy_restored-41791"
+		texturefile = "gfx/interface/event_gfx/the_monarchy_restored-41791.dds"
+	}
+
+	##Icon For: The Chinese Monarchy
+	SpriteType = { 
+		name = "the_chinese_monarchy-41797"
+		texturefile = "gfx/interface/event_gfx/the_chinese_monarchy-41797.dds"
+	}
+
+	##Icon For: Fate of the Dragon Throne
+	SpriteType = { 
+		name = "fate_of_the_dragon_throne-41798"
+		texturefile = "gfx/interface/event_gfx/fate_of_the_dragon_throne-41798.dds"
+	}
+
+	##Icon For: China invites Puyi to retake the Dragon Throne
+	SpriteType = { 
+		name = "china_invites_puyi_to_retake_the_dragon_throne-41799"
+		texturefile = "gfx/interface/event_gfx/china_invites_puyi_to_retake_the_dragon_throne-41799.dds"
+	}
+
+	##Icon For: Puyi refuses!
+	SpriteType = { 
+		name = "puyi_refuses-41808"
+		texturefile = "gfx/interface/event_gfx/puyi_refuses-41808.dds"
+	}
+
+	##Icon For: Puyi Returns!
+	SpriteType = { 
+		name = "puyi_returns-41809"
+		texturefile = "gfx/interface/event_gfx/puyi_returns-41809.dds"
+	}
+
+	##Icon For: Manchukuo surrendered it's lands to China
+	SpriteType = { 
+		name = "manchukuo_surrendered_its_lands_to_china-41797"
+		texturefile = "gfx/interface/event_gfx/manchukuo_surrendered_its_lands_to_china-41797.dds"
+	}
+
+	##Icon For: Puyi fled to China!
+	SpriteType = { 
+		name = "puyi_fled_to_china-41799"
+		texturefile = "gfx/interface/event_gfx/puyi_fled_to_china-41799.dds"
+	}
+
+	##Icon For: The Mexican Empire
+	SpriteType = { 
+		name = "the_mexican_empire-42165"
+		texturefile = "gfx/interface/event_gfx/the_mexican_empire-42165.dds"
+	}
+
+	##Icon For: The House of Moctezuma-Tultengo
+	SpriteType = { 
+		name = "the_house_of_moctezumatultengo-42176"
+		texturefile = "gfx/interface/event_gfx/the_house_of_moctezumatultengo-42176.dds"
+	}
+
+	##Icon For: The Kingdom of Poland
+	SpriteType = { 
+		name = "the_kingdom_of_poland-42200"
+		texturefile = "gfx/interface/event_gfx/the_kingdom_of_poland-42200.dds"
+	}
+
+ 
+ }

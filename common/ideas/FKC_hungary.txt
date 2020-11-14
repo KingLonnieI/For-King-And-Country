@@ -1,0 +1,136 @@
+ideas = {
+
+	country = {
+
+		HUN_hungarian_monarchy = {
+
+			allowed_civil_war = {
+				OR = { has_government = neutrality has_government = monarchist }
+			}
+			
+			modifier = {
+				monarchist_drift = 0.02
+			}
+		}
+
+		HUN_hungarian_monarchy_2 = {
+
+			picture = HUN_hungarian_monarchy
+
+			allowed_civil_war = {
+				OR = { has_government = neutrality has_government = monarchist }
+			}
+			
+			modifier = {
+				monarchist_drift = 0.02
+				stability_factor = 0.1
+			}
+		}
+
+		HUN_hungarian_monarchy_democratic = {			
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			available = {
+				OR = {
+					has_government = democratic
+					AND = {
+						has_government = neutrality
+						NOT = { has_completed_focus = HUN_responsible_government }
+					}
+					AND = {
+						has_government = monarchist
+						NOT = { has_completed_focus = HUN_responsible_government }
+					}
+				}
+			}
+			
+			modifier = {
+				democratic_drift = 0.02
+				stability_factor = 0.1
+			}
+		}
+
+		HUN_hungarian_monarchy_fascism = {			
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			available = {
+				OR = {
+					has_government = fascism
+					AND = {
+						has_government = neutrality
+						NOT = { has_completed_focus = HUN_renounce_the_treaty_of_trianon }
+					}
+					AND = {
+						has_government = monarchist
+						NOT = { has_completed_focus = HUN_renounce_the_treaty_of_trianon }
+					}
+				}
+			}
+			
+			modifier = {
+				fascism_drift = 0.034
+				stability_factor = 0.1
+			}
+		}
+
+		HUN_habsburg_restored = {
+
+			picture = HUN_hungarian_monarchy_habsburg
+
+			allowed_civil_war = {
+				OR = { has_government = neutrality has_government = monarchist }
+			}
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+			}
+			
+			modifier = {
+				monarchist_drift = 0.02
+				stability_factor = 0.1
+				political_power_factor = 0.2
+				generate_wargoal_tension = -0.4
+			}
+		}
+
+		HUN_charles_v = {
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			modifier = {
+				democratic_drift = 0.02
+				monarchist_drift = 0.01
+			}
+		}
+	}
+
+	political_advisor = {
+
+		HUN_gusztav_gratz = {
+
+			picture = generic_political_advisor_europe_1
+
+			allowed = {
+				original_tag = HUN
+				has_dlc = "Death or Dishonor"
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { staunch_monarchist }
+		}
+    }
+}

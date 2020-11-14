@@ -1,0 +1,82 @@
+ideas = {
+	political_advisor = {
+		# POLITICAL	
+	    generic_monarchism_revolutionary = {
+			
+			allowed = {
+			    NOT = { has_available_idea_with_traits = { idea = staunch_monarchist limit = 1 } }
+			}
+			
+            picture = generic_political_advisor_europe_2
+
+			
+			traits = { staunch_monarchist }
+	
+			on_add = {
+				if = { 
+				    limit = { 
+					    has_country_flag = monarchy_in_place
+						NOT = { tag = JAP }
+						NOT = { tag = MAN }
+						NOT = { tag = ROM }
+						NOT = { tag = HUN }
+						NOT = { tag = ENG }
+						NOT = { tag = HOL }
+					}
+					country_event = { id = monarchyoverhaul.15 }
+				}
+                if = {
+                    limit = { 
+					    has_country_flag = had_monarchy
+						NOT = { tag = FRA }
+						NOT = { tag = SPR }
+						NOT = { tag = POR }
+						NOT = { tag = GER }
+					}
+                    country_event = { id = monarchyoverhaul.11 }
+                }
+				if = {
+				    limit = {
+					    NOT = { has_dlc = "Death or Dishonor" }
+					}	
+					HUN = { country_event = { id = monarchyoverhaul.15 } }
+					ROM = { country_event = { id = monarchyoverhaul.15 } }
+				}	
+                if = {
+				    limit = {
+					    NOT = { has_dlc = "Waking the Tiger" }
+					}	
+					MAN = { country_event = { id = monarchyoverhaul.15 } }
+				}
+                if = {
+				    limit = {
+					    NOT = { has_dlc = "Man the Guns" }
+					}	
+					HOL = { country_event = { id = monarchyoverhaul.15 } }
+				}	
+                if = {
+				    limit = {
+					    NOT = { has_dlc = "La Resistance" }
+					}	
+					POR = { country_event = { id = monarchyoverhaul.11 } }
+					SPR = { country_event = { id = monarchyoverhaul.11 } }
+				}				
+                else = {
+                    set_country_flag = monarchist_intelectual
+                }					
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = monarchist
+				}
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+	}
+}		
+	

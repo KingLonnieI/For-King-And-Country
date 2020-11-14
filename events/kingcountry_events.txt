@@ -1,0 +1,212 @@
+add_namespace = kingcountry
+
+##Event: A Union that couldn't last
+country_event = {
+	id = kingcountry.1
+	title = kingcountry.1.title
+	desc = kingcountry.1.desc
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = kingcountry.1.a
+		ai_chance = { factor = 1}
+		POR = {
+release = BRA
+release = ANG
+release = MZB
+}
+	}
+	option = {
+		name = kingcountry.1.b
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = will_wage_war_on_brazil_again_tt
+hidden_effect = { 
+POR = {
+release = BRA
+release = ANG
+release = MZB
+declare_war_on = { target = BRA type = annex_everything }
+declare_war_on = { target = ANG type = annex_everything }
+declare_war_on = { target = MZB type = annex_everything }
+set_equipment_fraction = 0.4
+}
+BRA = { load_oob = BRA_1939 }
+ANG = { load_oob = ANG_1936 }
+MZB = { load_oob = MZB_1936 }
+}
+	}
+}
+##Event: A Força Expedicionária Brasileira
+country_event = {
+	id = kingcountry.2
+	title = kingcountry.2.title
+	desc = kingcountry.2.desc
+	picture = a_fora_expedicionria_brasileira-51149
+	fire_only_once = yes
+	trigger = {
+		tag = POR
+has_cosmetic_tag = KPB_kingdom_portugal_and_brazil
+NOT = { has_country_flag = succession_crisis_ongoing }
+has_stability > 0.4
+has_government = monarchist
+OR = { has_country_flag = full_brazilian_dominance has_country_flag = partial_brazilian_dominance has_country_flag = little_brazilian_dominance }
+	}
+	mean_time_to_happen = {
+		days = 60
+	}
+	option = {
+		name = kingcountry.2.a
+		ai_chance = { factor = 1}
+		if = { limit = { has_country_flag = little_brazilian_dominance } add_ideas = feb_1 } if = { limit = { has_country_flag = partial_brazilian_dominance } add_ideas = feb_2 } if = { limit = { has_country_flag = full_brazilian_dominance } add_ideas = feb_3 }
+	}
+}
+##Event: The German Nation
+country_event = {
+	id = kingcountry.3
+	title = kingcountry.3.title
+	desc = kingcountry.3.desc
+	picture = the_german_nation-51157
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = kingcountry.3.a
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = germany_divided_tt
+		WUR = {
+			add_state_core = 50
+		}
+		SAX = {
+			add_state_core = 65
+			add_state_core = 60
+		}
+		MEK = {
+			add_state_core = 61
+		}
+		SHL = {
+			add_state_core = 58
+		}
+		
+		BAY = {
+			add_state_core = 52
+			add_state_core = 53
+			add_state_core = 54
+		}
+		HAN = {
+			add_state_core = 59
+			add_state_core = 56
+			add_state_core = 57
+		}
+        set_country_flag = germany_issue
+	}
+	option = {
+		name = kingcountry.3.b
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = germany_stay_united_tt
+        set_country_flag = germany_issue
+	}
+}
+##Event: The Crown of Spain
+country_event = {
+	id = kingcountry.4
+	title = kingcountry.4.title
+	desc = kingcountry.4.desc
+	picture = the_crown_of_spain-51183
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = kingcountry.4.a
+		ai_chance = { factor = 0}
+		custom_effect_tooltip = spain_be_divided_tt
+		ADU = {
+			add_state_core = 173
+			add_state_core = 789
+			add_state_core = 169
+		}
+		CAT = {
+			add_state_core = 166
+			add_state_core = 794
+			add_state_core = 167
+			add_state_core = 177
+		}
+		GLC = {
+		    add_state_core = 790
+		}	
+	}
+	option = {
+		name = kingcountry.4.b
+		ai_chance = { factor = 1}
+		custom_effect_tooltip = spain_remains_united_tt
+	}
+}
+##Event: African Civilizations
+country_event = {
+	id = kingcountry.5
+	title = kingcountry.5.title
+	desc = kingcountry.5.desc
+	picture = african_civilizations-51340
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = kingcountry.5.a
+		ai_chance = { factor = 1}
+		set_country_flag = self_determination
+	}
+	option = {
+		name = kingcountry.5.b
+		ai_chance = { factor = 0}
+		set_country_flag = no_self_determination
+	}
+}
+##Event: Are you playing other mods?
+country_event = {
+	id = kingcountry.6
+	title = kingcountry.6.title
+	desc = kingcountry.6.desc
+	picture = are_you_playing_other_mods-46741
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = kingcountry.6.a
+		ai_chance = { factor = 0}
+		set_global_flag = other_mods
+	}
+	option = {
+		name = kingcountry.6.b
+		ai_chance = { factor = 1}
+	}
+}
+##Event: The Hungarian Monarchy
+country_event = {
+	id = kingcountry.7
+	title = kingcountry.7.title
+	desc = kingcountry.7.desc
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = kingcountry.7.a
+		ai_chance = { factor = 1}
+		set_country_flag = hungarian_king_decision
+	}
+	option = {
+		name = kingcountry.7.b
+		ai_chance = { factor = 0}
+		set_country_flag = regency_installed
+unlock_national_focus = HUN_elect_a_democratic_king
+	}
+	option = {
+		name = kingcountry.7.c
+		ai_chance = { factor = 0}
+		#create joseph august
+unlock_national_focus = HUN_invite_the_habsburg_prince
+set_country_flag = hungary_joseph_augustus
+	}
+	option = {
+		name = kingcountry.7.d
+		ai_chance = { factor = 0}
+		#create maximilian hohenberg
+unlock_national_focus = HUN_invite_the_habsburg_prince
+set_country_flag = hungary_joseph_augustus
+	}
+}
