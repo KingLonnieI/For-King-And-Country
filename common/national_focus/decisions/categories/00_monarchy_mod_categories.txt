@@ -1,0 +1,103 @@
+regency_mod_category = {
+	icon = decision_category_regency_decisions
+}
+
+european_noble_mod_category = {
+	icon = decision_category_elect_monarch
+}
+
+monarchy_restoration_mod_category = {
+    icon = decision_category_new_monarchy
+}
+
+monarchist_diplomacy_mod_category = {
+    icon = decision_category_new_monarchy
+}
+
+mod_settings_mod_category = {
+	icon = decision_category_generic_political_actions
+
+	visible = {
+        NOT = { has_country_flag = mod_setting_done }
+	}
+}
+
+monarchism_on_the_rise_mod_category = {
+	icon = decision_category_new_monarchy
+}
+
+princely_india_mod_category = {
+	icon = decision_category_india
+}
+
+electing_bourbons_mod_category = {
+	icon = decision_category_bourbons
+}
+
+electing_habsburgs_mod_category = {
+	icon = decision_category_habsburgs
+}
+
+electing_romanovs_mod_category = {
+	icon = decision_category_romanovs
+}
+
+electing_hohenzollerns_mod_category = {
+	icon = decision_category_germans
+}
+
+electing_polish_mod_category = {
+	icon = decision_category_polish_king
+}
+
+warlord_new_dynasty_mod_category = {
+        icon = generic_formable_nations
+		
+		picture = GFX_decision_cat_chinese_empire
+}
+
+russian_empire_mod_category = {
+    icon = generic_formable_nations
+
+    picture = GFX_decision_cat_russian_empire
+}
+
+portugal_succession_crisis_mod_category = {
+    icon = decision_category_succession_crisis
+
+    picture = GFX_decision_cat_generic_portugal
+}
+
+cisleithania_mod_category = {
+    icon = generic_formable_nations
+
+    picture = GFX_decision_cat_generic_cisleithania
+}
+
+cisplatina_empire_mod_category = {
+        icon = decision_category_succession_crisis
+
+        picture = GFX_decision_cat_generic_brazilian_empire
+}
+
+austria_form_holy_roman_empire_mod_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_hre
+
+	allowed = {
+		has_dlc = "Waking the Tiger"
+	}
+}
+
+indochina_mod_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_rattanakosin_kingdom
+
+	allowed = {
+		has_dlc = "Waking the Tiger"
+	}
+}

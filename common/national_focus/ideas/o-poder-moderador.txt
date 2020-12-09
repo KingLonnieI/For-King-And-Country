@@ -1,0 +1,361 @@
+ideas = {
+	country = {
+
+		BRA_unity_ethos = {
+			picture = FRA_scw_intervention_nationalists_focus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+
+		BRA_strong_tradition = {
+			ledger = army
+			picture = fra_national_resistance_council
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				mobilization_speed = 0.2
+			    surrender_limit = 0.4
+			    war_support_weekly = 0.005
+			}
+		}
+
+		BRA_royalist_movements = {
+			picture = generic_monarchist_uprising
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.1
+			}
+		}
+
+		BRA_enlightened_monarchism = {
+			picture = brittish_stoicism
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				stability_weekly = 0.005
+			    research_speed_factor = 0.15
+			}
+		}
+
+		BRA_divine_right = {
+			picture = spa_carlism
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				political_power_gain = 0.5
+			    war_support_weekly = 0.01
+			}
+		}
+
+		BRA_acclamation = {
+			picture = por_monarchist_uprising
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				political_power_gain = 0.5
+			    stability_weekly = 0.01
+			}
+		}
+
+		BRA_royal_guard = {
+			ledger = army
+			picture = BRA_royal_guard-45064
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				conscription = 0.02
+			    army_attack_factor = 0.1
+			    army_defence_factor = 0.1
+			}
+		}
+
+		BRA_o_poder_moderador = {
+			ledger = army
+			picture = bra_monarchist_uprising
+			allowed = {
+				original_tag = BRA has_government = monarchist
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			available = {
+				original_tag = BRA  has_government = monarchist
+			}
+			visible = {
+				original_tag = BRA  has_government = monarchist
+			}
+			cancel = {
+				NOT = { has_government = monarchist }
+			}
+			modifier = {
+				stability_weekly = 0.01
+			    monarchist_drift = 0.001
+			    drift_defence_factor = 0.75
+			    political_power_gain = 0.5
+			    political_advisor_cost_factor = 0.25
+			}
+		}
+
+		BRA_royal_hierarchy = {
+			picture = BRA_royal_hierarchy-44982
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				army_morale_factor = 0.15
+			    army_org_factor = 0.15
+			    training_time_army_factor = -0.2
+			}
+		}
+
+		BRA_noble_duties = {
+			ledger = army
+			picture = st_abandon_the_westminster_system
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				conscription = 0.01
+			    monarchist_drift = 0.005
+			    army_morale_factor = 0.1
+			    research_speed_factor = 0.15
+			    production_speed_buildings_factor = 0.3
+			}
+		}
+
+		BRA_princeps = {
+			picture = hun_hungarian_monarchy
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				stability_factor = 0.10
+			    war_support_factor = 0.10
+			}
+		}
+
+		BRA_royalist_nation = {
+			ledger = army
+			picture = BRA_royalist_nation-45007
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				stability_weekly = 0.005
+			    war_support_weekly = 0.005
+			    monarchist_drift = 0.01
+			    conscription = 0.02
+			    surrender_limit = 0.3
+			}
+		}
+
+		BRA_last_bastion = {
+			picture = generic_victors_of_ww1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				OR = { has_government = democratic has_government = neutrality }
+			}
+			modifier = {
+				war_support_weekly = 0.01
+			    stability_weekly = 0.01
+			    surrender_limit = 0.5
+			}
+		}
+
+		BRA_guardians_of_civilization = {
+			picture = generic_war_preparation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				OR = { has_government = democratic has_government = neutrality }
+			}
+			modifier = {
+				conscription = 3
+			    army_defence_factor = 0.15
+			    army_attack_factor = 0.15
+			    army_speed_factor = 0.1
+			}
+		}
+
+		BRA_cultural_imperialism = {
+			picture = r_support_focus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				OR = { has_government = democratic has_government = neutrality }
+			}
+			modifier = {
+				subjects_autonomy_gain = -0.4
+			    master_ideology_drift = 0.2
+			    opinion_gain_monthly_factor = 0.25
+			}
+		}
+
+		BRA_monarchist_literature_banned = {
+			picture = generic_king_handled
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				political_power_gain = -0.5
+			    monarchist_drift = -0.005
+			    stability_weekly = -0.01
+			}
+		}
+
+		BRA_monarchist_movements = {
+			picture = BRA_monarchist_movements-45039
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.1
+			    political_power_gain = -0.5
+			}
+		}
+
+		BRA_monarchism_endorsed = {
+			picture = BRA_monarchism_endorsed-45041
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.15
+			}
+		}
+
+		BRA_royalist_radicals = {
+			picture = spa_crusade_against_democracy
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.05
+			    political_power_gain = -1
+			    stability_weekly = -0.1
+			}
+		}
+
+		BRA_monarchist_politicians = {
+			picture = ng_the_kings_party
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.1
+			    political_power_gain = -0.5
+			}
+		}
+
+		BRA_royal_debates = {
+			picture = generic_monarchist_uprising
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			cancel = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.1
+			}
+		}
+
+		BRA_crown_support = {
+			picture = BRA_crown_support-45068
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			cancel = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.1
+			    political_power_gain = -1
+			    stability_weekly = -0.02
+			}
+		}
+
+		BRA_suppressed_royalists = {
+			picture = can_patriation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			modifier = {
+				monarchist_drift = 0.005
+			    stability_weekly = -0.02
+			}
+		}
+	}
+}

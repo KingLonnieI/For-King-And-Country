@@ -1,0 +1,221 @@
+ideas = {
+
+	country = {
+
+		ENG_support_for_the_king_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				stability_weekly = 0.01
+				monarchist_drift = 0.1
+			}
+
+			picture = ast_abandon_the_westminster_system
+			
+			removal_cost = -1
+		}
+
+		ENG_the_kings_party_idea = {
+
+			name = ENG_the_kings_party
+
+			allowed = {
+				always = no
+			}
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				monarchist_drift = 0.1
+				political_power_factor = 0.15
+				generate_wargoal_tension = -0.5
+				lend_lease_tension = -0.4
+				send_volunteers_tension = -0.4
+				guarantee_tension = -0.4
+				drift_defence_factor = 0.3
+			}
+
+			picture = eng_the_kings_party
+			
+			removal_cost = -1
+		}
+	}
+	
+	political_advisor = {
+
+		ENG_winston_churchill = {
+			
+			#picture = generic_democratic_reformer_western_european_2d
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+				has_completed_focus = ENG_the_kings_party
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			allowed = {
+				original_tag = ENG
+				has_dlc = "Man the Guns"
+			}
+			
+			traits = { royalist_bulldog }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_oswald_mosley = {
+			
+			#picture = generic_political_advisor_europe_3
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+				has_completed_focus = ENG_the_kings_party
+			}
+			
+			allowed = {
+				original_tag = ENG
+				has_dlc = "Man the Guns"
+			}
+			
+			traits = { economic_organizer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_david_lloyd_george = {
+			
+			#picture = generic_political_advisor_europe_4
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+				has_completed_focus = ENG_the_kings_party
+			}
+			
+			allowed = {
+				original_tag = ENG
+				has_dlc = "Man the Guns"
+			}
+			
+			traits = { old_figurehead }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		ENG_corgis_2 = { # Dookie
+			
+			picture = generic_political_advisor_europe_5
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+				has_completed_focus = ENG_the_kings_party
+				has_country_leader = {
+				    name = "Elizabeth II"
+				    ruling_only = yes
+				}
+			}
+
+			visible = {
+				has_country_leader = {
+				    name = "Elizabeth II"
+				    ruling_only = yes
+				}
+			}
+			
+			allowed = {
+				original_tag = ENG
+				has_dlc = "Man the Guns"
+			}
+			
+			traits = { heels_nipper }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		ENG_corgis_3 = { # Jane
+			
+			picture = generic_political_advisor_europe_4
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+				has_completed_focus = ENG_the_kings_party
+				has_country_leader = {
+				    name = "Elizabeth II"
+				    ruling_only = yes
+				}
+			}
+
+			visible = {
+				has_country_leader = {
+				    name = "Elizabeth II"
+				    ruling_only = yes
+				}
+			}
+			
+			allowed = {
+				original_tag = ENG
+				has_dlc = "Man the Guns"
+			}
+			
+			traits = { snuggler }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		ENG_corgis_1 = { # Crackers
+			
+			picture = generic_political_advisor_europe_3
+
+			available = {
+				OR = { has_government = neutrality has_government = monarchist }
+				has_completed_focus = ENG_the_kings_party
+				has_country_leader = {
+				    name = "Elizabeth II"
+				    ruling_only = yes
+				}
+			}
+
+			visible = {
+				has_country_leader = {
+				    name = "Elizabeth II"
+				    ruling_only = yes
+				}
+			}
+			
+			allowed = {
+				original_tag = ENG
+				has_dlc = "Man the Guns"
+			}
+			
+			traits = { face_licker }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}
+

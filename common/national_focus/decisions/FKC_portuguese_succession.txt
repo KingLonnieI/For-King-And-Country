@@ -1,0 +1,292 @@
+portugal_succession_crisis_mod_category = {
+
+    decide_capital = {
+
+		icon = eng_install_government
+		
+		allowed = {
+			tag = POR
+		}
+		
+		available = {
+			has_country_flag = reforming_brazil_kingdom
+			NOT = { has_country_flag = imperial_capital_set }
+		}
+        fire_only_once = yes
+        cost = 150
+		visible = {
+			OR = {
+			    has_government = monarchist
+				has_government = neutrality
+			}
+            has_country_flag = brazilian_issues_flag			
+			has_country_flag = reforming_brazil_kingdom
+			NOT = { has_country_flag = imperial_capital_set }
+			NOT = { has_country_flag = portuguese_planning }
+		}
+
+		complete_effect = { 
+		    custom_effect_tooltip = decide_capital_portuguese_empire_tt 
+			set_country_flag = portuguese_planning
+		}
+		days_remove = 10
+		remove_effect = {
+    		country_event = { id = larportugalpromotemonarchistcause.4 }
+			clr_country_flag = portuguese_planning
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	planing_brazil = {
+
+		icon = eng_install_government
+		
+		allowed = {
+			tag = POR
+		}
+		
+		available = {
+			has_country_flag = reforming_brazil_kingdom
+			NOT = { has_country_flag = brazilian_issues_flag }
+		}
+        fire_only_once = yes 
+		cost = 50
+		visible = {
+			OR = {
+			    has_government = monarchist
+				has_government = neutrality
+			}
+            has_country_flag = activate_imperial_assembly				
+			has_country_flag = reforming_brazil_kingdom
+			NOT = { has_country_flag = brazilian_issues_flag }
+			NOT = { has_country_flag = portuguese_planning }
+			500 = { is_capital = no }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = include_brazil_portuguese_empire_tt
+			set_country_flag = general_courts_installed
+			set_country_flag = portuguese_planning
+		}
+		days_remove = 15
+		remove_effect = {
+			country_event = { id = larportugalpromotemonarchistcause.10 }
+			clr_country_flag = portuguese_planning
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	imperial_courts = {
+
+		icon = eng_install_government
+		
+		allowed = {
+			tag = POR
+		}
+		
+		available = {
+			has_country_flag = reforming_brazil_kingdom
+			has_country_flag = general_courts_installed
+		}
+        fire_only_once = yes 
+		cost = 200
+		visible = {
+			OR = {
+			    has_government = monarchist
+				has_government = neutrality
+			}
+            has_country_flag = activate_imperial_assembly				
+			has_country_flag = reforming_brazil_kingdom
+			has_country_flag = general_courts_installed
+			has_country_flag = brazilian_issues_flag
+			NOT = { has_country_flag = activate_cortes_gerais }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = cortes_portuguese_empire_tt
+			set_country_flag = imperial_general_courts_installed
+			set_country_flag = portuguese_planning
+		}
+		days_remove = 25
+		remove_effect = {
+			country_event = { id = larportugalpromotemonarchistcause.3 }
+			clr_country_flag = portuguese_planning
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	find_quick_solution = {
+
+		icon = eng_install_government
+		
+		allowed = {
+		    tag = POR
+		}
+		
+		available = {
+		    tag = POR
+			has_country_flag = activate_succession_crisis
+			NOT = { has_country_flag = quick_solution_set }
+		}
+        fire_only_once = yes 
+		cost = 10
+		visible = {
+		    has_idea = portuguese_succession_crisis
+		    has_country_flag = activate_succession_crisis
+		    tag = POR
+			OR = {
+			    has_government = monarchist
+				has_government = neutrality
+			}
+            NOT = { has_country_flag = quick_solution_set }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = quick_solution_tt
+			set_country_flag = quick_solution_set
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	regency_of_amelia = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    tag = POR
+			has_government = monarchist
+			has_country_flag = quick_solution_set
+		}
+		
+		fire_only_once = yes
+		
+		visible = {
+            has_country_flag = quick_solution_set		
+		    tag = POR
+            OR = { has_government = monarchist has_government = neutrality }		
+			NOT = { has_country_flag = amelia_regency }
+		}	
+		
+		complete_effect = {
+		    custom_effect_tooltip = amelia_regency_tt
+			hidden_effect = {
+			country_event = { id = monarchymod.11 }
+            }			
+		}	
+	    ai_will_do = {
+			factor = 1
+		}
+    }
+	
+	compromise_with_maria = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    tag = POR
+			has_government = monarchist
+			has_country_flag = quick_solution_set
+		}
+		
+		fire_only_once = yes
+		cost = 90
+		
+		visible = {
+            has_country_flag = quick_solution_set		
+		    tag = POR
+            OR = { has_government = monarchist has_government = neutrality }		
+			NOT = { has_country_flag = maria_compromise }
+		}	
+		
+		complete_effect = {
+		    custom_effect_tooltip = maria_compromise_tt
+			set_country_flag = maria_compromise
+			clr_country_flag = quick_solution_set
+			add_stability = -0.2
+			add_war_support = -0.4
+			hidden_effect = {
+			country_event = { id = monarchymod.8 }
+            }			
+		}	
+	    ai_will_do = {
+			factor = 1
+		}
+    }
+
+	address_imperial_assembly = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    tag = POR
+			has_government = monarchist
+			has_country_flag = quick_solution_set
+			has_country_flag = start_lusitanian_empire
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		visible = {
+            has_country_flag = quick_solution_set
+            has_country_flag = start_lusitanian_empire			
+		    tag = POR
+            OR = { has_government = monarchist has_government = neutrality }		
+			NOT = { has_country_flag = brazilian_concessions }
+		}	
+		
+		complete_effect = {
+		    custom_effect_tooltip = imperial_assembly_demands_tt
+			set_country_flag = brazilian_concessions
+			clr_country_flag = quick_solution_set
+			add_stability = -0.1
+			hidden_effect = {
+			country_event = { id = monarchymod.11 }
+            }			
+		}	
+	    ai_will_do = {
+			factor = 1
+		}
+    }	
+
+	portuguese_succession_crisis = {
+
+		icon = decision_eng_abdication_crisis
+
+		available = {
+			NOT = { has_idea = portuguese_succession_crisis }
+		}
+
+		days_mission_timeout = 90
+
+		activation = {
+			has_idea = portuguese_succession_crisis
+		}
+
+		visible = {
+			has_country_flag = succession_crisis_ongoing
+		}		
+
+		fixed_random_seed = no
+
+		fire_only_once = no
+
+		is_good = no
+
+		timeout_effect = {
+			country_event = { id = kingcountry.1 }
+		}
+	}
+}

@@ -1,0 +1,349 @@
+mod_settings_mod_category = {
+	
+	convert_to_monarchism = {
+		
+		available = {
+		    has_global_flag = other_mods
+			has_government = neutrality 
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		visible = {
+		    has_global_flag = other_mods
+			has_government = neutrality
+			monarchist > 0.6
+			NOT = { has_government = monarchist } 
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = convert_to_monarchism_tt
+			hidden_effect = {
+			set_country_leader_ideology = constitutional_monarchism
+			add_popularity = {
+	            ideology = monarchist
+	            popularity = 0.6
+            }
+            }			
+		}
+	}
+	
+	unlock_royal_elections = {
+		
+		available = {
+			NOT = { has_global_flag = royal_elections_allowed } 
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_global_flag = royal_elections_allowed } 
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_royal_elections_tt
+			hidden_effect = {
+            country_event = { id = monarchyoverhaul.4 }
+            }			
+		}
+	}
+	
+	load_irredentism = {
+		
+		available = {
+			NOT = { has_global_flag = no_irredentism } 
+			NOT = { has_global_flag = yes_irredentism } 
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_global_flag = no_irredentism } 
+			NOT = { has_global_flag = yes_irredentism }
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = unlock_irredentism_tt
+			hidden_effect = {
+            set_global_flag = yes_irredentism
+            }			
+		}
+	}
+	
+	lock_irredentism = {
+		
+		available = {
+			NOT = { has_global_flag = no_irredentism } 
+			NOT = { has_global_flag = yes_irredentism }
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_global_flag = no_irredentism } 
+			NOT = { has_global_flag = yes_irredentism }
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = lock_irredentism_tt
+			hidden_effect = {
+            set_global_flag = no_irredentism
+            }			
+		}
+	}
+	
+	load_trees = {
+		
+		available = {
+			NOT = { has_global_flag = better_portraits_loaded } 
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_global_flag = better_portraits_loaded } 
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_better_portraits_tt
+			hidden_effect = {
+            country_event = { id = monarchyoverhaul.2 }
+            }			
+		}
+	}	
+
+	load_focus_HOL = {
+		
+		available = {
+			country_exists = HOL
+			has_dlc = "Man the Guns"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+		    has_dlc = "Man the Guns"
+			HOL = { NOT = { has_focus_tree = netherlands_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_HOL_tree_tt
+			hidden_effect = {
+            HOL = { load_focus_tree = netherlands_focus_modded }
+            }			
+		}
+	}
+	
+	load_focus_GER = {
+		
+		available = {
+			country_exists = GER
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			GER = { NOT = { has_focus_tree = german_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_GER_tree_tt
+			hidden_effect = {
+            GER = { load_focus_tree = german_focus_modded }	
+			}
+		}
+	}
+	
+	load_focus_ENG = {
+		
+		available = {
+			country_exists = ENG
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			ENG = { NOT = { has_focus_tree = british_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_ENG_tree_tt
+			hidden_effect = {
+            ENG = { load_focus_tree = british_focus_modded }
+            }			
+		}
+	}
+	
+	load_focus_FRA = {
+		
+		available = {
+			country_exists = FRA
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			FRA = { NOT = { has_focus_tree = french_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_FRA_tree_tt
+			hidden_effect = {
+            FRA = { load_focus_tree = french_focus_modded }
+            }			
+		}
+	}
+	
+	load_focus_JAP = {
+		
+		available = {
+			country_exists = JAP
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			JAP = { NOT = { has_focus_tree = japan_wtt_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_JAP_tree_tt
+			hidden_effect = {
+            JAP = { load_focus_tree = japan_wtt_focus_modded }
+            }			
+		}
+	}
+	
+	load_focus_SPR = {
+		
+		available = {
+			country_exists = SPR
+			has_dlc = "La Resistance"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			SPR = { NOT = { has_focus_tree = spanish_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_SPR_tree_tt
+			hidden_effect = {
+            SPR = { load_focus_tree = spanish_focus_modded }
+            }			
+		}
+	}
+	
+	load_focus_POR = {
+		
+		available = {
+			country_exists = POR
+			has_dlc = "La Resistance"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			POR = { NOT = { has_focus_tree = portuguese_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_POR_tree_tt
+			hidden_effect = {
+            POR = { load_focus_tree = portuguese_focus_modded }	
+			}
+		}
+	}
+	
+	load_focus_ROM = {
+		
+		available = {
+			country_exists = ROM
+			has_dlc = "Death or Dishonor"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			ROM = { NOT = { has_focus_tree = romanian_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_ROM_tree_tt
+			hidden_effect = {
+            ROM = { load_focus_tree = romanian_focus_modded }
+            }			
+		}
+	}
+	
+	load_focus_HUN = {
+		
+		available = {
+			country_exists = HUN
+			has_dlc = "Death or Dishonor"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			HUN = { NOT = { has_focus_tree = hungarian_focus_modded } }
+			has_country_flag = manually_load_trees
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_HUN_tree_tt
+			hidden_effect = {
+            HUN = { load_focus_tree = hungarian_focus_modded }
+            }			
+		}
+	}
+	
+    end_mod_settings = {
+		
+		available = {
+			NOT = { has_country_flag = mod_setting_done }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_country_flag = mod_setting_done }
+			has_country_flag = manually_load_trees
+		}
+
+		complete_effect = {
+		    custom_effect_tooltip = load_trees_be_careful_tt
+			set_country_flag = mod_setting_done 
+            clr_country_flag = manually_load_trees
+            clr_global_flag = load_all_trees			
+		}
+	}	
+}	

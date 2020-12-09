@@ -1,0 +1,448 @@
+monarchy_restoration_mod_category = {
+
+	restore_the_monarchy = {
+
+		icon = eng_install_government
+		
+		available = {
+			monarchist > 0.2
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = monarchist }
+			has_country_flag = had_monarchy
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			monarchist > 0.2
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = monarchist }
+			has_country_flag = had_monarchy
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = will_start_restoration_tt
+			hidden_effect = {
+			    country_event = { days = 4 id = monarchyoverhaul.11 }
+			}	
+		}
+	}
+
+	install_monarchy_HOL = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = HOL
+			NOT = { original_tag = HOL }
+			has_dlc = "Man the Guns"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+		    has_dlc = "Man the Guns"
+			HOL = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = HOL_oranje_boven }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = dutch_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = dutch_monarchy_restored
+            HOL = {
+			    load_focus_tree = { tree = netherlands_focus_modded keep_completed = no }
+	            unlock_national_focus = HOL_oranje_boven
+			}	
+		}
+	}
+	
+	install_monarchy_ROM = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = ROM
+			NOT = { original_tag = ROM }
+			has_dlc = "Death or Dishonor"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			ROM = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = ROM_his_majestys_loyal_government }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = romanian_monarchy_restored }
+			has_dlc = "Death or Dishonor"
+		}
+
+		complete_effect = {
+			set_global_flag = romanian_monarchy_restored
+			if = {
+			    limit = {
+				    ROM = { NOT = { has_completed_focus = ROM_institute_royal_dictatorship } }
+				}
+                ROM = {
+			        load_focus_tree = { tree = romanian_focus_modded keep_completed = no }
+					complete_national_focus = ROM_institute_royal_dictatorship 
+	                unlock_national_focus = ROM_his_majestys_loyal_government
+				    complete_national_focus = ROM_his_majestys_loyal_government
+			    }
+            }
+            else = {			
+                ROM = {
+			        load_focus_tree = { tree = romanian_focus_modded keep_completed = no }
+	                unlock_national_focus = ROM_his_majestys_loyal_government
+				    complete_national_focus = ROM_his_majestys_loyal_government
+			    }
+            }				
+		}
+	}	
+	
+	install_monarchy_ENG = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = ENG
+			NOT = { original_tag = ENG }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			ENG = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = ENG_the_kings_party }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = british_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = british_monarchy_restored
+            ENG = {
+			    load_focus_tree = { tree = british_focus_modded keep_completed = no }
+	            unlock_national_focus = ENG_the_kings_party
+			}	
+		}
+	}	
+	
+	install_monarchy_GER = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = GER
+			NOT = { original_tag = GER }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			GER = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = GER_revive_the_kaiserreich }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = german_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = german_monarchy_restored
+            GER = {
+			    load_focus_tree = { tree = german_focus_modded keep_completed = no }
+	            unlock_national_focus = GER_revive_the_kaiserreich
+			}	
+		}
+	}
+	
+	install_monarchy_JAP = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = JAP
+			NOT = { original_tag = JAP }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			JAP = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = JAP_showa_restoration }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = japanese_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = japanese_monarchy_restored
+            JAP = {
+			    load_focus_tree = { tree = japan_wtt_focus_modded keep_completed = no }
+	            unlock_national_focus = JAP_showa_restoration
+				complete_national_focus = JAP_showa_restoration
+			}	
+		}
+	}
+
+	install_monarchy_SPR = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = SPR
+			NOT = { original_tag = SPR }
+			has_dlc = "La Resistance"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+		    has_dlc = "La Resistance"
+			SPR = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = SPA_supremacy_of_the_communion }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = spanish_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = spanish_monarchy_restored
+            SPR = {
+			    load_focus_tree = { tree = spanish_focus_modded keep_completed = no }
+	            unlock_national_focus = SPA_supremacy_of_the_communion
+				complete_national_focus = SPA_supremacy_of_the_communion
+			}	
+		}
+	}
+
+	install_monarchy_POR = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = POR
+			NOT = { original_tag = POR }
+			has_dlc = "La Resistance"
+		}
+
+		fire_only_once = yes
+
+		visible = {
+		    has_dlc = "La Resistance"
+			POR = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = POR_the_return_of_duarte }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = portuguese_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = portuguese_monarchy_restored
+            POR = {
+			    load_focus_tree = { tree = portuguese_focus_modded keep_completed = no }
+	            unlock_national_focus = POR_the_return_of_duarte
+				add_stability = 0.4
+				complete_national_focus = POR_the_return_of_duarte
+			}	
+		}
+	}
+
+	install_monarchy_FRA = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = FRA
+			NOT = { original_tag = FRA }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			FRA = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = FRA_the_council_of_rambouillet }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = french_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = french_monarchy_restored
+            FRA = {
+			    load_focus_tree = { tree = french_focus_modded keep_completed = no }
+	            unlock_national_focus = FRA_the_council_of_rambouillet
+				complete_national_focus = FRA_the_council_of_rambouillet
+			}	
+		}
+	}
+
+	install_orleans_monarchy_FRA = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = FRA
+			NOT = { original_tag = FRA }				
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			FRA = {
+				is_subject_of = ROOT
+				has_completed_focus = FRA_the_council_of_rambouillet 
+				NOT = { has_completed_focus = FRA_orleanist_restoration }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = french_monarchy_restored }
+			NOT = {
+			    OR = {
+				    tag = ITA
+					AND = {
+					    tag = SPR
+						has_government = monarchist
+						NOT = { has_country_flag = SPB_xavier_king }
+					    has_cosmetic_tag = SPB_kingdom
+                    }						
+					AND = { 
+					    original_tag = SPR 
+						has_government = monarchist
+						NOT = { has_country_flag = SPB_xavier_king }
+					    has_cosmetic_tag = SPB_kingdom
+					}	
+					tag = POR
+					AND = {
+					    tag = SOV
+						has_government = monarchist
+						has_cosmetic_tag = RUS
+					}	
+					AND = {
+					    original_tag = SOV 
+						has_government = monarchist
+						has_cosmetic_tag = RUS
+					}
+                    tag = AUS
+                    AND = {
+                        tag = HUN
+                        has_cosmetic_tag = HUN_EMPIRE
+                    }
+                }
+            }
+		}
+
+		complete_effect = {
+			set_global_flag = french_monarchy_restored
+            FRA = {
+			    load_focus_tree = { tree = french_focus_modded keep_completed = no }
+	            unlock_national_focus = FRA_orleanist_restoration
+				complete_national_focus = FRA_orleanist_restoration
+			}	
+		}
+	}
+
+	install_bourbon_monarchy_FRA = {
+
+		icon = eng_install_government
+		
+		available = {
+			country_exists = FRA
+			NOT = { original_tag = FRA }				
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			FRA = {
+				is_subject_of = ROOT
+				has_completed_focus = FRA_the_council_of_rambouillet 
+				NOT = { has_completed_focus = FRA_the_legitimate_heir }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = french_monarchy_restored }
+			OR = {
+			    tag = ITA
+				AND = {
+				    tag = SPR
+					has_government = monarchist
+					NOT = { has_country_flag = SPB_xavier_king }
+				    has_cosmetic_tag = SPB_kingdom
+                }						
+				AND = { 
+			        original_tag = SPR 
+					has_government = monarchist
+					NOT = { has_country_flag = SPB_xavier_king }
+				    has_cosmetic_tag = SPB_kingdom
+				}	
+				tag = POR
+				AND = {
+				    tag = SOV
+					has_government = monarchist
+					has_cosmetic_tag = RUS
+				}	
+				AND = {
+				    original_tag = SOV 
+					has_government = monarchist
+					has_cosmetic_tag = RUS
+				}
+                tag = AUS
+                AND = {
+                    tag = HUN
+                    has_cosmetic_tag = HUN_EMPIRE
+                }
+            }
+		}
+
+		complete_effect = {
+			set_global_flag = french_monarchy_restored
+            FRA = {
+			    load_focus_tree = { tree = french_focus_modded keep_completed = no }
+	            unlock_national_focus = FRA_the_legitimate_heir
+				complete_national_focus = FRA_the_legitimate_heir
+			}	
+		}
+	}	
+
+	install_monarchy_HUN = {
+
+		icon = eng_install_government
+		
+		available = {
+		    has_dlc = "Death or Dishonor"
+			country_exists = HUN
+			NOT = { original_tag = HUN }
+			HUN = { has_government = monarchist }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+		    has_dlc = "Death or Dishonor"
+			HUN = {
+				is_subject_of = ROOT
+				NOT = { has_completed_focus = HUN_balanced_budget }
+			}
+			has_country_flag = monarchist_foreign_policy
+			NOT = { has_global_flag = hungarian_monarchy_restored }
+		}
+
+		complete_effect = {
+			set_global_flag = hungarian_monarchy_restored
+            HUN = { 
+			    load_focus_tree = { tree = hungarian_focus_modded keep_completed = no }
+	            unlock_national_focus = HUN_balanced_budget
+			}	
+		}
+	}
+	
+}	

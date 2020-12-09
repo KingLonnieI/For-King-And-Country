@@ -1,0 +1,37 @@
+ideas = {
+	country = {
+
+		POR_monarchists_on_the_rise = { #BRA
+			picture = bra_monarchist_uprising
+			allowed = {
+				original_tag = POR
+			}
+
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {
+				monarchist_drift = 0.05
+			}
+		}
+
+		POR_monarchists_on_the_rise2 = { #POR
+		 	picture = generic_monarchist_uprising
+			allowed = {
+				original_tag = POR
+			}
+
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {
+				monarchist_drift = 0.05
+				stability_weekly = -0.005
+			}
+		}
+	}
+}

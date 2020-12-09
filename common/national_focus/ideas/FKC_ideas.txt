@@ -1,0 +1,80 @@
+ideas = {
+	country = {
+
+		portuguese_succession_crisis = {
+			picture = generic_king_handled
+			allowed = {
+				always = no
+			}
+			available = {
+				has_country_flag = succession_crisis_ongoing 
+                                has_government = monarchist
+			}
+			cancel = {
+				OR = { NOT = { has_country_flag = succession_crisis_ongoing } NOT = { has_government = monarchist } }
+			}
+			modifier = {
+				monarchist_drift = -0.1
+disabled_ideas = 1
+trade_opinion_factor = -0.25
+			}
+		}
+
+		feb_1 = {
+			picture = brazilian_expeditionary_force-52041
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			available = {
+				BRA = { exists = no }
+			}
+			cancel = {
+				BRA = { exists = yes }
+			}
+			modifier = {
+				conscription = 0.01
+			}
+		}
+
+		feb_2 = {
+			picture = brazilian_expeditionary_force-52042
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			available = {
+				BRA = { exists = no }
+			}
+			cancel = {
+				BRA = { exists = yes }
+			}
+			modifier = {
+				conscription = 0.02
+			}
+		}
+
+		feb_3 = {
+			picture = brazilian_expeditionary_force-52043
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = monarchist
+			}
+			available = {
+				BRA = { exists = no }
+			}
+			cancel = {
+				BRA = { exists = yes }
+			}
+			modifier = {
+				conscription = 0.03
+			}
+		}
+	}
+}

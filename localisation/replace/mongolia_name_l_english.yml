@@ -1,0 +1,17 @@
+﻿l_english:
+ #Replace Folder for Communist Country Name
+ MON_fascism:1 "Mongolia"
+ MON_fascism_DEF:1 "Mongolia"
+ MON_democratic:1 "Mongolia"
+ MON_democratic_DEF:1 "Mongolia"
+ MON_neutrality:1 "Mongolia"
+ MON_neutrality_DEF:1 "Mongolia"
+ MON_communism:1 "Mongolian People's Republic"
+ MON_communism_DEF:1 "the Mongolian People's Republic"
+ MON_fascism_ADJ:1 "Mongolian"
+ MON_democratic_ADJ:1 "Mongolian"
+ MON_neutrality_ADJ:1 "Mongolian"
+ MON_communism_ADJ:1 "Mongolian"
+ MON:0 "Mongolia"
+ MON_DEF:0 "Mongolia"
+ MON_ADJ:0 "Mongolian"

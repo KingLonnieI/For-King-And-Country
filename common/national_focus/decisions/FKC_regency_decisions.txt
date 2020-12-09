@@ -1,0 +1,392 @@
+regency_mod_category = { 
+
+    president_takes_over = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    has_country_flag = never_had_monarchy
+			has_government = neutrality
+			monarchist > 0.5
+			neutrality > 0.3
+		}
+		
+		fire_only_once = yes
+		
+		visible = {
+            monarchist > 0.4
+			neutrality > 0.3
+            has_country_flag = never_had_monarchy			
+		    has_government = neutrality
+            has_idea_with_trait = staunch_monarchist			
+			NOT = { has_country_flag = president_king }
+			NOT = { has_country_flag = elected_king }
+		}	
+		
+		complete_effect = {
+		    clr_country_flag = regency_installed
+			set_country_flag = monarchist_nation
+			set_country_flag = president_king
+			set_country_leader_ideology = absolute_monarchism
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+		}	
+	    ai_will_do = {
+			factor = 0
+			modifier = {
+			    tag = HAI
+				factor = 1
+			}	
+		}
+    }
+	
+	eternal_regency = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    has_country_flag = never_had_monarchy
+            has_idea_with_trait = staunch_monarchist			
+		    has_government = monarchist
+            monarchist > 0.4 			
+			NOT = { has_country_flag = president_regency }
+			NOT = { has_country_flag = elected_king }
+		}
+		
+		fire_only_once = yes
+		
+		visible = { 
+		    has_country_flag = never_had_monarchy
+            has_idea_with_trait = staunch_monarchist			
+		    has_government = monarchist
+            monarchist > 0.4 			
+			NOT = { has_country_flag = president_regency }
+			NOT = { has_country_flag = elected_king }
+		}	
+		
+		complete_effect = {
+		    clr_country_flag = regency_installed
+			set_country_flag = monarchist_nation
+			set_country_flag = president_regency
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_country_leader_ideology = absolute_monarchism
+			set_politics = { ruling_party = monarchist elections_allowed = no }
+		}	
+	    ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	elect_european_noble = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    has_government = monarchist
+			monarchist > 0.4
+		}
+		
+		fire_only_once = yes
+		
+		visible = { 
+		    has_country_flag = never_had_monarchy
+		    has_government = monarchist 
+			NOT = { has_country_flag = regency_installed }
+			NOT = { has_country_flag = elected_king }
+		}	
+		
+		complete_effect = {
+		    if = { 
+			    limit = { 
+				    OR = {
+					    tag = GUA
+						tag = CUB
+						tag = DOM
+						tag = HON
+						tag = NIC
+						tag = COS
+						tag = PAN
+						tag = ECU
+						tag = VEN
+						tag = CHL
+						tag = PRG
+						tag = ARG
+						tag = URG
+						tag = COL
+						tag = PRU
+						tag = BOL
+					}
+				}
+                country_event = { id = forkingandcountry.4 }
+                set_country_flag = triggered_first
+            }
+            if = { 
+			    limit = { 
+				    OR = {
+					    tag = CRO
+						tag = CZE
+						tag = SLO
+						tag = SLV
+					}
+				}
+                country_event = { id = forkingandcountry.3 }
+                set_country_flag = triggered_first
+            }
+            if = { 
+			    limit = { 
+				    tag = BLR
+				}
+                country_event = { id = forkingandcountry.15 }
+                set_country_flag = triggered_first
+            }
+            else = { 
+                country_event = { id = forkingandcountry.1 }
+            }			
+			set_country_flag = monarchist_nation
+			set_country_flag = elected_king
+		}	
+	    ai_will_do = {
+			factor = 1
+		}
+    }
+	
+	include_lesser_nobility = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    has_country_flag = never_had_monarchy
+            has_idea_with_trait = staunch_monarchist			
+            monarchist > 0.4 			
+			NOT = { has_country_flag = president_regency }
+			NOT = { has_country_flag = elected_king }
+		}
+		
+		fire_only_once = yes
+		
+		visible = { 
+		    has_country_flag = never_had_monarchy
+            has_idea_with_trait = staunch_monarchist			
+            monarchist > 0.4 			
+			NOT = { has_country_flag = president_regency }
+			NOT = { has_country_flag = elected_king }
+			NOT = { has_country_flag = lesser_nobility_included }
+		}	
+		
+		complete_effect = {
+		    custom_effect_tooltip = include_lesser_nobility_tt
+			set_country_flag = lesser_nobility_included
+		}	
+	    ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	include_princesses = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    has_country_flag = never_had_monarchy
+            has_idea_with_trait = staunch_monarchist			
+            monarchist > 0.4 			
+			NOT = { has_country_flag = president_regency }
+			NOT = { has_country_flag = elected_king }
+		}
+		
+		fire_only_once = yes
+		
+		visible = { 
+		    has_country_flag = never_had_monarchy
+            has_idea_with_trait = staunch_monarchist			
+            monarchist > 0.4 			
+			NOT = { has_country_flag = president_regency }
+			NOT = { has_country_flag = elected_king }
+			NOT = { has_country_flag = princesses_included }
+		}	
+		
+		complete_effect = {
+		    custom_effect_tooltip = include_princesses_tt
+			set_country_flag = princesses_included
+		}	
+	    ai_will_do = {
+			factor = 1
+		}
+    }
+    
+	make_horthy_king = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    tag = HUN
+			monarchist > 0.4
+		}
+		
+		fire_only_once = yes
+		
+		visible = { 
+		    tag = HUN
+            has_idea_with_trait = staunch_monarchist
+            monarchist > 0.3			
+			NOT = { has_country_flag = regency_installed }
+			NOT = { has_country_flag = elected_king }
+			has_country_flag = hungarian_king_decision
+		}	
+		
+		complete_effect = {
+		    clr_country_flag = regency_installed
+			set_country_flag = monarchist_nation
+			set_country_flag = elected_king
+			set_country_flag = president_regency
+			create_country_leader = {
+					name = "Miklós Horthy"
+					picture = "gfx/leaders/Dictators/Portrait_Hungary_Miklos_Horthy_King.tga"
+					expire = "1981.1.1"
+     				ideology = totalitarian_monarchism
+				traits = {
+					popular_figurehead2 fascist_sympathies anti_communist
+				}
+			}
+			if = { limit = { NOT = { has_government = monarchist } }
+			    set_politics = { ruling_party = monarchist elections_allowed = no }
+			}	
+		}	
+	    ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	restore_real_king_CHA = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    tag = CHA
+			has_government = monarchist
+			is_ai = no
+			is_subject = no 
+		}
+		
+		fire_only_once = yes
+		
+		visible = { 
+		    tag = CHA
+			is_ai = no 
+			is_subject = no
+            has_idea_with_trait = staunch_monarchist
+            has_government = monarchist			
+			NOT = { has_country_flag = chad_king }
+		}	
+		
+		complete_effect = {
+		    clr_country_flag = regency_installed
+			set_country_flag = monarchist_nation
+			set_country_flag = elected_king
+			set_country_flag = president_regency
+			set_country_flag = chad_king
+			create_country_leader = {
+					name = "The Chad King"
+					picture = "gfx/leaders/Monarchs/Portrait_the_Chad_King.tga"
+					expire = "1981.1.1"
+     				ideology = totalitarian_monarchism
+				traits = {
+					popular_figurehead2 indomitable_perseverance actually_chad
+				}
+			}	
+		}	
+	    ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	restore_real_king_MAD = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    tag = MAD
+			has_government = monarchist
+			is_ai = no
+			is_subject = no 
+		}
+		
+		fire_only_once = yes
+		
+		visible = { 
+		    tag = MAD
+			is_ai = no 
+			is_subject = no
+            has_idea_with_trait = staunch_monarchist
+            has_government = monarchist			
+			NOT = { has_country_flag = king_julien }
+		}	
+		
+		complete_effect = {
+		    clr_country_flag = regency_installed
+			set_country_flag = monarchist_nation
+			set_country_flag = elected_king
+			set_country_flag = president_regency
+			set_country_flag = king_julien
+			create_country_leader = {
+					name = "King Julien"
+					picture = "gfx/leaders/Monarchs/Portrait_King_Julien.tga"
+					expire = "1981.1.1"
+     				ideology = totalitarian_monarchism
+				traits = {
+					popular_figurehead2 indomitable_perseverance the_sacred_king not_touch_his_feet like_to_moveit_moveit
+				}
+			}	
+		}	
+	    ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	restore_hohenberg_succession = { 
+	
+	    icon = decision_eng_abdication_crisis
+		
+		available = {
+		    OR = {
+			    tag = CZE
+				tag = CRO
+				AND = {
+				    tag = AUS 
+					HUN = { has_completed_focus = HUN_invite_the_habsburg_prince }
+				}
+            }
+            is_ai = no			
+			monarchist > 0.4
+		}
+		
+		fire_only_once = yes
+		
+		visible = {
+            OR = {
+			    tag = CZE
+				tag = CRO
+				AND = {
+				    tag = AUS 
+					HUN = { has_completed_focus = HUN_invite_the_habsburg_prince }
+				}
+            }
+            is_ai = no
+            has_idea_with_trait = staunch_monarchist
+            monarchist > 0.3			
+			NOT = { has_country_flag = regency_installed }
+			NOT = { has_country_flag = elected_king }
+		}	
+		
+		complete_effect = {
+		    set_country_flag = regency_installed
+			set_country_flag = monarchist_nation
+			set_country_flag = elected_king
+			set_country_flag = hohenberg_restoration	
+		}	
+	    ai_will_do = {
+			factor = 0
+		}
+    }
+}
+
+	

@@ -1,0 +1,49 @@
+ideas = {
+	political_advisor = {
+		# POLITICAL	
+	    generic_monarchism_revolutionary = {
+			
+			allowed = {
+			    has_global_flag = monarchism_allowed 
+				has_global_flag = royal_elections_allowed
+				NOT = { 
+                    OR = {
+                    AND = { tag = SOV has_government = communism } 
+					has_available_idea_with_traits = { idea = staunch_monarchist limit = 1 }
+                    }
+				}
+			}
+			
+            picture = generic_political_advisor_europe_2
+
+			
+			traits = { staunch_monarchist }
+	
+			on_add = {
+				if = { 
+				    limit = { has_country_flag = monarchy_in_place }
+					country_event = { id = monarchyoverhaul.15 }
+				}
+                if = {
+                    limit = { has_country_flag = had_monarchy }
+                    country_event = { id = monarchyoverhaul.11 }
+                }
+                else = {
+                    set_country_flag = monarchist_intelectual
+                }					
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = monarchism
+				}
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+	}
+}		
+	
