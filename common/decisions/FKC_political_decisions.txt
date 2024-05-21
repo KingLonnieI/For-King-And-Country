@@ -313,7 +313,7 @@ monarchism_on_the_rise_mod_category = {
 		}
 
 		visible = {
-			has_country_flag = preparation_for_monarchist_civil_war
+			has_country_flag = preparation_for_fascist_civil_war
 			has_idea_with_trait = staunch_monarchist
 			NOT = { has_government = monarchist }
 			check_has_focus_tree_to_switch_to_monarchist = yes
@@ -573,13 +573,11 @@ monarchism_on_the_rise_mod_category = {
 		cost = 100
 		
 		complete_effect = {
-				set_politics = { ruling_party = monarchist elections_allowed = no }
 		    if = {
 			    limit = { has_country_flag = monarchy_in_place }
 				country_event = { id = monarchyoverhaul.18 }
 			}
-           
-	 if = {
+            if = {
 			    limit = { has_country_flag = had_monarchy }
 				country_event = { id = monarchyoverhaul.13 }
 			}
@@ -589,7 +587,11 @@ monarchism_on_the_rise_mod_category = {
 			}
 			else = {
 			    country_event = { id = monarchyoverhaul.10 }
-			}	
+			}
+				set_politics = {
+			ruling_party = monarchist
+			elections_allowed = no
+	}
 		}
 		
 		ai_will_do = {
